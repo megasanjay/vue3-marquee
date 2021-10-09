@@ -1,6 +1,7 @@
 on:
   push:
     tags: v*.*.*
+  workflow_dispatch:
 jobs:
   npm:
     runs-on: ubuntu-latest
