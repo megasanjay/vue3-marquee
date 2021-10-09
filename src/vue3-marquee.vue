@@ -1,11 +1,19 @@
 <template>
   <div>
     <div class="vue3-marquee" :style="getCurrentStyle">
-      <div class="overlay"></div>
-      <div class="marquee">
+      <div class="overlay" ref="marqueeContainer"></div>
+      <div class="marquee" ref="marqueeContent">
         <slot></slot>
       </div>
       <div class="marquee">
+        <slot></slot>
+      </div>
+      <div
+        v-show="localClone"
+        class="marquee"
+        v-for="num in cloneAmount"
+        :key="num"
+      >
         <slot></slot>
       </div>
     </div>
@@ -18,16 +26,6 @@ import { defineComponent } from "vue";
 export default /*#__PURE__*/ defineComponent({
   name: "Vue3Marquee",
   props: {
-    pauseOnHover: {
-      type: Boolean,
-      required: false,
-      default: false,
-    },
-    pauseOnClick: {
-      type: Boolean,
-      required: false,
-      default: false,
-    },
     direction: {
       type: String,
       required: false,
@@ -39,7 +37,7 @@ export default /*#__PURE__*/ defineComponent({
     speed: {
       type: Number,
       required: false,
-      default: 10,
+      default: 20,
     },
     delay: {
       type: Number,
@@ -51,20 +49,15 @@ export default /*#__PURE__*/ defineComponent({
       required: false,
       default: 0,
     },
-    circular: {
+    clone: {
       type: Boolean,
       required: false,
       default: false,
     },
-    circularClone: {
-      type: Number,
-      required: false,
-      default: 0,
-    },
     gradient: {
       type: Boolean,
       required: false,
-      default: true,
+      default: false,
     },
     gradientColor: {
       type: Array,
@@ -91,57 +84,132 @@ export default /*#__PURE__*/ defineComponent({
       required: false,
       default: 200,
     },
+    pauseOnHover: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
+    pauseOnClick: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
+    options: {
+      type: Object,
+      required: false,
+      default: {},
+    },
   },
   data() {
-    return {};
+    return {
+      localDirection: this.direction,
+      localSpeed: this.speed,
+      localDelay: this.delay,
+      localLoop: this.loop,
+      localGradient: this.gradient,
+      localGradientColor: this.gradientColor,
+      localGradientWidth: this.gradientWidth,
+      localPauseOnHover: this.pauseOnHover,
+      localPauseOnClick: this.pauseOnClick,
+      localClone: this.clone,
+      minWidth: 0,
+      cloneAmount: 0,
+    };
   },
   computed: {
     getMarqueeDirection() {
-      if (this.direction === "left") {
+      if (this.localDirection === "left") {
         return "normal";
-      } else if (this.direction === "right") {
+      } else if (this.localDirection === "right") {
         return "reverse";
       }
       return "normal";
     },
     getPauseOnHover() {
-      if (this.pauseOnHover) {
+      if (this.localPauseOnHover) {
         return "paused";
       }
       return "running";
     },
     getpauseOnClick() {
-      if (this.pauseOnClick) {
+      if (this.localPauseOnClick) {
         return "paused";
       }
       return "running";
     },
     getLoops() {
-      return this.loop === 0 ? "infinite" : this.loop;
+      return this.localLoop === 0 ? "infinite" : this.localLoop;
     },
     getCurrentStyle() {
       let cssVariables = {
-        "--speed": `${this.speed}s`,
-        "--delay": `${this.delay}s`,
+        "--speed": `${this.localSpeed}s`,
+        "--delay": `${this.localDelay}s`,
         "--direction": `${this.getMarqueeDirection}`,
         "--pauseOnHover": `${this.getPauseOnHover}`,
         "--pauseOnClick": `${this.getpauseOnClick}`,
         "--loops": `${this.getLoops}`,
       };
-      if (this.gradient) {
-        const rgbaGradientColor = `rgba(${this.gradientColor[0]}, ${this.gradientColor[1]}, ${this.gradientColor[2]}`;
+      if (this.localGradient) {
+        const rgbaGradientColor = `rgba(${this.localGradientColor[0]}, ${this.localGradientColor[1]}, ${this.localGradientColor[2]}`;
         cssVariables[
           "--gradient-color"
         ] = `${rgbaGradientColor}, 1), ${rgbaGradientColor}, 0)`;
         cssVariables["--gradient-width"] =
-          typeof this.gradientWidth === "number"
-            ? `${this.gradientWidth}px`
-            : this.gradientWidth;
+          typeof this.localGradientWidth === "number"
+            ? `${this.localGradientWidth}px`
+            : this.localGradientWidth;
       }
+      cssVariables["--min-width"] = this.minWidth;
       return cssVariables;
     },
   },
-  mounted() {},
+  mounted() {
+    if (this.options) {
+      if (this.options.direction) {
+        this.localDirection = this.options.direction;
+      }
+      if (this.options.speed) {
+        this.localSpeed = this.options.speed;
+      }
+      if (this.options.delay) {
+        this.localDelay = this.options.delay;
+      }
+      if (this.options.loop) {
+        this.localLoop = this.options.loop;
+      }
+      if (this.options.gradient) {
+        this.localGradient = this.options.gradient;
+      }
+      if (this.options.gradientColor) {
+        this.localGradientColor = this.options.gradientColor;
+      }
+      if (this.options.gradientWidth) {
+        this.localGradientWidth = this.options.gradientWidth;
+      }
+      if (this.options.pauseOnHover) {
+        this.localPauseOnHover = this.options.pauseOnHover;
+      }
+      if (this.options.pauseOnClick) {
+        this.localPauseOnClick = this.options.pauseOnClick;
+      }
+      if (this.options.clone) {
+        this.localClone = this.options.clone;
+      }
+    }
+
+    if (this.localClone) {
+      this.minWidth = 0;
+
+      const contentWidth = this.$refs.marqueeContent.clientWidth;
+      const containerWidth = this.$refs.marqueeContainer.clientWidth;
+      console.log(containerWidth, contentWidth);
+
+      this.cloneAmount = Math.ceil(containerWidth / contentWidth);
+      console.log(containerWidth, contentWidth, this.cloneAmount);
+    } else {
+      this.minWidth = "100%";
+    }
+  },
 });
 </script>
 
@@ -162,13 +230,9 @@ export default /*#__PURE__*/ defineComponent({
   animation-play-state: var(--pauseOnClick);
 }
 
-.marquee:active {
-  animation-play-state: var(--pauseOnClick);
-}
-
 .marquee {
   flex: 0 0 auto;
-  min-width: 100%;
+  min-width: var(--min-width);
   z-index: 1;
   display: flex;
   flex-direction: row;

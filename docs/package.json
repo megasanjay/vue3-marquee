@@ -1,0 +1,19 @@
+{
+  "name": "vue3-marquee",
+  "version": "0.0.1",
+  "description": "A dynamic marquee for Vue3 applications",
+  "main": "index.js",
+  "authors": {
+    "name": "Sanjay Soundarajan",
+    "email": "sanjay.16@live.com"
+  },
+  "repository": "https://github.com/megasanjay/vue3-marquee/vue3-marquee",
+  "scripts": {
+    "dev": "vuepress dev src",
+    "build": "vuepress build src"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "vuepress": "^1.5.3"
+  }
+}
