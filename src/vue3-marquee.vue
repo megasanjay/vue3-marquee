@@ -1,11 +1,13 @@
 <template>
-  <div class="vue3-marquee">
-    <div class="marquee">
-      text1
-      <slot></slot>
-    </div>
-    <div class="marquee"> text2
-      <slot></slot>
+  <div>
+    <div class="vue3-marquee" :style="getCurrentStyle">
+      <div class="overlay"></div>
+      <div class="marquee">
+        <slot></slot>
+      </div>
+      <div class="marquee">
+        <slot></slot>
+      </div>
     </div>
   </div>
 </template>
@@ -14,60 +16,136 @@
 import { defineComponent } from "vue";
 
 export default /*#__PURE__*/ defineComponent({
-  name: "Vue3Marquee", // vue 3 component name
-  data() {
-    return {
-      counter: 5,
-      initCounter: 5,
-      message: {
-        action: null,
-        amount: null,
+  name: "Vue3Marquee",
+  props: {
+    pauseOnHover: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
+    pauseOnClick: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
+    direction: {
+      type: String,
+      required: false,
+      default: "left",
+      validator(value) {
+        return ["left", "right"].includes(value);
       },
-    };
+    },
+    speed: {
+      type: Number,
+      required: false,
+      default: 10,
+    },
+    delay: {
+      type: Number,
+      required: false,
+      default: 0,
+    },
+    loop: {
+      type: Number,
+      required: false,
+      default: 0,
+    },
+    circular: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
+    circularClone: {
+      type: Number,
+      required: false,
+      default: 0,
+    },
+    gradient: {
+      type: Boolean,
+      required: false,
+      default: true,
+    },
+    gradientColor: {
+      type: Array,
+      required: false,
+      default: [255, 255, 255],
+      validator: (value) => {
+        if (value.length != 3) {
+          return false;
+        }
+        if (typeof value[0] !== "number" || value[0] < 0 || value[0] > 255) {
+          return false;
+        }
+        if (typeof value[1] !== "number" || value[1] < 0 || value[1] > 255) {
+          return false;
+        }
+        if (typeof value[2] !== "number" || value[2] < 0 || value[2] > 255) {
+          return false;
+        }
+        return true;
+      },
+    },
+    gradientWidth: {
+      type: [String, Number],
+      required: false,
+      default: 200,
+    },
+  },
+  data() {
+    return {};
   },
   computed: {
-    changedBy() {
-      const { message } = this;
-      if (!message.action) return "initialized";
-      return `${message.action} ${message.amount || ""}`.trim();
+    getMarqueeDirection() {
+      if (this.direction === "left") {
+        return "normal";
+      } else if (this.direction === "right") {
+        return "reverse";
+      }
+      return "normal";
+    },
+    getPauseOnHover() {
+      if (this.pauseOnHover) {
+        return "paused";
+      }
+      return "running";
+    },
+    getpauseOnClick() {
+      if (this.pauseOnClick) {
+        return "paused";
+      }
+      return "running";
+    },
+    getLoops() {
+      return this.loop === 0 ? "infinite" : this.loop;
+    },
+    getCurrentStyle() {
+      let cssVariables = {
+        "--speed": `${this.speed}s`,
+        "--delay": `${this.delay}s`,
+        "--direction": `${this.getMarqueeDirection}`,
+        "--pauseOnHover": `${this.getPauseOnHover}`,
+        "--pauseOnClick": `${this.getpauseOnClick}`,
+        "--loops": `${this.getLoops}`,
+      };
+      if (this.gradient) {
+        const rgbaGradientColor = `rgba(${this.gradientColor[0]}, ${this.gradientColor[1]}, ${this.gradientColor[2]}`;
+        cssVariables[
+          "--gradient-color"
+        ] = `${rgbaGradientColor}, 1), ${rgbaGradientColor}, 0)`;
+        cssVariables["--gradient-width"] =
+          typeof this.gradientWidth === "number"
+            ? `${this.gradientWidth}px`
+            : this.gradientWidth;
+      }
+      return cssVariables;
     },
   },
-  methods: {
-    increment(arg) {
-      const amount = typeof arg !== "number" ? 1 : arg;
-      this.counter += amount;
-      this.message.action = "incremented by";
-      this.message.amount = amount;
-    },
-    decrement(arg) {
-      const amount = typeof arg !== "number" ? 1 : arg;
-      this.counter -= amount;
-      this.message.action = "decremented by";
-      this.message.amount = amount;
-    },
-    reset() {
-      this.counter = this.initCounter;
-      this.message.action = "reset";
-      this.message.amount = null;
-    },
-  },
+  mounted() {},
 });
 </script>
 
 <style>
-/* .vue3-marquee {
-  display: block;
-  width: 400px;
-  margin: 25px auto;
-  border: 1px solid #ccc;
-  background: #eaeaea;
-  text-align: center;
-  padding: 25px;
-}
-.vue3-marquee p {
-  margin: 0 0 1em; 
-}*/
-
 .vue3-marquee {
   overflow-x: hidden !important;
   display: flex !important;
@@ -75,12 +153,37 @@ export default /*#__PURE__*/ defineComponent({
   position: relative;
   width: 100%;
 }
+
 .vue3-marquee:hover div {
-  animation-play-state: true;
+  animation-play-state: var(--pauseOnHover);
 }
 
 .vue3-marquee:active div {
-  animation-play-state: true;
+  animation-play-state: var(--pauseOnClick);
+}
+
+.marquee:active {
+  animation-play-state: var(--pauseOnClick);
+}
+
+.marquee {
+  flex: 0 0 auto;
+  min-width: 100%;
+  z-index: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  animation: scroll var(--speed) linear var(--delay) var(--loops);
+  animation-direction: var(--direction);
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
 
 .overlay {
@@ -88,17 +191,14 @@ export default /*#__PURE__*/ defineComponent({
   width: 100%;
   height: 100%;
 }
-/* @mixin gradient {
-    background: linear-gradient(to right, var(--gradient-color));
-  } */
 
 .overlay::before,
 .overlay::after {
-  /* @include gradient; */
+  background: linear-gradient(to right, var(--gradient-color));
   content: "";
   height: 100%;
   position: absolute;
-  width: 100%;
+  width: var(--gradient-width);
   z-index: 2;
 }
 
@@ -111,24 +211,5 @@ export default /*#__PURE__*/ defineComponent({
 .overlay::before {
   left: 0;
   top: 0;
-}
-
-.marquee {
-  flex: 0 0 auto;
-  min-width: 100%;
-  z-index: 1;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  animation: scroll 10s linear 2s infinite;
-}
-
-@keyframes scroll {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
 }
 </style>
