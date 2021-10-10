@@ -8,7 +8,7 @@ module.exports = {
   /**
    * Ref：https://v1.vuepress.vuejs.org/config/#description
    */
-  description: "A simple marquee component with ZERO dependencies for Vue 3.",
+  description: "A simple dynamic marquee component with ZERO dependencies for Vue 3.",
   dest: "dist",
   /**
    * Extra tags to be injected to the page HTML `<head>`
@@ -45,23 +45,19 @@ module.exports = {
         link: "/config/",
       },
       {
-        text: "VuePress",
-        link: "https://v1.vuepress.vuejs.org",
+        text: "Github",
+        link: "https://github.com/megasanjay/vue3-marquee",
       },
     ],
-    sidebar: {
-      "/guide/": [
-        {
-          title: "Guide",
-          collapsable: false,
-          children: ["", "using-vue"],
-        },
-      ],
-    },
+    sidebar: 'auto'
   },
 
   /**
    * Apply plugins，ref：https://v1.vuepress.vuejs.org/zh/plugin/
    */
-  plugins: ["@vuepress/plugin-back-to-top", "@vuepress/plugin-medium-zoom"],
+  plugins: [
+    "@vuepress/plugin-back-to-top",
+    "@vuepress/plugin-medium-zoom",
+    "@vuepress/register-components",
+  ],
 };
