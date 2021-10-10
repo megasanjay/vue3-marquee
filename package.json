@@ -1,7 +1,12 @@
 {
   "name": "vue3-marquee",
-  "version": "0.0.2",
-  "description": "",
+  "version": "0.0.4",
+  "description": "A simple marquee component with ZERO dependencies for Vue 3",
+  "keywords": [
+    "vue3",
+    "marquee"
+  ],
+  "author": "Sanjay Soundarajan <info@sanjaysoundarajan.dev> (https://sanjaysoundarajan.dev)",
   "main": "dist/vue3-marquee.ssr.js",
   "browser": "dist/vue3-marquee.esm.js",
   "module": "dist/vue3-marquee.esm.js",
@@ -46,5 +51,15 @@
   },
   "engines": {
     "node": ">=12"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/megasanjay/vue3-marquee.git"
+  },
+  "homepage": "https://github.com/megasanjay/vue3-marquee.git",
+  "bugs": {
+    "url": "https://github.com/megasanjay/vue3-marquee/issues",
+    "email": "info@sanjaysoundarajan.dev"
+  },
+  "license": "MIT"
 }
