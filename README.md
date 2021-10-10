@@ -68,4 +68,6 @@ You can then use the component in your template. A common use case is an image m
 | clone  | Boolean  | false  | Whether to clone the content if you want no empty spaces in the animation |
 | options | Object | { } | An object that you can also pass all of the above props in for a cleaner template |
 
-Examples: Add demo site here
+# Demo
+
+A very simple demo can be found here: https://codesandbox.io/s/epic-drake-db5dj
