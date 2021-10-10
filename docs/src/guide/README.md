@@ -122,7 +122,7 @@ Whether to clone the content if you want no empty spaces in the animation. Use t
 
 ## options
 
-You can also provide all of the props in an options prop for cleaner looking html.
+You can also provide all of the props in an `options` prop for cleaner looking html.
 
 | Type   | Default value | Required |
 | ------ | ------------- | -------- |
