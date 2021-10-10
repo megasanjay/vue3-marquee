@@ -81,8 +81,9 @@ module.exports = {
         link: "/guide/",
       },
       {
-        text: "Examples",
-        link: "/examples/",
+        text: "Demo",
+        link:
+          "https://codesandbox.io/s/epic-drake-db5dj",
       },
       {
         text: "Github",

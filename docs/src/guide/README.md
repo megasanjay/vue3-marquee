@@ -32,6 +32,39 @@ You can also use `vue3-marquee` directly in the browser via CDN.
 <script src="https://unpkg.com/vue3-marquee@0.0.4/dist/vue3-marquee.min.js"></script>
 ```
 
+## Usage
+
+The most common use case is to register the component globally.
+
+```js
+// main.js
+createApp(App)
+  .use(Vue3Marquee)
+  .mount("#app");
+```
+
+Alternatively you can import the marquee component locally.
+
+```vue
+<template>
+  <vue3-marquee>
+    <img height="200" src="...img" />
+    <img height="200" src="...img" />
+    <img height="200" src="...img" />
+  </vue3-marquee>
+</template>
+
+<script>
+import Vue3Marquee from "vue3-marquee";
+
+export default {
+  components: {
+    Vue3Marquee,
+  },
+};
+</script>
+```
+
 ## Available props
 
 All the possible props for `vue3-marquee` are shown below.
@@ -134,7 +167,7 @@ You can also provide all of the props in an `options` prop for cleaner looking h
 </template>
 
 <script>
-import Vue3Marquee from "@/vue3-marquee.vue";
+import Vue3Marquee from "vue3-marquee";
 
 export default defineComponent({
   components: {

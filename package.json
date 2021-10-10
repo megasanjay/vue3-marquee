@@ -1,6 +1,6 @@
 {
   "name": "vue3-marquee",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "description": "A simple marquee component with ZERO dependencies for Vue 3",
   "keywords": [
     "vue3",

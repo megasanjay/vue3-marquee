@@ -123,10 +123,9 @@ export default /*#__PURE__*/ defineComponent({
 
         const contentWidth = this.$refs.marqueeContent.clientWidth;
         const containerWidth = this.$refs.marqueeContainer.clientWidth;
-        console.log(containerWidth, contentWidth);
 
-        this.cloneAmount = Math.ceil(containerWidth / contentWidth);
-        console.log(containerWidth, contentWidth, this.cloneAmount);
+        this.cloneAmount = Math.ceil(containerWidth / (contentWidth * 2));
+        console.log(this.cloneAmount)
       } else {
         this.minWidth = "100%";
       }
@@ -177,8 +176,6 @@ export default /*#__PURE__*/ defineComponent({
       }
       cssVariables["--min-width"] = this.minWidth;
 
-      checkForClone();
-
       return cssVariables;
     },
   },
@@ -215,6 +212,7 @@ export default /*#__PURE__*/ defineComponent({
         this.localClone = this.options.clone;
       }
     }
+    this.checkForClone();
   },
 });
 </script>
