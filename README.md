@@ -70,4 +70,4 @@ You can then use the component in your template. A common use case is an image m
 
 # Demo
 
-A very simple demo can be found here: https://codesandbox.io/s/epic-drake-db5dj
+A very simple demo can be found here: https://codesandbox.io/s/epic-drake-db5dj?file=/src/App.vue
