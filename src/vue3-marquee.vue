@@ -34,7 +34,7 @@ export default /*#__PURE__*/ defineComponent({
         return ["left", "right"].includes(value);
       },
     },
-    speed: {
+    duration: {
       type: Number,
       required: false,
       default: 20,
@@ -103,7 +103,7 @@ export default /*#__PURE__*/ defineComponent({
   data() {
     return {
       localDirection: this.direction,
-      localSpeed: this.speed,
+      localDuration: this.duration,
       localDelay: this.delay,
       localLoop: this.loop,
       localGradient: this.gradient,
@@ -115,6 +115,22 @@ export default /*#__PURE__*/ defineComponent({
       minWidth: 0,
       cloneAmount: 0,
     };
+  },
+  methods: {
+    checkForClone() {
+      if (this.localClone) {
+        this.minWidth = 0;
+
+        const contentWidth = this.$refs.marqueeContent.clientWidth;
+        const containerWidth = this.$refs.marqueeContainer.clientWidth;
+        console.log(containerWidth, contentWidth);
+
+        this.cloneAmount = Math.ceil(containerWidth / contentWidth);
+        console.log(containerWidth, contentWidth, this.cloneAmount);
+      } else {
+        this.minWidth = "100%";
+      }
+    },
   },
   computed: {
     getMarqueeDirection() {
@@ -142,7 +158,7 @@ export default /*#__PURE__*/ defineComponent({
     },
     getCurrentStyle() {
       let cssVariables = {
-        "--speed": `${this.localSpeed}s`,
+        "--duration": `${this.localDuration}s`,
         "--delay": `${this.localDelay}s`,
         "--direction": `${this.getMarqueeDirection}`,
         "--pauseOnHover": `${this.getPauseOnHover}`,
@@ -160,6 +176,9 @@ export default /*#__PURE__*/ defineComponent({
             : this.localGradientWidth;
       }
       cssVariables["--min-width"] = this.minWidth;
+
+      checkForClone();
+
       return cssVariables;
     },
   },
@@ -168,8 +187,8 @@ export default /*#__PURE__*/ defineComponent({
       if (this.options.direction) {
         this.localDirection = this.options.direction;
       }
-      if (this.options.speed) {
-        this.localSpeed = this.options.speed;
+      if (this.options.duration) {
+        this.localDuration = this.options.duration;
       }
       if (this.options.delay) {
         this.localDelay = this.options.delay;
@@ -195,19 +214,6 @@ export default /*#__PURE__*/ defineComponent({
       if (this.options.clone) {
         this.localClone = this.options.clone;
       }
-    }
-
-    if (this.localClone) {
-      this.minWidth = 0;
-
-      const contentWidth = this.$refs.marqueeContent.clientWidth;
-      const containerWidth = this.$refs.marqueeContainer.clientWidth;
-      console.log(containerWidth, contentWidth);
-
-      this.cloneAmount = Math.ceil(containerWidth / contentWidth);
-      console.log(containerWidth, contentWidth, this.cloneAmount);
-    } else {
-      this.minWidth = "100%";
     }
   },
 });
@@ -237,7 +243,7 @@ export default /*#__PURE__*/ defineComponent({
   display: flex;
   flex-direction: row;
   align-items: center;
-  animation: scroll var(--speed) linear var(--delay) var(--loops);
+  animation: scroll var(--duration) linear var(--delay) var(--loops);
   animation-direction: var(--direction);
 }
 

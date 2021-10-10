@@ -57,7 +57,7 @@ You can then use the component in your template. A common use case is an image m
 | Prop | Type | Default Value | Description |
 | ------------- | ------------- | ------------- | ------------- |
 | direction  | String of either 'left' or 'right'  | left  | The direction for the content to move in |
-| speed  | Number  | 20  | The time taken for the marquee content to move the width of the container (in seconds) |
+| duration  | Number  | 20  | The time taken for the marquee content to move the width of the container (in seconds) |
 | delay  | Number  | 0  | A delay before the animation starts (in seconds) |
 | loop  | Number  | 0  | The number of instances that the marquee animation should run (0 is infinite) |
 | gradient  | Boolean  | false  | Whether to show a gradient overlay |

@@ -8,7 +8,8 @@ module.exports = {
   /**
    * Ref：https://v1.vuepress.vuejs.org/config/#description
    */
-  description: "A simple dynamic marquee component with ZERO dependencies for Vue 3.",
+  description:
+    "A simple dynamic marquee component with ZERO dependencies for Vue 3.",
   dest: "dist",
   /**
    * Extra tags to be injected to the page HTML `<head>`
@@ -49,7 +50,7 @@ module.exports = {
         link: "https://github.com/megasanjay/vue3-marquee",
       },
     ],
-    sidebar: 'auto'
+    sidebar: "auto",
   },
 
   /**
@@ -59,5 +60,6 @@ module.exports = {
     "@vuepress/plugin-back-to-top",
     "@vuepress/plugin-medium-zoom",
     "@vuepress/register-components",
+    ["vuepress-plugin-code-copy", true],
   ],
 };
