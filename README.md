@@ -1,6 +1,6 @@
 # vue3-marquee
 
-![npm](https://img.shields.io/npm/v/vue3-marquee) ![npm](https://img.shields.io/npm/dt/vue3-marquee) ![Libraries.io dependency status for latest release](https://img.shields.io/librariesio/release/npm/vue3-marquee) ![Snyk Vulnerabilities for npm package](https://img.shields.io/snyk/vulnerabilities/npm/vue3-marquee) ![NPM](https://img.shields.io/npm/l/vue3-marquee) ![GitHub issues](https://img.shields.io/github/issues/megasanjay/vue3-marquee)
+![npm](https://img.shields.io/npm/v/vue3-marquee) ![npm](https://img.shields.io/npm/dt/vue3-marquee) ![Libraries.io dependency status for latest release](https://img.shields.io/librariesio/release/npm/vue3-marquee) ![NPM](https://img.shields.io/npm/l/vue3-marquee) ![GitHub issues](https://img.shields.io/github/issues/megasanjay/vue3-marquee)
 
 A simple marquee component with ZERO dependencies for Vue 3. This component was originally developed for internal use but I figured this could be useful to someone else as well. This component is modeled after a React marquee component I found called [React Fast Marquee](https://github.com/justin-chu/react-fast-marquee). To keep a smooth animation running, clones of the content can be created for seamless transitions with no sudden jarring appearences or empty spaces in between content.
 
