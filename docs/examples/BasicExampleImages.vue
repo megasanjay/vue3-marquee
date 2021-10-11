@@ -5,7 +5,7 @@
       v-for="img in imgArray"
       :key="img"
       class="image"
-      height="150"
+      width="100"
     />
   </Vue3Marquee>
 </template>
