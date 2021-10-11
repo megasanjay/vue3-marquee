@@ -125,7 +125,6 @@ export default /*#__PURE__*/ defineComponent({
         const containerWidth = this.$refs.marqueeContainer.clientWidth;
 
         this.cloneAmount = Math.ceil(containerWidth / (contentWidth * 2));
-        console.log(this.cloneAmount)
       } else {
         this.minWidth = "100%";
       }

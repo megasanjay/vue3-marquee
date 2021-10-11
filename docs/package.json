@@ -1,19 +1,32 @@
 {
-  "name": "docs",
+  "name": "vue3-marquee-docs",
   "version": "1.0.0",
-  "description": "",
+  "description": "A simple marquee component with ZERO dependencies for Vue 3",
   "main": "index.js",
+  "keywords": [
+    "vue3",
+    "marquee"
+  ],
   "scripts": {
     "dev": "vitepress dev ",
     "build": "vitepress build ",
     "serve": "vitepress serve "
   },
-  "author": "Sanjay Soundarajan",
+  "author": "Sanjay Soundarajan <info@sanjaysoundarajan.dev> (https://sanjaysoundarajan.dev)",
   "license": "MIT",
   "devDependencies": {
     "vitepress": "^0.20.0"
   },
   "dependencies": {
     "vue3-marquee": "^0.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/megasanjay/vue3-marquee.git"
+  },
+  "homepage": "https://vue3-marquee.vercel.app/",
+  "bugs": {
+    "url": "https://github.com/megasanjay/vue3-marquee/issues",
+    "email": "info@sanjaysoundarajan.dev"
   }
 }

@@ -38,6 +38,9 @@ The most common use case is to register the component globally.
 
 ```js
 // main.js
+import { createApp } from "vue";
+import Vue3Marquee from "vue3-marquee";
+
 createApp(App)
   .use(Vue3Marquee)
   .mount("#app");

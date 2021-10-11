@@ -11,5 +11,5 @@ features:
   details: You can put in any content that would like.
 - title: 🙌 Easy to use
   details: Only a single component with all the props you need.
-footer: MIT Licensed | Made by Sanjay Soundarajan with ❤️
+footer:  Made by Sanjay Soundarajan with ❤️
 ---

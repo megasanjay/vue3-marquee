@@ -4,7 +4,6 @@ module.exports = {
   description:
     "A simple dynamic marquee component with zero dependencies for Vue 3.",
   editLinks: true,
-
   head: [
     ["meta", { name: "theme-color", content: "#3eaf7c" }],
     ["meta", { name: "apple-mobile-web-app-capable", content: "yes" }],
@@ -40,7 +39,6 @@ module.exports = {
         href: "favicon-32x32.png",
       },
     ],
-
     ["link", { rel: "manifest", href: "site.webmanifest" }],
     [
       "link",
@@ -52,7 +50,6 @@ module.exports = {
     ],
     ["link", { rel: "icon", href: "favicon.ico" }],
   ],
-
   themeConfig: {
     nav: [
       {
@@ -64,8 +61,8 @@ module.exports = {
         link: "/examples",
       },
       {
-        text: "Demo",
-        link: "https://codesandbox.io/s/epic-drake-db5dj",
+        text: "Submit an issue",
+        link: "https://github.com/megasanjay/vue3-marquee/issues/new",
       },
       {
         text: "Github",

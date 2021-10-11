@@ -1,11 +1,12 @@
 <template>
-  <Vue3Marquee>
+  <Vue3Marquee :pauseOnHover="true">
     <div class="card" v-for="avatar in avatarArray" :key="avatar">
       <img :src="avatar" width="100" height="100" />
       <p style="margin-top: 10px; margin-bottom: 0px;">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua.
       </p>
+      <button class="btn">Learn More</button>
     </div>
   </Vue3Marquee>
 </template>
@@ -15,7 +16,7 @@ import { reactive } from "vue";
 import Vue3Marquee from "vue3-marquee";
 
 export default {
-  name: "BasicExampleCards",
+  name: "CardsPauseOnHover",
   components: {
     Vue3Marquee,
   },
@@ -48,6 +49,17 @@ export default {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.btn {
+  padding: 5px;
+  margin: 10px 0;
+  transition: all 0.2s;
+}
+
+.btn:hover {
+  background: rgb(226, 226, 226);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 </style>

@@ -1,6 +1,6 @@
 {
   "name": "vue3-marquee",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "A simple marquee component with ZERO dependencies for Vue 3",
   "keywords": [
     "vue3",
@@ -56,7 +56,7 @@
     "type": "git",
     "url": "https://github.com/megasanjay/vue3-marquee.git"
   },
-  "homepage": "https://github.com/megasanjay/vue3-marquee.git",
+  "homepage": "https://vue3-marquee.vercel.app/",
   "bugs": {
     "url": "https://github.com/megasanjay/vue3-marquee/issues",
     "email": "info@sanjaysoundarajan.dev"
