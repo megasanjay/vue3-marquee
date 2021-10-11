@@ -1,21 +1,10 @@
-// const { description } = require("../../package");
-
 module.exports = {
-  /**
-   * Ref：https://v1.vuepress.vuejs.org/config/#title
-   */
+  lang: "en-US",
   title: "Vue 3 Marquee",
-  /**
-   * Ref：https://v1.vuepress.vuejs.org/config/#description
-   */
   description:
-    "A simple dynamic marquee component with ZERO dependencies for Vue 3.",
-  dest: "dist",
-  /**
-   * Extra tags to be injected to the page HTML `<head>`
-   *
-   * ref：https://v1.vuepress.vuejs.org/config/#head
-   */
+    "A simple dynamic marquee component with zero dependencies for Vue 3.",
+  editLinks: true,
+
   head: [
     ["meta", { name: "theme-color", content: "#3eaf7c" }],
     ["meta", { name: "apple-mobile-web-app-capable", content: "yes" }],
@@ -64,42 +53,30 @@ module.exports = {
     ["link", { rel: "icon", href: "favicon.ico" }],
   ],
 
-  /**
-   * Theme configuration, here is the default theme configuration for VuePress.
-   *
-   * ref：https://v1.vuepress.vuejs.org/theme/default-theme-config.html
-   */
   themeConfig: {
-    repo: "",
-    editLinks: false,
-    docsDir: "",
-    editLinkText: "",
-    lastUpdated: false,
     nav: [
       {
         text: "Guide",
-        link: "/guide/",
+        link: "/guide",
+      },
+      {
+        text: "Examples",
+        link: "/examples",
       },
       {
         text: "Demo",
-        link:
-          "https://codesandbox.io/s/epic-drake-db5dj",
+        link: "https://codesandbox.io/s/epic-drake-db5dj",
       },
       {
         text: "Github",
         link: "https://github.com/megasanjay/vue3-marquee",
       },
     ],
-    sidebar: "auto",
+    sidebar: {
+      "/": [
+        { text: "Getting Started", link: "/guide" },
+        { text: "Examples", link: "/examples" },
+      ],
+    },
   },
-
-  /**
-   * Apply plugins，ref：https://v1.vuepress.vuejs.org/zh/plugin/
-   */
-  plugins: [
-    "@vuepress/plugin-back-to-top",
-    "@vuepress/plugin-medium-zoom",
-    "@vuepress/register-components",
-    ["vuepress-plugin-code-copy", true],
-  ],
 };
