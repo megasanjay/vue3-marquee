@@ -74,4 +74,4 @@ You can then use the component in your template. A common use case is an image m
 | clone  | Boolean  | false  | Whether to clone the content if you want no empty spaces in the animation |
 | options | Object | { } | An object that you can also pass all of the above props in for a cleaner template |
 
-[![forthebadge](https://forthebadge.com/images/badges/made-with-vue.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/works-on-my-machine.svg)](https://forthebadge.com)
+[![forthebadge](https://forthebadge.com/images/badges/made-with-vue.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)]
