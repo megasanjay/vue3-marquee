@@ -91,10 +91,10 @@ export default {
   data() {
     return {
       imgArray: [
-        "http://assets.stickpng.com/thumbs/5a4e2f8b2da5ad73df7efe6f.png",
-        "http://assets.stickpng.com/thumbs/6160562276000b00045a7d97.png",
-        "http://assets.stickpng.com/thumbs/608fffae5d1f990004970e72.png",
-        "http://assets.stickpng.com/thumbs/608ff7145d1f990004970e69.png",
+        "https://assets.stickpng.com/thumbs/5a4e2f8b2da5ad73df7efe6f.png",
+        "https://assets.stickpng.com/thumbs/6160562276000b00045a7d97.png",
+        "https://assets.stickpng.com/thumbs/608fffae5d1f990004970e72.png",
+        "https://assets.stickpng.com/thumbs/608ff7145d1f990004970e69.png",
         ...
       ],
     };
@@ -207,9 +207,9 @@ export default {
   data() {
     return {
       imgArray: [
-        "http://assets.stickpng.com/thumbs/5a4e2f8b2da5ad73df7efe6f.png",
-        "http://assets.stickpng.com/thumbs/6160562276000b00045a7d97.png",
-        "http://assets.stickpng.com/thumbs/608fffae5d1f990004970e72.png",
+        "https://assets.stickpng.com/thumbs/5a4e2f8b2da5ad73df7efe6f.png",
+        "https://assets.stickpng.com/thumbs/6160562276000b00045a7d97.png",
+        "https://assets.stickpng.com/thumbs/608fffae5d1f990004970e72.png",
         ...
       ],
     };
@@ -332,8 +332,8 @@ export default {
   data() {
     return {
       imgArray: [
-        "http://assets.stickpng.com/thumbs/5a4e2f8b2da5ad73df7efe6f.png",
-        "http://assets.stickpng.com/thumbs/6160562276000b00045a7d97.png",
+        "https://assets.stickpng.com/thumbs/5a4e2f8b2da5ad73df7efe6f.png",
+        "https://assets.stickpng.com/thumbs/6160562276000b00045a7d97.png",
         ...
       ],
     };
@@ -382,8 +382,8 @@ export default {
   data() {
     return {
       imgArray: [
-        "http://assets.stickpng.com/thumbs/5a4e2f8b2da5ad73df7efe6f.png",
-        "http://assets.stickpng.com/thumbs/6160562276000b00045a7d97.png",
+        "https://assets.stickpng.com/thumbs/5a4e2f8b2da5ad73df7efe6f.png",
+        "https://assets.stickpng.com/thumbs/6160562276000b00045a7d97.png",
       ],
     };
   },
