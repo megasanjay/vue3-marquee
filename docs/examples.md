@@ -397,3 +397,7 @@ export default {
 }
 </style>
 ```
+
+::: warning
+`Disclaimer`: The logos used in these examples are only used for demo purposes. The entities represented by their logos are not endorsing this component.
+:::
