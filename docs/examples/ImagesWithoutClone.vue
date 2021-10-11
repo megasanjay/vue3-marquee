@@ -20,8 +20,8 @@ export default {
   data() {
     return {
       imgArray: [
-        "https://assets.stickpng.com/thumbs/5a4e2f8b2da5ad73df7efe6f.png",
-        "https://assets.stickpng.com/thumbs/6160562276000b00045a7d97.png",
+        "http://assets.stickpng.com/thumbs/5a4e2f8b2da5ad73df7efe6f.png",
+        "http://assets.stickpng.com/thumbs/6160562276000b00045a7d97.png",
       ],
     };
   },
