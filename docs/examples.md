@@ -1,4 +1,4 @@
-# Demos
+# Examples
 
 ## Basic example with text
 
