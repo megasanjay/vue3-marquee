@@ -76,7 +76,7 @@ export default {
       v-for="img in imgArray"
       :key="img"
       class="image"
-      height="150"
+      width="100"
     />
   </Vue3Marquee>
 </template>
@@ -91,10 +91,9 @@ export default {
   data() {
     return {
       imgArray: [
-        "https://assets.stickpng.com/thumbs/5a4e2f8b2da5ad73df7efe6f.png",
-        "https://assets.stickpng.com/thumbs/6160562276000b00045a7d97.png",
-        "https://assets.stickpng.com/thumbs/608fffae5d1f990004970e72.png",
-        "https://assets.stickpng.com/thumbs/608ff7145d1f990004970e69.png",
+        "https://vuejs.org/images/vueschool.png",
+        "https://vuejs.org/images/vehikl.png",
+        "https://vuejs.org/images/retool.png",
         ...
       ],
     };
@@ -192,7 +191,7 @@ In this example the following props are used:
       v-for="img in imgArray"
       :key="img"
       class="image"
-      height="150"
+      width="100"
     />
   </Vue3Marquee>
 </template>
@@ -207,9 +206,9 @@ export default {
   data() {
     return {
       imgArray: [
-        "https://assets.stickpng.com/thumbs/5a4e2f8b2da5ad73df7efe6f.png",
-        "https://assets.stickpng.com/thumbs/6160562276000b00045a7d97.png",
-        "https://assets.stickpng.com/thumbs/608fffae5d1f990004970e72.png",
+        "https://vuejs.org/images/vueschool.png",
+        "https://vuejs.org/images/vehikl.png",
+        "https://vuejs.org/images/retool.png",
         ...
       ],
     };
@@ -317,7 +316,7 @@ If you need more functionality than this, using a carousel component might be be
       v-for="img in imgArray"
       :key="img"
       class="image"
-      height="150"
+      width="100"
     />
   </Vue3Marquee>
 </template>
@@ -332,8 +331,9 @@ export default {
   data() {
     return {
       imgArray: [
-        "https://assets.stickpng.com/thumbs/5a4e2f8b2da5ad73df7efe6f.png",
-        "https://assets.stickpng.com/thumbs/6160562276000b00045a7d97.png",
+        "https://vuejs.org/images/vueschool.png",
+        "https://vuejs.org/images/vehikl.png",
+        "https://vuejs.org/images/retool.png",
         ...
       ],
     };
@@ -355,7 +355,7 @@ If your marquee content is too small to take the width of the full container it 
 
 <ImagesWithoutClone />
 
-You can use the [`clone`](/guide#clone) prop to workaround this issue. With this option, `vue3-marquee` will automatically calculate the content and container widths and clone your content to fill the container completely. 
+You can use the [`clone`](/guide#clone) prop to workaround this issue. With this option, `vue3-marquee` will automatically calculate the content and container widths and clone your content to fill the container completely.
 
 <ImagesWithClone/>
 
@@ -367,7 +367,7 @@ You can use the [`clone`](/guide#clone) prop to workaround this issue. With this
       v-for="img in imgArray"
       :key="img"
       class="image"
-      height="150"
+      width="100"
     />
   </Vue3Marquee>
 </template>
@@ -382,8 +382,8 @@ export default {
   data() {
     return {
       imgArray: [
-        "https://assets.stickpng.com/thumbs/5a4e2f8b2da5ad73df7efe6f.png",
-        "https://assets.stickpng.com/thumbs/6160562276000b00045a7d97.png",
+        "https://vuejs.org/images/tendermint.png",
+        "https://vuejs.org/images/layer0.png",
       ],
     };
   },
@@ -398,6 +398,6 @@ export default {
 </style>
 ```
 
-::: warning
-`Disclaimer`: The logos used in these examples are only used for demo purposes. The entities represented by their logos are not endorsing this component.
+::: warning Disclaimer
+The logos used in these examples are only used for demo purposes. The entities represented by their logos are not endorsing this component.
 :::
