@@ -160,7 +160,7 @@ You can also provide all of the props in an `options` prop for cleaner looking h
 
 | Type   | Default value | Required |
 | ------ | ------------- | -------- |
-| Object | { }           | no       |
+| Object | "{ }"         | no       |
 
 ```vue
 <template>
