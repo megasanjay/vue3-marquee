@@ -40,5 +40,3 @@ jobs:
           prettier_extensions: "css,html,js,json,jsx,md,sass,scss,ts,tsx,vue"
           auto_fix: true
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          git_email: "fairdataihub@gmail.com"
-          git_name: "fairdataihub-bot"
