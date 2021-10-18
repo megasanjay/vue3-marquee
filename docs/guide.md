@@ -41,9 +41,7 @@ The most common use case is to register the component globally.
 import { createApp } from "vue";
 import Vue3Marquee from "vue3-marquee";
 
-createApp(App)
-  .use(Vue3Marquee)
-  .mount("#app");
+createApp(App).use(Vue3Marquee).mount("#app");
 ```
 
 Alternatively you can import the marquee component locally.

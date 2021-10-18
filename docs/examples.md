@@ -360,7 +360,7 @@ You can use the [`clone`](/guide#clone) prop to workaround this issue. With this
 <ImagesWithClone/>
 
 ::: warning
-On certain screen sizes, I have observed the image flashing in between animation resets. Please submit an issue if this happens to you. 
+On certain screen sizes, I have observed the image flashing in between animation resets. Please submit an issue if this happens to you.
 :::
 
 ```vue
