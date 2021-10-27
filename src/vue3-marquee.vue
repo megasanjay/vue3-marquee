@@ -20,17 +20,17 @@
   </div>
 </template>
 
-<script>
-import { defineComponent } from "vue";
+<script lang="ts">
+import { defineComponent, PropType } from "vue";
 
-export default /*#__PURE__*/ defineComponent({
+export default defineComponent({
   name: "Vue3Marquee",
   props: {
     direction: {
       type: String,
       required: false,
       default: "left",
-      validator(value) {
+      validator(value: "left" | "right") {
         return ["left", "right"].includes(value);
       },
     },
@@ -63,7 +63,7 @@ export default /*#__PURE__*/ defineComponent({
       type: Array,
       required: false,
       default: [255, 255, 255],
-      validator: (value) => {
+      validator: (value: [number, number, number]) => {
         if (value.length != 3) {
           return false;
         }
@@ -131,7 +131,7 @@ export default /*#__PURE__*/ defineComponent({
     },
   },
   computed: {
-    getMarqueeDirection() {
+    getMarqueeDirection(): "normal" | "reverse" {
       if (this.localDirection === "left") {
         return "normal";
       } else if (this.localDirection === "right") {
@@ -139,20 +139,20 @@ export default /*#__PURE__*/ defineComponent({
       }
       return "normal";
     },
-    getPauseOnHover() {
+    getPauseOnHover(): "paused" | "running" {
       if (this.localPauseOnHover) {
         return "paused";
       }
       return "running";
     },
-    getpauseOnClick() {
+    getpauseOnClick(): "paused" | "running" {
       if (this.localPauseOnClick) {
         return "paused";
       }
       return "running";
     },
-    getLoops() {
-      return this.localLoop === 0 ? "infinite" : this.localLoop;
+    getLoops(): string {
+      return this.localLoop === 0 ? "infinite" : this.localLoop.toString();
     },
     getCurrentStyle() {
       let cssVariables = {

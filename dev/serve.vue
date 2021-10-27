@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 import { defineComponent } from "vue";
 import Vue3Marquee from "@/vue3-marquee.vue";
 
@@ -12,7 +12,7 @@ export default defineComponent({
 
 <template>
   <div id="app">
-    <vue3-marquee :clone="true">
+    <Vue3Marquee :clone="true">
       <img
         height="200"
         src="https://images.unsplash.com/photo-1633614907351-22b3992b906c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1740&q=80"
@@ -26,6 +26,6 @@ export default defineComponent({
         src="https://images.unsplash.com/photo-1633596683562-4a47eb4983c5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2064&q=80"
         alt=""
       />
-    </vue3-marquee>
+    </Vue3Marquee>
   </div>
 </template>
