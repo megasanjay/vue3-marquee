@@ -23,6 +23,18 @@
 <script lang="ts">
 import { defineComponent, PropType } from "vue";
 
+interface MarqueeOptions {
+  direction: "left" | "right";
+  delay: number;
+  loop: boolean;
+  clone: boolean;
+  gradient: boolean;
+  gradientColor: [number, number, number];
+  gradientWidth: number | string;
+  pauseOnHover: boolean;
+  pauseOnClick: boolean;
+}
+
 export default defineComponent({
   name: "Vue3Marquee",
   props: {
@@ -95,29 +107,31 @@ export default defineComponent({
       default: false,
     },
     options: {
-      type: Object,
+      type: Object as PropType<MarqueeOptions>,
       required: false,
       default: {},
     },
   },
   data() {
     return {
-      localDirection: this.direction,
-      localDuration: this.duration,
-      localDelay: this.delay,
-      localLoop: this.loop,
-      localGradient: this.gradient,
-      localGradientColor: this.gradientColor,
-      localGradientWidth: this.gradientWidth,
-      localPauseOnHover: this.pauseOnHover,
-      localPauseOnClick: this.pauseOnClick,
-      localClone: this.clone,
+      localDirection: this.direction as PropType<"left" | "right">,
+      localDuration: this.duration as PropType<number>,
+      localDelay: this.delay as PropType<number>,
+      localLoop: this.loop as PropType<boolean>,
+      localGradient: this.gradient as PropType<boolean>,
+      localGradientColor: this.gradientColor as PropType<
+        [number, number, number]
+      >,
+      localGradientWidth: this.gradientWidth as PropType<number | string>,
+      localPauseOnHover: this.pauseOnHover as PropType<boolean>,
+      localPauseOnClick: this.pauseOnClick as PropType<boolean>,
+      localClone: this.clone as PropType<boolean>,
       minWidth: 0,
       cloneAmount: 0,
     };
   },
   methods: {
-    checkForClone() {
+    checkForClone(): void {
       if (this.localClone) {
         this.minWidth = 0;
 
