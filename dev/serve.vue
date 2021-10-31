@@ -7,6 +7,11 @@ export default defineComponent({
   components: {
     Vue3Marquee,
   },
+  data() {
+    return {
+      options: { direction: "normal" },
+    };
+  },
 });
 </script>
 

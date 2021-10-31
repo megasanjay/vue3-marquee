@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="vue3-marquee" :style="getCurrentStyle">
+    <div class="vue3-marquee">
       <div class="overlay" ref="marqueeContainer"></div>
       <div class="marquee" ref="marqueeContent">
         <slot></slot>
@@ -8,12 +8,7 @@
       <div class="marquee">
         <slot></slot>
       </div>
-      <div
-        v-show="localClone"
-        class="marquee"
-        v-for="num in cloneAmount"
-        :key="num"
-      >
+      <div class="marquee">
         <slot></slot>
       </div>
     </div>
@@ -21,12 +16,13 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType } from "vue";
+import { defineComponent, PropType, ref, onMounted } from "vue";
 
 interface MarqueeOptions {
-  direction: "left" | "right";
+  direction: "normal" | "reverse";
+  duration: number;
   delay: number;
-  loop: boolean;
+  loop: number;
   clone: boolean;
   gradient: boolean;
   gradientColor: [number, number, number];
@@ -39,12 +35,9 @@ export default defineComponent({
   name: "Vue3Marquee",
   props: {
     direction: {
-      type: String,
+      type: String as PropType<"normal" | "reverse">,
       required: false,
-      default: "left",
-      validator(value: "left" | "right") {
-        return ["left", "right"].includes(value);
-      },
+      default: "normal",
     },
     duration: {
       type: Number,
@@ -72,7 +65,7 @@ export default defineComponent({
       default: false,
     },
     gradientColor: {
-      type: Array,
+      type: Array as unknown as PropType<[number, number, number]>,
       required: false,
       default: [255, 255, 255],
       validator: (value: [number, number, number]) => {
@@ -109,123 +102,88 @@ export default defineComponent({
     options: {
       type: Object as PropType<MarqueeOptions>,
       required: false,
-      default: {},
+      default: {
+        direction: "normal",
+        duration: 20,
+        delay: 0,
+        loop: 0,
+        clone: false,
+        gradient: false,
+        gradientColor: [255, 255, 255],
+        gradientWidth: 200,
+        pauseOnHover: true,
+        pauseOnClick: true,
+      },
     },
   },
-  data() {
-    return {
-      localDirection: this.direction as PropType<"left" | "right">,
-      localDuration: this.duration as PropType<number>,
-      localDelay: this.delay as PropType<number>,
-      localLoop: this.loop as PropType<boolean>,
-      localGradient: this.gradient as PropType<boolean>,
-      localGradientColor: this.gradientColor as PropType<
-        [number, number, number]
-      >,
-      localGradientWidth: this.gradientWidth as PropType<number | string>,
-      localPauseOnHover: this.pauseOnHover as PropType<boolean>,
-      localPauseOnClick: this.pauseOnClick as PropType<boolean>,
-      localClone: this.clone as PropType<boolean>,
-      minWidth: 0,
-      cloneAmount: 0,
+  setup(props) {
+    let cloneAmount = ref(0);
+    let minWidth = ref("100%");
+
+    let marqueeContent = ref<HTMLDivElement | null>();
+    let marqueeContainer = ref<HTMLDivElement | null>();
+
+    const initValues = () => {
+      if (props.clone) {
+        props.options.clone = true;
+      }
+      if (props.direction) {
+        props.options.direction = props.direction;
+      }
+      if (props.duration) {
+        props.options.duration = props.duration;
+      }
+      if (props.delay) {
+        props.options.delay = props.delay;
+      }
+      if (props.loop) {
+        props.options.loop = props.loop;
+      }
+      if (props.gradient) {
+        props.options.gradient = props.gradient;
+      }
+      if (props.gradientColor) {
+        props.options.gradientColor = props.gradientColor;
+      }
+      if (props.gradientWidth) {
+        props.options.gradientWidth = props.gradientWidth;
+      }
+      if (props.pauseOnHover) {
+        props.options.pauseOnHover = props.pauseOnHover;
+      }
+      if (props.pauseOnClick) {
+        props.options.pauseOnClick = props.pauseOnClick;
+      }
     };
-  },
-  methods: {
-    checkForClone(): void {
-      if (this.localClone) {
-        this.minWidth = 0;
 
-        const contentWidth = this.$refs.marqueeContent.clientWidth;
-        const containerWidth = this.$refs.marqueeContainer.clientWidth;
+    initValues();
 
-        this.cloneAmount = Math.ceil(containerWidth / (contentWidth * 2));
-      } else {
-        this.minWidth = "100%";
-      }
-    },
-  },
-  computed: {
-    getMarqueeDirection(): "normal" | "reverse" {
-      if (this.localDirection === "left") {
-        return "normal";
-      } else if (this.localDirection === "right") {
-        return "reverse";
-      }
-      return "normal";
-    },
-    getPauseOnHover(): "paused" | "running" {
-      if (this.localPauseOnHover) {
-        return "paused";
-      }
-      return "running";
-    },
-    getpauseOnClick(): "paused" | "running" {
-      if (this.localPauseOnClick) {
-        return "paused";
-      }
-      return "running";
-    },
-    getLoops(): string {
-      return this.localLoop === 0 ? "infinite" : this.localLoop.toString();
-    },
-    getCurrentStyle() {
-      let cssVariables = {
-        "--duration": `${this.localDuration}s`,
-        "--delay": `${this.localDelay}s`,
-        "--direction": `${this.getMarqueeDirection}`,
-        "--pauseOnHover": `${this.getPauseOnHover}`,
-        "--pauseOnClick": `${this.getpauseOnClick}`,
-        "--loops": `${this.getLoops}`,
-      };
-      if (this.localGradient) {
-        const rgbaGradientColor = `rgba(${this.localGradientColor[0]}, ${this.localGradientColor[1]}, ${this.localGradientColor[2]}`;
-        cssVariables[
-          "--gradient-color"
-        ] = `${rgbaGradientColor}, 1), ${rgbaGradientColor}, 0)`;
-        cssVariables["--gradient-width"] =
-          typeof this.localGradientWidth === "number"
-            ? `${this.localGradientWidth}px`
-            : this.localGradientWidth;
-      }
-      cssVariables["--min-width"] = this.minWidth;
+    const checkForClone = () => {
+      if (props.options.clone || props.clone) {
+        minWidth.value = "0%";
 
-      return cssVariables;
-    },
-  },
-  mounted() {
-    if (this.options) {
-      if (this.options.direction) {
-        this.localDirection = this.options.direction;
+        if (marqueeContent.value && marqueeContainer.value) {
+          const contentWidth = marqueeContent.value.clientWidth;
+          const containerWidth = marqueeContainer.value.clientWidth;
+
+          console.log(contentWidth, containerWidth);
+
+          cloneAmount.value = Math.ceil(containerWidth / (contentWidth * 2));
+        }
       }
-      if (this.options.duration) {
-        this.localDuration = this.options.duration;
-      }
-      if (this.options.delay) {
-        this.localDelay = this.options.delay;
-      }
-      if (this.options.loop) {
-        this.localLoop = this.options.loop;
-      }
-      if (this.options.gradient) {
-        this.localGradient = this.options.gradient;
-      }
-      if (this.options.gradientColor) {
-        this.localGradientColor = this.options.gradientColor;
-      }
-      if (this.options.gradientWidth) {
-        this.localGradientWidth = this.options.gradientWidth;
-      }
-      if (this.options.pauseOnHover) {
-        this.localPauseOnHover = this.options.pauseOnHover;
-      }
-      if (this.options.pauseOnClick) {
-        this.localPauseOnClick = this.options.pauseOnClick;
-      }
-      if (this.options.clone) {
-        this.localClone = this.options.clone;
-      }
-    }
-    this.checkForClone();
+    };
+
+    
+
+    onMounted(checkForClone);
+
+    return {
+      cloneAmount,
+      minWidth,
+      checkForClone,
+      marqueeContainer,
+      marqueeContent,
+    };
   },
 });
 </script>
