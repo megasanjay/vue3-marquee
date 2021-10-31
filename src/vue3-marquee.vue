@@ -173,8 +173,6 @@ export default defineComponent({
       }
     };
 
-    
-
     onMounted(checkForClone);
 
     return {
