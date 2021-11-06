@@ -56,7 +56,7 @@ module.exports = {
         text: "Guide",
         link: "/guide",
       },
-      { text: "V2.0", link: "/v2/guide" },
+      { text: "V2.0", link: "/v2/index.html" },
       {
         text: "Examples",
         link: "/examples",
@@ -74,6 +74,9 @@ module.exports = {
       "/": [
         { text: "Getting Started", link: "/guide" },
         { text: "Examples", link: "/examples" },
+
+        { text: "Getting Started - v2.0.x-beta", link: "/v2/guide" },
+        { text: "Examples - v2.0.x-beta", link: "/v2/examples" },
       ],
     },
   },
