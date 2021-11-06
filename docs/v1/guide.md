@@ -1,4 +1,3 @@
-
 # Getting Started
 
 **vue3-marquee** is a simple marquee component for Vue 3 that creates customizable marquees. This component uses slots for your content and props for any config options.
