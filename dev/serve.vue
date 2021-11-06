@@ -69,7 +69,7 @@ export default defineComponent({
     </div>
     <div>
       <p>Gradient color</p>
-      <Vue3Marquee :gradient="true" :gradient-color="[78,205,196]">
+      <Vue3Marquee :gradient="true" :gradient-color="[78, 205, 196]">
         <img v-for="i in img_30" :key="i" height="100" :src="i" />
       </Vue3Marquee>
     </div>
