@@ -164,7 +164,11 @@ Whether to pause the marquee when you hold the right click button
 | ------- | ------------- | -------- | --------------- |
 | Boolean | false         | no       | true or false   |
 
-### clone
+### clone - experimental
+
+::: warning
+This option is still in the experimental stage.
+:::
 
 Whether to clone the content if you want no empty spaces in the animation. Use this option if you find empty spaces between your marquee animations.
 
