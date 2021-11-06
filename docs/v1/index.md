@@ -7,8 +7,8 @@ actionLink: /v2/guide
 features:
   - title: ⚡ Zero Dependencies
     details: This is a simple Vue 3 component with no external dependencies. All the styling is done with pure CSS.
-  - title: 🌠 Typescript Support
-    details: Native TS support has been provided with this library.
+  - title: 🌠 Dynamic content
+    details: You can put in any content that would like.
   - title: 🙌 Easy to use
     details: Only a single component with all the props you need.
 footer: Made by Sanjay Soundarajan with ❤️

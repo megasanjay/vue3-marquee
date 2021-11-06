@@ -56,7 +56,7 @@ module.exports = {
         text: "Guide",
         link: "/guide",
       },
-      { text: "V2.0", link: "/v2/index.html" },
+      { text: "v1.0.x", link: "/v1/guide.html" },
       {
         text: "Examples",
         link: "/examples",
@@ -64,6 +64,10 @@ module.exports = {
       {
         text: "Submit an issue",
         link: "https://github.com/megasanjay/vue3-marquee/issues/new",
+      },
+      {
+        text: "View on npm",
+        link: "https://www.npmjs.com/package/vue3-marquee",
       },
       {
         text: "Github",
@@ -74,9 +78,6 @@ module.exports = {
       "/": [
         { text: "Getting Started", link: "/guide" },
         { text: "Examples", link: "/examples" },
-
-        { text: "Getting Started - v2.0.x-beta", link: "/v2/guide" },
-        { text: "Examples - v2.0.x-beta", link: "/v2/examples" },
       ],
     },
   },
