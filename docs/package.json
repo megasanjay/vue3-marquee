@@ -15,6 +15,7 @@
   "author": "Sanjay Soundarajan <info@sanjaysoundarajan.dev> (https://sanjaysoundarajan.dev)",
   "license": "MIT",
   "devDependencies": {
+    "copyfiles": "^2.4.1",
     "vitepress": "^0.20.0"
   },
   "dependencies": {

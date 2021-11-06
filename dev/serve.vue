@@ -9,28 +9,81 @@ export default defineComponent({
   },
   data() {
     return {
-      options: { direction: "normal" },
+      img_30: this.getImgURLS(30),
+      img_5: this.getImgURLS(5),
     };
+  },
+  methods: {
+    generateRandomString() {
+      const randomString = Math.random().toString(36).substring(2, 15);
+      return `https://avatars.dicebear.com/api/avataaars/${randomString}.svg`;
+    },
+    getImgURLS(num: number) {
+      let array = [];
+      for (let i = 0; i < num; i++) {
+        array.push(this.generateRandomString());
+      }
+      return array;
+    },
   },
 });
 </script>
 
 <template>
   <div id="app">
-    <Vue3Marquee :clone="true">
-      <img
-        height="200"
-        src="https://images.unsplash.com/photo-1633614907351-22b3992b906c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1740&q=80"
-      />
-      <img
-        height="200"
-        src="https://images.unsplash.com/photo-1633077666323-68f2e8bae631?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1740&q=80"
-      />
-      <img
-        height="200"
-        src="https://images.unsplash.com/photo-1633596683562-4a47eb4983c5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2064&q=80"
-        alt=""
-      />
-    </Vue3Marquee>
+    <div>
+      <p>Default</p>
+      <Vue3Marquee>
+        <img v-for="i in img_30" :key="i" height="100" :src="i" />
+      </Vue3Marquee>
+    </div>
+    <div>
+      <p>Duration : 10s</p>
+      <Vue3Marquee :duration="10">
+        <img v-for="i in img_30" :key="i" height="100" :src="i" />
+      </Vue3Marquee>
+    </div>
+    <div>
+      <p>Direction : reverse</p>
+      <Vue3Marquee direction="reverse">
+        <img v-for="i in img_30" :key="i" height="100" :src="i" />
+      </Vue3Marquee>
+    </div>
+    <div>
+      <p>Pause on hover</p>
+      <Vue3Marquee :pause-on-hover="true">
+        <img v-for="i in img_30" :key="i" height="100" :src="i" />
+      </Vue3Marquee>
+    </div>
+    <div>
+      <p>Pause on click</p>
+      <Vue3Marquee :pause-on-click="true">
+        <img v-for="i in img_30" :key="i" height="100" :src="i" />
+      </Vue3Marquee>
+    </div>
+    <div>
+      <p>Gradient</p>
+      <Vue3Marquee :gradient="true">
+        <img v-for="i in img_30" :key="i" height="100" :src="i" />
+      </Vue3Marquee>
+    </div>
+    <div>
+      <p>Gradient color</p>
+      <Vue3Marquee :gradient="true" :gradient-color="[78,205,196]">
+        <img v-for="i in img_30" :key="i" height="100" :src="i" />
+      </Vue3Marquee>
+    </div>
+    <div>
+      <p>Gradient width</p>
+      <Vue3Marquee :gradient="true" gradient-width="1000px">
+        <img v-for="i in img_30" :key="i" height="100" :src="i" />
+      </Vue3Marquee>
+    </div>
+    <div>
+      <p>clone</p>
+      <Vue3Marquee :clone="true">
+        <img v-for="i in img_5" :key="i" height="100" :src="i" />
+      </Vue3Marquee>
+    </div>
   </div>
 </template>

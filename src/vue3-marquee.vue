@@ -1,14 +1,15 @@
 <template>
-  <div>
-    <div class="vue3-marquee">
-      <div class="overlay" ref="marqueeContainer"></div>
+  <div v-if="ready">
+    <div class="vue3-marquee" :style="getCurrentStyle" :key="componentKey">
+      <div class="transparent-overlay" ref="marqueeContainer"></div>
+      <div class="overlay" v-if="showGradient"></div>
       <div class="marquee" ref="marqueeContent">
         <slot></slot>
       </div>
       <div class="marquee">
         <slot></slot>
       </div>
-      <div class="marquee">
+      <div class="marquee cloned" v-for="num in cloneAmount" :key="num">
         <slot></slot>
       </div>
     </div>
@@ -16,7 +17,14 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType, ref, onMounted } from "vue";
+import {
+  defineComponent,
+  PropType,
+  ref,
+  onMounted,
+  computed,
+  watch,
+} from "vue";
 
 interface MarqueeOptions {
   direction: "normal" | "reverse";
@@ -85,9 +93,9 @@ export default defineComponent({
       },
     },
     gradientWidth: {
-      type: [String, Number],
+      type: String,
       required: false,
-      default: 200,
+      default: "200px",
     },
     pauseOnHover: {
       type: Boolean,
@@ -110,77 +118,108 @@ export default defineComponent({
         clone: false,
         gradient: false,
         gradientColor: [255, 255, 255],
-        gradientWidth: 200,
-        pauseOnHover: true,
-        pauseOnClick: true,
+        gradientWidth: "200px",
+        pauseOnHover: false,
+        pauseOnClick: false,
       },
     },
   },
   setup(props) {
     let cloneAmount = ref(0);
+    let showClones = ref(false);
     let minWidth = ref("100%");
+    let componentKey = ref(0);
+    let containerWidth = ref(0);
+
+    let ready = ref(false);
 
     let marqueeContent = ref<HTMLDivElement | null>();
     let marqueeContainer = ref<HTMLDivElement | null>();
 
-    const initValues = () => {
-      if (props.clone) {
-        props.options.clone = true;
-      }
-      if (props.direction) {
-        props.options.direction = props.direction;
-      }
-      if (props.duration) {
-        props.options.duration = props.duration;
-      }
-      if (props.delay) {
-        props.options.delay = props.delay;
-      }
-      if (props.loop) {
-        props.options.loop = props.loop;
-      }
-      if (props.gradient) {
-        props.options.gradient = props.gradient;
-      }
-      if (props.gradientColor) {
-        props.options.gradientColor = props.gradientColor;
-      }
-      if (props.gradientWidth) {
-        props.options.gradientWidth = props.gradientWidth;
-      }
-      if (props.pauseOnHover) {
-        props.options.pauseOnHover = props.pauseOnHover;
-      }
-      if (props.pauseOnClick) {
-        props.options.pauseOnClick = props.pauseOnClick;
-      }
-    };
+    const initValues = () => {};
 
     initValues();
 
-    const checkForClone = () => {
-      if (props.options.clone || props.clone) {
+    const checkForClone = async () => {
+      setInterval(() => {
         minWidth.value = "0%";
 
         if (marqueeContent.value && marqueeContainer.value) {
           const contentWidth = marqueeContent.value.clientWidth;
-          const containerWidth = marqueeContainer.value.clientWidth;
+          containerWidth.value = marqueeContainer.value.clientWidth;
 
-          console.log(contentWidth, containerWidth);
+          const localCloneAmount = Math.ceil(
+            containerWidth.value / contentWidth
+          );
 
-          cloneAmount.value = Math.ceil(containerWidth / (contentWidth * 2));
+          cloneAmount.value = isFinite(localCloneAmount) ? localCloneAmount : 0;
+
+          return cloneAmount.value;
+        } else {
+          minWidth.value = "100%";
         }
+      }, 100);
+    };
+
+    watch(containerWidth, () => {
+      if (props.clone) {
+        ForcesUpdate();
+      }
+    });
+
+    const getCurrentStyle: any = computed(() => {
+      let cssVariables = {
+        "--duration": `${props.duration}s`,
+        "--delay": `${props.delay}s`,
+        "--direction": `${props.direction}`,
+        "--pauseOnHover": `${props.pauseOnHover ? "paused" : "running"}`,
+        "--pauseOnClick": `${props.pauseOnClick ? "paused" : "running"}`,
+        "--loops": `${props.loop === 0 ? "infinite" : props.loop}`,
+        "--gradient-color": `rgba(${props.gradientColor[0]}, ${props.gradientColor[1]}, ${props.gradientColor[2]}, 1), rgba(${props.gradientColor[0]}, ${props.gradientColor[1]}, ${props.gradientColor[2]}, 0)`,
+        "--gradient-width": `${props.gradientWidth}`,
+        "--min-width": `${minWidth.value}`,
+      };
+
+      return cssVariables;
+    });
+
+    const showGradient = computed(() => {
+      if (props.gradient) {
+        return true;
+      }
+      return false;
+    });
+
+    const ForcesUpdate = () => {
+      componentKey.value++;
+    };
+
+    const setupMarquee = async () => {
+      if (props.clone) {
+        await checkForClone();
+        ForcesUpdate();
+        ready.value = true;
+      } else {
+        ready.value = true;
       }
     };
 
-    onMounted(checkForClone);
+    onMounted(setupMarquee);
 
     return {
       cloneAmount,
+      showClones,
       minWidth,
       checkForClone,
       marqueeContainer,
+      containerWidth,
       marqueeContent,
+      componentKey,
+      ready,
+      getCurrentStyle,
+      setupMarquee,
+      showGradient,
+      ForcesUpdate,
     };
   },
 });
@@ -224,6 +263,12 @@ export default defineComponent({
 }
 
 .overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.transparent-overlay {
   position: absolute;
   width: 100%;
   height: 100%;
