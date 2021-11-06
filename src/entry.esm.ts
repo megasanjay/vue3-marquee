@@ -9,7 +9,7 @@ export default /*#__PURE__*/ (() => {
   const installable = component;
 
   // Attach install function executed by Vue.use()
-  installable.install = (app) => {
+  installable.install = (app:any) => {
     app.component("Vue3Marquee", installable);
   };
   return installable;

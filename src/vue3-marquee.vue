@@ -26,19 +26,6 @@ import {
   watch,
 } from "vue";
 
-interface MarqueeOptions {
-  direction: "normal" | "reverse";
-  duration: number;
-  delay: number;
-  loop: number;
-  clone: boolean;
-  gradient: boolean;
-  gradientColor: [number, number, number];
-  gradientWidth: number | string;
-  pauseOnHover: boolean;
-  pauseOnClick: boolean;
-}
-
 export default defineComponent({
   name: "Vue3Marquee",
   props: {
@@ -106,22 +93,6 @@ export default defineComponent({
       type: Boolean,
       required: false,
       default: false,
-    },
-    options: {
-      type: Object as PropType<MarqueeOptions>,
-      required: false,
-      default: {
-        direction: "normal",
-        duration: 20,
-        delay: 0,
-        loop: 0,
-        clone: false,
-        gradient: false,
-        gradientColor: [255, 255, 255],
-        gradientWidth: "200px",
-        pauseOnHover: false,
-        pauseOnClick: false,
-      },
     },
   },
   setup(props) {
