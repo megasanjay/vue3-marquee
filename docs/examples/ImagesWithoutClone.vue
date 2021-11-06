@@ -1,5 +1,5 @@
 <template>
-  <Vue3Marquee :duration="5" :direction="'right'">
+  <Vue3Marquee :duration="5" :direction="'reverse'">
     <img
       :src="img"
       v-for="img in imgArray"

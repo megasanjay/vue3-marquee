@@ -90,7 +90,7 @@ All the possible props for `vue3-marquee` are shown below.
 
 ### direction
 
-The direction for the content to move in
+The direction for the content to move in. `normal` corresponds to elements moving left and `reverse` corresponds to elements moving right.
 
 | Type   | Default value | Required | Accepted values       |
 | ------ | ------------- | -------- | --------------------- |
@@ -98,7 +98,7 @@ The direction for the content to move in
 
 ### duration
 
-The time taken for the marquee content to move the width of its own container (in seconds)
+The time taken for the marquee content to move the width of its own container (in seconds).
 
 | Type   | Default value | Required | Accepted values |
 | ------ | ------------- | -------- | --------------- |
@@ -106,7 +106,7 @@ The time taken for the marquee content to move the width of its own container (i
 
 ### delay
 
-A delay before the animation starts (in seconds)
+A delay before the animation starts (in seconds).
 
 | Type   | Default value | Required | Accepted values |
 | ------ | ------------- | -------- | --------------- |
@@ -114,7 +114,7 @@ A delay before the animation starts (in seconds)
 
 ### loop
 
-The number of instances that the marquee animation should run (0 is infinite)
+The number of instances that the marquee animation should run (0 is infinite).
 
 | Type   | Default value | Required | Accepted values |
 | ------ | ------------- | -------- | --------------- |
@@ -122,7 +122,7 @@ The number of instances that the marquee animation should run (0 is infinite)
 
 ### gradient
 
-Whether to show a gradient overlay
+Whether to show a gradient overlay.
 
 | Type    | Default value | Required | Accepted values |
 | ------- | ------------- | -------- | --------------- |
@@ -130,7 +130,7 @@ Whether to show a gradient overlay
 
 ### gradientColor
 
-The RGB colors for the color of the gradient
+The RGB colors for the color of the gradient.
 
 | Type                  | Default value   | Required | Accepted values                                              |
 | --------------------- | --------------- | -------- | ------------------------------------------------------------ |
@@ -145,7 +145,7 @@ What portion of the container edges should be taken by the gradient overlay.
 | String | 200px         | no       | Any valid css unit |
 
 ::: tip
-Any accepted css size unit (eg: 10%, 2em) can be used here
+Any accepted css size unit (eg: 10%, 2em) can be used here. You might need to play around with this unit to get the gradient overlay that you want.
 :::
 
 ### pauseOnHover
@@ -158,7 +158,7 @@ Whether to pause the marquee on hover
 
 ### pauseOnClick
 
-Whether to pause the marquee when you hold the right click button
+Whether to pause the marquee when you hold the right click button.
 
 | Type    | Default value | Required | Accepted values |
 | ------- | ------------- | -------- | --------------- |
