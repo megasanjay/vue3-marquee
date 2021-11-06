@@ -93,7 +93,7 @@ if (!argv.format || argv.format === "es") {
     input: "src/entry.esm.ts",
     external,
     output: {
-      file: "dist/vue3-marquee.esm.ts",
+      file: "dist/vue3-marquee.esm.js",
       format: "esm",
       exports: "named",
     },
@@ -126,7 +126,7 @@ if (!argv.format || argv.format === "cjs") {
     external,
     output: {
       compact: true,
-      file: "dist/vue3-marquee.ssr.ts",
+      file: "dist/vue3-marquee.ssr.js",
       format: "cjs",
       name: "Vue3Marquee",
       exports: "auto",
@@ -150,7 +150,7 @@ if (!argv.format || argv.format === "iife") {
     external,
     output: {
       compact: true,
-      file: "dist/vue3-marquee.min.ts",
+      file: "dist/vue3-marquee.min.js",
       format: "iife",
       name: "Vue3Marquee",
       exports: "auto",

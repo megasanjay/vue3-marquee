@@ -1,10 +1,10 @@
 {
   "name": "vue3-marquee",
-  "version": "2.0.0",
+  "version": "2.0.1-beta",
   "description": "A simple marquee component with ZERO dependencies for Vue 3",
   "author": "Sanjay Soundarajan <info@sanjaysoundarajan.dev> (https://sanjaysoundarajan.dev)",
   "scripts": {
-    "serve": "vue-cli-service serve dev/serve.ts",
+    "dev": "vue-cli-service serve dev/serve.ts",
     "build": "cross-env NODE_ENV=production rollup --config build/rollup.config.js",
     "build:es": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format es",
     "build:ssr": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format cjs",
@@ -18,7 +18,8 @@
   "unpkg": "dist/vue3-marquee.min.js",
   "files": [
     "dist/*",
-    "src/**/*.vue"
+    "src/**/*.vue",
+    "types/*"
   ],
   "dependencies": {
     "vue-class-component": "^8.0.0-0"
