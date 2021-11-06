@@ -56,6 +56,7 @@ module.exports = {
         text: "Guide",
         link: "/guide",
       },
+      { text: "v1.0.x", link: "/v1/guide.html" },
       {
         text: "Examples",
         link: "/examples",
@@ -63,6 +64,10 @@ module.exports = {
       {
         text: "Submit an issue",
         link: "https://github.com/megasanjay/vue3-marquee/issues/new",
+      },
+      {
+        text: "View on npm",
+        link: "https://www.npmjs.com/package/vue3-marquee",
       },
       {
         text: "Github",

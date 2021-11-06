@@ -1,28 +1,28 @@
 {
   "name": "vue3-marquee",
-  "version": "1.0.0",
+  "version": "2.0.1-beta",
   "description": "A simple marquee component with ZERO dependencies for Vue 3",
-  "keywords": [
-    "vue3",
-    "marquee"
-  ],
   "author": "Sanjay Soundarajan <info@sanjaysoundarajan.dev> (https://sanjaysoundarajan.dev)",
+  "scripts": {
+    "dev": "vue-cli-service serve dev/serve.ts",
+    "build": "cross-env NODE_ENV=production rollup --config build/rollup.config.js",
+    "build:es": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format es",
+    "build:ssr": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format cjs",
+    "build:unpkg": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format iife",
+    "prebuild": "rimraf ./dist",
+    "prepublish": "npm run build"
+  },
   "main": "dist/vue3-marquee.ssr.js",
-  "browser": "dist/vue3-marquee.esm.js",
   "module": "dist/vue3-marquee.esm.js",
+  "browser": "dist/vue3-marquee.esm.js",
   "unpkg": "dist/vue3-marquee.min.js",
   "files": [
     "dist/*",
-    "src/**/*.vue"
+    "src/**/*.vue",
+    "types/*"
   ],
-  "sideEffects": false,
-  "scripts": {
-    "serve": "vue-cli-service serve dev/serve.js",
-    "prebuild": "rimraf ./dist",
-    "build": "cross-env NODE_ENV=production rollup --config build/rollup.config.js",
-    "build:ssr": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format cjs",
-    "build:es": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format es",
-    "build:unpkg": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format iife"
+  "dependencies": {
+    "vue-class-component": "^8.0.0-0"
   },
   "devDependencies": {
     "@babel/core": "^7.14.6",
@@ -31,10 +31,12 @@
     "@rollup/plugin-babel": "^5.3.0",
     "@rollup/plugin-commonjs": "^14.0.0",
     "@rollup/plugin-node-resolve": "^9.0.0",
-    "@rollup/plugin-replace": "^2.4.2",
+    "@rollup/plugin-replace": "^3.0.0",
     "@vue/cli-plugin-babel": "^4.5.13",
+    "@vue/cli-plugin-typescript": "~4.5.0",
     "@vue/cli-service": "^4.5.13",
     "@vue/compiler-sfc": "^3.0.11",
+    "copyfiles": "^2.4.1",
     "cross-env": "^7.0.3",
     "eslint": "^8.0.1",
     "eslint-plugin-vue": "^7.19.1",
@@ -45,23 +47,32 @@
     "rollup": "^2.52.8",
     "rollup-plugin-postcss": "^4.0.0",
     "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-typescript": "^1.0.1",
+    "rollup-plugin-typescript2": "^0.30.0",
     "rollup-plugin-vue": "^6.0.0",
-    "vue": "^3.0.5"
+    "typescript": "~4.1.5",
+    "vue": "^3.0.5",
+    "vue-server-renderer": "^2.6.14"
   },
   "peerDependencies": {
     "vue": "^3.0.5"
   },
-  "engines": {
-    "node": ">=12"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/megasanjay/vue3-marquee.git"
-  },
-  "homepage": "https://vue3-marquee.vercel.app/",
   "bugs": {
     "url": "https://github.com/megasanjay/vue3-marquee/issues",
     "email": "info@sanjaysoundarajan.dev"
   },
-  "license": "MIT"
+  "engines": {
+    "node": ">=12"
+  },
+  "homepage": "https://vue3-marquee.vercel.app/",
+  "keywords": [
+    "vue3",
+    "marquee"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/megasanjay/vue3-marquee.git"
+  },
+  "sideEffects": false
 }

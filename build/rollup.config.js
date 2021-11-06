@@ -9,6 +9,7 @@ import replace from "@rollup/plugin-replace";
 import babel from "@rollup/plugin-babel";
 import PostCSS from "rollup-plugin-postcss";
 import { terser } from "rollup-plugin-terser";
+import typescript from "rollup-plugin-typescript2";
 import minimist from "minimist";
 
 // Get browserslist config and remove ie from es build targets
@@ -28,7 +29,7 @@ const argv = minimist(process.argv.slice(2));
 const projectRoot = path.resolve(__dirname, "..");
 
 const baseConfig = {
-  input: "src/entry.js",
+  input: "src/entry.ts",
   plugins: {
     preVue: [
       alias({
@@ -80,6 +81,7 @@ const external = [
 const globals = {
   // Provide global variable names to replace your external imports
   // eg. jquery: '$'
+
   vue: "Vue",
 };
 
@@ -88,7 +90,7 @@ const buildFormats = [];
 if (!argv.format || argv.format === "es") {
   const esConfig = {
     ...baseConfig,
-    input: "src/entry.esm.js",
+    input: "src/entry.esm.ts",
     external,
     output: {
       file: "dist/vue3-marquee.esm.js",
@@ -96,6 +98,7 @@ if (!argv.format || argv.format === "es") {
       exports: "named",
     },
     plugins: [
+      typescript(),
       replace(baseConfig.plugins.replace),
       ...baseConfig.plugins.preVue,
       vue(baseConfig.plugins.vue),
@@ -130,6 +133,7 @@ if (!argv.format || argv.format === "cjs") {
       globals,
     },
     plugins: [
+      typescript(),
       replace(baseConfig.plugins.replace),
       ...baseConfig.plugins.preVue,
       vue(baseConfig.plugins.vue),
@@ -153,6 +157,7 @@ if (!argv.format || argv.format === "iife") {
       globals,
     },
     plugins: [
+      typescript(),
       replace(baseConfig.plugins.replace),
       ...baseConfig.plugins.preVue,
       vue(baseConfig.plugins.vue),
