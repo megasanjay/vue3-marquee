@@ -62,17 +62,17 @@ You can then use the component in your template. A common use case is an image m
 
 # Props and options
 
-| Prop          | Type                               | Default Value   | Description                                                                            |
-| ------------- | ---------------------------------- | --------------- | -------------------------------------------------------------------------------------- |
-| direction     | String of either 'normal' or 'reverse' | "normal"            | The direction for the content to move in                                               |
-| duration      | Number                             | 20              | The time taken for the marquee content to move the width of the container (in seconds) |
-| delay         | Number                             | 0               | A delay before the animation starts (in seconds)                                       |
-| loop          | Number                             | 0               | The number of instances that the marquee animation should run (0 is infinite)          |
-| gradient      | Boolean                            | false           | Whether to show a gradient overlay                                                     |
-| gradientColor | Array of 3 RGB values              | [255, 255, 255] | The RGB colors for the color of the gradient                                           |
-| gradientWidth | String                   | 200px             | Length of portion of the container edges that should be taken by the gradient overlay            |
-| pauseOnHover  | Boolean                            | false           | Whether to pause the marquee on hover                                                  |
-| pauseOnClick  | Boolean                            | false           | Whether to pause the marquee when you hold the right click button                      |
-| clone         | Boolean                            | false           | Whether to clone the content if you want no empty spaces in the animation              |
+| Prop          | Type                                   | Default Value   | Description                                                                            |
+| ------------- | -------------------------------------- | --------------- | -------------------------------------------------------------------------------------- |
+| direction     | String of either 'normal' or 'reverse' | "normal"        | The direction for the content to move in                                               |
+| duration      | Number                                 | 20              | The time taken for the marquee content to move the width of the container (in seconds) |
+| delay         | Number                                 | 0               | A delay before the animation starts (in seconds)                                       |
+| loop          | Number                                 | 0               | The number of instances that the marquee animation should run (0 is infinite)          |
+| gradient      | Boolean                                | false           | Whether to show a gradient overlay                                                     |
+| gradientColor | Array of 3 RGB values                  | [255, 255, 255] | The RGB colors for the color of the gradient                                           |
+| gradientWidth | String                                 | 200px           | Length of portion of the container edges that should be taken by the gradient overlay  |
+| pauseOnHover  | Boolean                                | false           | Whether to pause the marquee on hover                                                  |
+| pauseOnClick  | Boolean                                | false           | Whether to pause the marquee when you hold the right click button                      |
+| clone         | Boolean                                | false           | Whether to clone the content if you want no empty spaces in the animation              |
 
 [![forthebadge](https://forthebadge.com/images/badges/made-with-vue.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
