@@ -67,19 +67,7 @@ const props = defineProps({
     required: false,
     default: false,
   },
-  options: {
-    type: Object,
-    required: false,
-  },
 });
-
-if (process.env.NODE_ENV !== "production") {
-  if (props.options) {
-    console.warn(
-      "vue3-marquee: options is deprecated, please provide each prop individually instead."
-    );
-  }
-}
 
 let cloneAmount = ref(0);
 let minWidth = ref("100%");
@@ -89,29 +77,41 @@ let contentWidth = ref(0);
 
 let ready = ref(false);
 
-let marqueeContent = ref<HTMLDivElement | null>();
-let marqueeContainer = ref<HTMLDivElement | null>();
+let marqueeContent = ref<HTMLDivElement | any>(null);
+let marqueeContainer = ref<HTMLDivElement | any>(null);
 
 const ForcesUpdate = () => {
   componentKey.value++;
 };
 
 const checkForClone = async () => {
-  const Interval = setInterval(() => {
+  setInterval(() => {
     minWidth.value = "0%";
 
-    if (marqueeContent.value && marqueeContainer.value) {
-      contentWidth.value = marqueeContent.value.clientWidth;
-      containerWidth.value = marqueeContainer.value.clientWidth;
+    if (marqueeContent.value !== null && marqueeContainer.value !== null) {
+      if (marqueeContent.value && marqueeContainer.value) {
+        if (
+          "clientWidth" in marqueeContent.value &&
+          "clientWidth" in marqueeContainer.value
+        ) {
+          contentWidth.value = marqueeContent.value.clientWidth;
+          containerWidth.value = marqueeContainer.value.clientWidth;
 
-      const localCloneAmount = Math.ceil(
-        containerWidth.value / contentWidth.value
-      );
+          const localCloneAmount = Math.ceil(
+            containerWidth.value / contentWidth.value
+          );
 
-      cloneAmount.value = isFinite(localCloneAmount) ? localCloneAmount : 0;
-      // console.log(containerWidth.value, contentWidth, cloneAmount.value);
-      // clearInterval(Interval);
-      return cloneAmount.value;
+          cloneAmount.value = isFinite(localCloneAmount) ? localCloneAmount : 0;
+
+          return cloneAmount.value;
+        } else {
+          minWidth.value = "100%";
+          return 0;
+        }
+      } else {
+        minWidth.value = "100%";
+        return 0;
+      }
     } else {
       minWidth.value = "100%";
       return 0;
@@ -120,6 +120,12 @@ const checkForClone = async () => {
 };
 
 watch(contentWidth, () => {
+  if (props.clone) {
+    ForcesUpdate();
+  }
+});
+
+watch(containerWidth, () => {
   if (props.clone) {
     ForcesUpdate();
   }

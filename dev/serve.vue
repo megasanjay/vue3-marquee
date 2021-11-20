@@ -34,55 +34,55 @@ export default defineComponent({
     <div>
       <p>Default</p>
       <Vue3Marquee>
-        <img v-for="i in img_30" :key="i" height="100" :src="i" />
+        <img v-for="i in img_30" :key="i" height="80" :src="i" />
       </Vue3Marquee>
     </div>
     <div>
       <p>Duration : 10s</p>
       <Vue3Marquee :duration="10">
-        <img v-for="i in img_30" :key="i" height="100" :src="i" />
+        <img v-for="i in img_30" :key="i" height="80" :src="i" />
       </Vue3Marquee>
     </div>
     <div>
       <p>Direction : reverse</p>
       <Vue3Marquee direction="reverse">
-        <img v-for="i in img_30" :key="i" height="100" :src="i" />
+        <img v-for="i in img_30" :key="i" height="80" :src="i" />
       </Vue3Marquee>
     </div>
     <div>
       <p>Pause on hover</p>
       <Vue3Marquee :pause-on-hover="true">
-        <img v-for="i in img_30" :key="i" height="100" :src="i" />
+        <img v-for="i in img_30" :key="i" height="80" :src="i" />
       </Vue3Marquee>
     </div>
     <div>
       <p>Pause on click</p>
       <Vue3Marquee :pause-on-click="true">
-        <img v-for="i in img_30" :key="i" height="100" :src="i" />
+        <img v-for="i in img_30" :key="i" height="80" :src="i" />
       </Vue3Marquee>
     </div>
     <div>
       <p>Gradient</p>
       <Vue3Marquee :gradient="true">
-        <img v-for="i in img_30" :key="i" height="100" :src="i" />
+        <img v-for="i in img_30" :key="i" height="80" :src="i" />
       </Vue3Marquee>
     </div>
     <div>
       <p>Gradient color</p>
       <Vue3Marquee :gradient="true" :gradient-color="[78, 205, 196]">
-        <img v-for="i in img_30" :key="i" height="100" :src="i" />
+        <img v-for="i in img_30" :key="i" height="80" :src="i" />
       </Vue3Marquee>
     </div>
     <div>
       <p>Gradient width</p>
       <Vue3Marquee :gradient="true" gradient-width="1000px">
-        <img v-for="i in img_30" :key="i" height="100" :src="i" />
+        <img v-for="i in img_30" :key="i" height="80" :src="i" />
       </Vue3Marquee>
     </div>
     <div>
       <p>clone</p>
       <Vue3Marquee :clone="true" :duration="5">
-        <img v-for="i in img_5" :key="i" height="100" :src="i" />
+        <img v-for="i in img_5" :key="i" height="80" :src="i" />
       </Vue3Marquee>
     </div>
   </div>

@@ -1,7 +1,7 @@
 /* eslint-disable */
 declare module "*.vue" {
   import type {
-    DefineComponent,
+    defineProps,
     PropType,
     ref,
     onMounted,
