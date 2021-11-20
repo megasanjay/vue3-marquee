@@ -43,6 +43,7 @@ const baseConfig = {
     ],
     replace: {
       "process.env.NODE_ENV": JSON.stringify("production"),
+      preventAssignment: true,
     },
     vue: {},
     postVue: [
@@ -81,7 +82,6 @@ const external = [
 const globals = {
   // Provide global variable names to replace your external imports
   // eg. jquery: '$'
-
   vue: "Vue",
 };
 

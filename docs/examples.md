@@ -353,6 +353,10 @@ export default {
 
 If your marquee content is too small to take the width of the full container it will leave an empty space since the content will always take the full width of the container.
 
+::: warning
+This feature is still experimental. If you have any issues with this option I would suggest you to have content that is wider than your container or make a duplicate of the content if possible.
+:::
+
 <ImagesWithoutClone />
 
 You can use the [`clone`](/guide#clone) prop to workaround this issue. With this option, `vue3-marquee` will automatically calculate the content and container widths and clone your content to fill the container completely.
