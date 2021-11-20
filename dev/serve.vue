@@ -81,7 +81,7 @@ export default defineComponent({
     </div>
     <div>
       <p>clone</p>
-      <Vue3Marquee :clone="true">
+      <Vue3Marquee :clone="true" :duration="5">
         <img v-for="i in img_5" :key="i" height="100" :src="i" />
       </Vue3Marquee>
     </div>

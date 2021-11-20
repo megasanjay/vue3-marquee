@@ -1,5 +1,5 @@
 // Import vue component
-import component from "@/vue3-marquee.vue";
+import component from "@/Vue3Marquee.vue;
 
 // Default export is installable instance of component.
 // IIFE injects install function into component, allowing component
