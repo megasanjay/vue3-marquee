@@ -5,6 +5,13 @@ module.exports = {
     "A simple dynamic marquee component with zero dependencies for Vue 3.",
   editLinks: true,
   head: [
+    [
+      "meta",
+      {
+        name: "google-site-verification",
+        content: "gL3nT__pnzZ1iFx2J12jkwwDoOZpl6s",
+      },
+    ],
     ["meta", { name: "theme-color", content: "#3eaf7c" }],
     ["meta", { name: "apple-mobile-web-app-capable", content: "yes" }],
     ["meta", { name: "msapplication-TileColor", content: "#da532c" }],
