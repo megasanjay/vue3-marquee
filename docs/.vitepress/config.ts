@@ -9,7 +9,7 @@ module.exports = {
       "meta",
       {
         name: "google-site-verification",
-        content: "gL3nT__pnzZ1iFx2J12jkwwDoOZpl6s",
+        content: "f6nafnBQBr6-gL3nT__pnzZ1iFx2J12jkwwDoOZpl6s",
       },
     ],
     ["meta", { name: "theme-color", content: "#3eaf7c" }],
