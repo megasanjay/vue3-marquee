@@ -28,6 +28,10 @@ The `direction` prop has now changed to use the css value of `normal` or `revers
 
 The `gradientWidth` prop has been modified to only accept string attributes. Pass a valid css unit to adjust the width of the gradient.
 
+## Playground
+
+You can use the already setup code sandbox to play around with the library and test out the funcionality. [Use this link to go to the playground](https://codesandbox.io/s/vue3-marquee-sandbox-09zm5?file=/src/App.vue).
+
 ## Installation
 
 ### NPM
