@@ -12,6 +12,10 @@ The latest version of vue3-marquee is in the experimental stage. I'm looking for
 
 View the live demos here: [https://vue3-marquee.vercel.app/examples.html](https://vue3-marquee.vercel.app/examples.html)
 
+# Playground
+
+If you would like to test out any functionality before downloading, you can use codesandbox.io to create a copy of an initialized playground. You can view the sandbox here: https://codesandbox.io/s/vue3-marquee-sandbox-09zm5?file=/src/App.vue
+
 # Installation
 
 If you are using npm:
