@@ -1,72 +1,30 @@
 <script setup lang="ts">
-import { defineProps, PropType, ref, onMounted, computed, watch } from "vue";
+import { defineProps, ref, onMounted, computed, watch } from "vue";
 
-const props = defineProps({
-  direction: {
-    type: String as PropType<"normal" | "reverse">,
-    required: false,
-    default: "normal",
-  },
-  duration: {
-    type: Number,
-    required: false,
-    default: 20,
-  },
-  delay: {
-    type: Number,
-    required: false,
-    default: 0,
-  },
-  loop: {
-    type: Number,
-    required: false,
-    default: 0,
-  },
-  clone: {
-    type: Boolean,
-    required: false,
-    default: false,
-  },
-  gradient: {
-    type: Boolean,
-    required: false,
-    default: false,
-  },
-  gradientColor: {
-    type: Array as unknown as PropType<[number, number, number]>,
-    required: false,
-    default: [255, 255, 255],
-    validator: (value: [number, number, number]) => {
-      if (value.length != 3) {
-        return false;
-      }
-      if (typeof value[0] !== "number" || value[0] < 0 || value[0] > 255) {
-        return false;
-      }
-      if (typeof value[1] !== "number" || value[1] < 0 || value[1] > 255) {
-        return false;
-      }
-      if (typeof value[2] !== "number" || value[2] < 0 || value[2] > 255) {
-        return false;
-      }
-      return true;
-    },
-  },
-  gradientWidth: {
-    type: String,
-    required: false,
-    default: "200px",
-  },
-  pauseOnHover: {
-    type: Boolean,
-    required: false,
-    default: false,
-  },
-  pauseOnClick: {
-    type: Boolean,
-    required: false,
-    default: false,
-  },
+interface MarqueeProps {
+  direction?: "normal" | "reverse";
+  duration?: number;
+  delay?: number;
+  loop?: number;
+  clone?: boolean;
+  gradient?: boolean;
+  gradientColor?: any;
+  gradientWidth?: string;
+  pauseOnHover?: boolean;
+  pauseOnClick?: boolean;
+}
+
+const props = withDefaults(defineProps<MarqueeProps>(), {
+  direction: "normal",
+  duration: 20,
+  delay: 0,
+  loop: 0,
+  clone: false,
+  gradient: false,
+  gradientColor: [255, 255, 255],
+  gradientWidth: "200px",
+  pauseOnHover: false,
+  pauseOnClick: false,
 });
 
 let cloneAmount = ref(0);

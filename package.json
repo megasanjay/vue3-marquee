@@ -1,6 +1,6 @@
 {
   "name": "vue3-marquee",
-  "version": "2.0.2-beta",
+  "version": "2.1.1-beta",
   "description": "A simple marquee component with ZERO dependencies for Vue 3",
   "author": "Sanjay Soundarajan <info@sanjaysoundarajan.dev> (https://sanjaysoundarajan.dev)",
   "scripts": {
@@ -16,6 +16,7 @@
   "module": "dist/vue3-marquee.esm.js",
   "browser": "dist/vue3-marquee.esm.js",
   "unpkg": "dist/vue3-marquee.min.js",
+  "types": "./src/types/shims.d.ts",
   "files": [
     "dist/*",
     "src/**/*.vue",
