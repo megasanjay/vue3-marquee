@@ -20,8 +20,8 @@ export default {
   data() {
     return {
       imgArray: [
-        "https://vuejs.org/images/tendermint.png",
-        "https://vuejs.org/images/layer0.png",
+        "https://sponsors.vuejs.org/images/layer0.avif",
+        "https://sponsors.vuejs.org/images/plaid__inc_.svg",
       ],
     };
   },
