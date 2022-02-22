@@ -11,38 +11,38 @@
 </template>
 
 <script>
-import Vue3Marquee from "vue3-marquee";
+import { Vue3Marquee } from 'vue3-marquee'
 export default {
-  name: "BasicExample",
+  name: 'BasicExample',
   components: {
     Vue3Marquee,
   },
   data() {
     return {
       imgArray: [
-        "https://sponsors.vuejs.org/images/vueschool.avif",
-        "https://sponsors.vuejs.org/images/vehikl.avif",
-        "https://sponsors.vuejs.org/images/dronahq.avif",
-        "https://sponsors.vuejs.org/images/passionate_people.png",
-        "https://sponsors.vuejs.org/images/storyblok.png",
-        "https://sponsors.vuejs.org/images/ionic.png",
-        "https://sponsors.vuejs.org/images/cypress_io.svg",
-        "https://sponsors.vuejs.org/images/vuemastery.avif",
-        "https://sponsors.vuejs.org/images/laravel.png",
-        "https://sponsors.vuejs.org/images/html_burger.png",
-        "https://sponsors.vuejs.org/images/neds.png",
-        "https://sponsors.vuejs.org/images/icons_8.png",
-        "https://sponsors.vuejs.org/images/tidelift.png",
-        "https://sponsors.vuejs.org/images/intygrate.png",
-        "https://sponsors.vuejs.org/images/myetherwallet_inc.avif",
-        "https://sponsors.vuejs.org/images/flowdash.avif",
-        "https://sponsors.vuejs.org/images/plaid__inc_.svg",
-        "https://sponsors.vuejs.org/images/lendio.avif",
-        "https://sponsors.vuejs.org/images/fastcoding_inc.svg",
+        'https://sponsors.vuejs.org/images/vueschool.avif',
+        'https://sponsors.vuejs.org/images/vehikl.avif',
+        'https://sponsors.vuejs.org/images/dronahq.avif',
+        'https://sponsors.vuejs.org/images/passionate_people.png',
+        'https://sponsors.vuejs.org/images/storyblok.png',
+        'https://sponsors.vuejs.org/images/ionic.png',
+        'https://sponsors.vuejs.org/images/cypress_io.svg',
+        'https://sponsors.vuejs.org/images/vuemastery.avif',
+        'https://sponsors.vuejs.org/images/laravel.png',
+        'https://sponsors.vuejs.org/images/html_burger.png',
+        'https://sponsors.vuejs.org/images/neds.png',
+        'https://sponsors.vuejs.org/images/icons_8.png',
+        'https://sponsors.vuejs.org/images/tidelift.png',
+        'https://sponsors.vuejs.org/images/intygrate.png',
+        'https://sponsors.vuejs.org/images/myetherwallet_inc.avif',
+        'https://sponsors.vuejs.org/images/flowdash.avif',
+        'https://sponsors.vuejs.org/images/plaid__inc_.svg',
+        'https://sponsors.vuejs.org/images/lendio.avif',
+        'https://sponsors.vuejs.org/images/fastcoding_inc.svg',
       ],
-    };
+    }
   },
-};
+}
 </script>
 
 <style scoped>

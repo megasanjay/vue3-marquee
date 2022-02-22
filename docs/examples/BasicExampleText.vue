@@ -12,43 +12,43 @@
 </template>
 
 <script>
-import Vue3Marquee from "vue3-marquee";
+import { Vue3Marquee } from 'vue3-marquee'
 export default {
-  name: "BasicExampleText",
+  name: 'BasicExampleText',
   components: {
     Vue3Marquee,
   },
   data() {
     return {
       helloArray: [
-        "hello",
-        "こんにちは",
-        "bonjour",
-        "안녕하세요 ",
-        "Hai",
-        "ສະບາຍດີ ",
-        "hallo",
-        "नमस्ते",
-        "aloha",
-        "ਸਤ ਸ੍ਰੀ ਅਕਾਲ",
-        "bongu",
-        "здравствуйте",
-        "salama",
-        "侬好",
-        "salve",
-        "ආයුබෝවන්",
-        "xin chào",
-        "வணக்கம் ",
-        "¡Hola!",
-        "నమస్కారం",
-        "hej",
-        "สวัสดี ครับ/ค่ะ",
-        "kamusta",
-        "السلام علیکم ",
+        'hello',
+        'こんにちは',
+        'bonjour',
+        '안녕하세요 ',
+        'Hai',
+        'ສະບາຍດີ ',
+        'hallo',
+        'नमस्ते',
+        'aloha',
+        'ਸਤ ਸ੍ਰੀ ਅਕਾਲ',
+        'bongu',
+        'здравствуйте',
+        'salama',
+        '侬好',
+        'salve',
+        'ආයුබෝවන්',
+        'xin chào',
+        'வணக்கம் ',
+        '¡Hola!',
+        'నమస్కారం',
+        'hej',
+        'สวัสดี ครับ/ค่ะ',
+        'kamusta',
+        'السلام علیکم ',
       ],
-    };
+    }
   },
-};
+}
 </script>
 
 <style scoped>

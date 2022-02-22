@@ -30,7 +30,9 @@ import ImagesWithClone from './examples/ImagesWithClone.vue'
 </template>
 
 <script>
-import Vue3Marquee from "vue3-marquee";
+import { Vue3Marquee } from 'vue3-marquee'
+import 'vue3-marquee/dist/style.css'
+
 export default {
   name: "BasicExample",
   components: {
@@ -82,7 +84,9 @@ export default {
 </template>
 
 <script>
-import Vue3Marquee from "vue3-marquee";
+import { Vue3Marquee } from 'vue3-marquee'
+import 'vue3-marquee/dist/style.css'
+
 export default {
   name: "BasicExample",
   components: {
@@ -126,30 +130,31 @@ export default {
 </template>
 
 <script>
-import { reactive } from "vue";
-import Vue3Marquee from "vue3-marquee";
+import { reactive } from 'vue'
+import { Vue3Marquee } from 'vue3-marquee'
+import 'vue3-marquee/dist/style.css'
 
 export default {
-  name: "BasicExampleCards",
+  name: 'BasicExampleCards',
   components: {
     Vue3Marquee,
   },
   setup() {
-    const avatarArray = reactive([]);
+    const avatarArray = reactive([])
 
     for (let i = 0; i < 5; i++) {
       avatarArray.push(
         `https://avatars.dicebear.com/api/avataaars/${Math.random()
           .toString(36)
-          .substr(2, 6)}.svg`
-      );
+          .substr(2, 6)}.svg`,
+      )
     }
 
     return {
       avatarArray,
-    };
+    }
   },
-};
+}
 </script>
 
 <style scoped>
@@ -197,7 +202,9 @@ In this example the following props are used:
 </template>
 
 <script>
-import Vue3Marquee from "vue3-marquee";
+import { Vue3Marquee } from 'vue3-marquee'
+import 'vue3-marquee/dist/style.css'
+
 export default {
   name: "ImagesWithGradient",
   components: {
@@ -245,30 +252,31 @@ The marquee can pause when you hover over the content. This is useful if you wan
 </template>
 
 <script>
-import { reactive } from "vue";
-import Vue3Marquee from "vue3-marquee";
+import { reactive } from 'vue'
+import { Vue3Marquee } from 'vue3-marquee'
+import 'vue3-marquee/dist/style.css'
 
 export default {
-  name: "CardsPauseOnHover",
+  name: 'CardsPauseOnHover',
   components: {
     Vue3Marquee,
   },
   setup() {
-    const avatarArray = reactive([]);
+    const avatarArray = reactive([])
 
     for (let i = 0; i < 5; i++) {
       avatarArray.push(
         `https://avatars.dicebear.com/api/avataaars/${Math.random()
           .toString(36)
-          .substr(2, 6)}.svg`
-      );
+          .substr(2, 6)}.svg`,
+      )
     }
 
     return {
       avatarArray,
-    };
+    }
   },
-};
+}
 </script>
 
 <style scoped>
@@ -322,7 +330,9 @@ If you need more functionality than this, using a carousel component might be be
 </template>
 
 <script>
-import Vue3Marquee from "vue3-marquee";
+import { Vue3Marquee } from 'vue3-marquee'
+import 'vue3-marquee/dist/style.css'
+
 export default {
   name: "ImagesWithPauseOnClick",
   components: {
@@ -369,7 +379,7 @@ On certain screen sizes, I have observed the image flashing in between animation
 
 ```vue
 <template>
-  <Vue3Marquee :clone="true" :duration="5" :direction="'reverse'">
+  <Vue3Marquee :clone="true" :duration="5" direction="reverse">
     <img
       :src="img"
       v-for="img in imgArray"
@@ -381,21 +391,23 @@ On certain screen sizes, I have observed the image flashing in between animation
 </template>
 
 <script>
-import Vue3Marquee from "vue3-marquee";
+import { Vue3Marquee } from 'vue3-marquee'
+import 'vue3-marquee/dist/style.css'
+
 export default {
-  name: "ImagesWithClone",
+  name: 'ImagesWithClone',
   components: {
     Vue3Marquee,
   },
   data() {
     return {
       imgArray: [
-        "https://sponsors.vuejs.org/images/layer0.avif",
-        "https://sponsors.vuejs.org/images/plaid__inc_.svg",
+        'https://sponsors.vuejs.org/images/layer0.avif',
+        'https://sponsors.vuejs.org/images/plaid__inc_.svg',
       ],
-    };
+    }
   },
-};
+}
 </script>
 
 <style scoped>
