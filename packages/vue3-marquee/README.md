@@ -14,7 +14,7 @@ If you would like to test out any functionality before downloading, you can use 
 
 # Upgrade to v3.x
 
-If you are using version 1.x or 2.x of `vue3-marquee` you should upgrade to version 2.x. You can do this by running the [Installation](#installation) command below. This adds TS support for the component. There are some new imports so take a look at the [new documentation](https://vue3-marquee.vercel.app/guide.html#usage).
+If you are using version 1.x or 2.x of `vue3-marquee` you should upgrade to version 3.x. You can do this by running the [Installation](#installation) command below. This adds TS support for the component. There are some new imports so take a look at the [new documentation](https://vue3-marquee.vercel.app/guide.html#usage).
 
 # Installation
 

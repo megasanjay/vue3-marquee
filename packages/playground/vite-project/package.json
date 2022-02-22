@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "vue": "^3.2.31",
-    "vue3-marquee": "^3.0.0"
+    "vue3-marquee": "^3.0.3"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^2.2.0",
