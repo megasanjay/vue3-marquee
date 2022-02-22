@@ -4,10 +4,6 @@
 
 A simple marquee component with ZERO dependencies for Vue 3. This component was originally developed for internal use but I figured this could be useful to someone else as well. This component is modeled after a React marquee component I found called [React Fast Marquee](https://github.com/justin-chu/react-fast-marquee). To keep a smooth animation running, clones of the content can be created for seamless transitions with no sudden jarring appearences or empty spaces in between content.
 
-# Warning
-
-The latest version of vue3-marquee is in the experimental stage. I'm looking for users with typescript applications to verify the use of this library before I update the version numbers.
-
 # Demos
 
 View the live demos here: [https://vue3-marquee.vercel.app/examples.html](https://vue3-marquee.vercel.app/examples.html)
