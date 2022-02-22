@@ -16,18 +16,22 @@ View the live demos here: [https://vue3-marquee.vercel.app/examples.html](https:
 
 If you would like to test out any functionality before downloading, you can use codesandbox.io to create a copy of an initialized playground. You can view the sandbox here: https://codesandbox.io/s/vue3-marquee-sandbox-09zm5?file=/src/App.vue
 
+# Upgrade to v3.x
+
+If you are using version 1.x or 2.x of `vue3-marquee` you should upgrade to version 2.x. You can do this by running the [Installation](#installation) command below. This adds TS support for the component. There are some new imports so take a look at the [new documentation](https://vue3-marquee.vercel.app/guide.html#usage).
+
 # Installation
 
 If you are using npm:
 
 ```shell
-npm install vue3-marquee
+npm install vue3-marquee@latest --save
 ```
 
 If you are using yarn:
 
 ```shell
-yarn add vue3-marquee
+yarn add vue3-marquee@latest
 ```
 
 # Usage
@@ -36,35 +40,52 @@ The most common use case is to register the component globally.
 
 ```js
 // main.js
-import { createApp } from "vue";
-import Vue3Marquee from "vue3-marquee";
+import { createApp } from 'vue'
+import Vue3Marquee from 'vue3-marquee'
+import 'vue3-marquee/dist/style.css'
 
-createApp(App).use(Vue3Marquee).mount("#app");
+createApp(App).use(Vue3Marquee).mount('#app')
 ```
 
 Alternatively you can import the marquee component locally.
 
 ```js
-import Vue3Marquee from "vue3-marquee";
+import { Vue3Marquee } from 'vue3-marquee'
+import 'vue3-marquee/dist/style.css'
 
 export default {
   components: {
     Vue3Marquee,
   },
-};
+}
 ```
 
 You can then use the component in your template. A common use case is an image marquee for logos but you can also use it for scrolling text.
 
-```html
-<vue3-marquee>
-  <img height="200" width="300" src="...img" />
-  <img height="200" width="300" src="...img" />
-  <img height="200" width="300" src="...img" />
-</vue3-marquee>
+```vue
+<template>
+  <Vue3Marquee>
+    <img height="200" width="300" src="...img" />
+    <img height="200" width="300" src="...img" />
+    <img height="200" width="300" src="...img" />
+  </Vue3Marquee>
+</template>
+
+<script>
+import { Vue3Marquee } from 'vue3-marquee'
+import 'vue3-marquee/dist/style.css'
+
+export default {
+  components: {
+    Vue3Marquee,
+  },
+}
+</script>
 ```
 
 # Props and options
+
+More detailed explanations are provided in the [documentation](https://vue3-marquee.vercel.app/guide.html).
 
 | Prop          | Type                                   | Default Value   | Description                                                                            |
 | ------------- | -------------------------------------- | --------------- | -------------------------------------------------------------------------------------- |
