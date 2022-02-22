@@ -14,6 +14,13 @@ In `vue3-marquee` you have the option of cloning content to remove any empty spa
 
 With version 3, native TypeScript support has been added.
 
+::: info Upgrade guide
+
+- If you are importing the component in your main.(js|ts) file (via the `use` syntax), you don't have to modify this statement. However you will need to now import a css file as well.
+- If you are using a local import, you will need to convert your `import Vue3Marquee from 'vue3-marquee'` to `import {Vue3Marquee} from 'vue3-marquee'`. You will need to now import a css file as well.
+
+  :::
+
 ## Playground
 
 You can use the already setup code sandbox to play around with the library and test out the funcionality. [Use this link to go to the playground](https://codesandbox.io/s/vue3-marquee-sandbox-09zm5?file=/src/App.vue).
