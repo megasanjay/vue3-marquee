@@ -741,17 +741,10 @@ vitepress@^0.20.0:
     vite "^2.6.5"
     vue "^3.2.19"
 
-vue-class-component@^8.0.0-0:
-  version "8.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/vue-class-component/-/vue-class-component-8.0.0-rc.1.tgz#db692cd97656eb9a08206c03d0b7398cdb1d9420"
-  integrity sha512-w1nMzsT/UdbDAXKqhwTmSoyuJzUXKrxLE77PCFVuC6syr8acdFDAq116xgvZh9UCuV0h+rlCtxXolr3Hi3HyPQ==
-
-vue3-marquee@^2.0.2-beta:
-  version "2.0.2-beta"
-  resolved "https://registry.yarnpkg.com/vue3-marquee/-/vue3-marquee-2.0.2-beta.tgz#12ea26a1a3603066cf6161d46a1b379b69acab48"
-  integrity sha512-zzZZ5V2LnDCqbtpexHz298SQON1S4oe4QBlHG0nAQOtjX8YyidoQ46XlMevNlFqr1u4y/EO4T4u8fBYqQkk2Zw==
-  dependencies:
-    vue-class-component "^8.0.0-0"
+vue3-marquee@^3.0.3-beta:
+  version "3.0.3-beta"
+  resolved "https://registry.yarnpkg.com/vue3-marquee/-/vue3-marquee-3.0.3-beta.tgz#01cab168594fb5287b7c9c79cc10b86544f3726d"
+  integrity sha512-4GU/4iLPLa/fONVEapN5De8PLELikxnnp+eMWVfw1wyXPL9MgV9B256PV4DyME/ywvVb2o60sji71Q+DqJi9rw==
 
 vue@^3.2.19:
   version "3.2.20"
