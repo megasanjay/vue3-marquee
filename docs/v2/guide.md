@@ -3,7 +3,7 @@
 **vue3-marquee** is a simple marquee component for Vue 3 that creates customizable marquees. This component uses slots for your content and props for any config options.
 
 ::: warning
-You are viewing the documentation for vue3-maquee v1.x To get the latest version specific documentation, click [here](/guide).
+You are viewing the documentation for vue3-maquee v2.x To get the latest version specific documentation, click [here](/guide).
 :::
 
 ## Introduction
@@ -13,6 +13,22 @@ You are viewing the documentation for vue3-maquee v1.x To get the latest version
 In my search for a good marquee component, I found a React library that seemed to do what I wanted so I decided to emulate the component in Vue 3 for anyone to use. The original React library can be found [here](https://www.react-fast-marquee.com/).
 
 In `vue3-marquee` you have the option of cloning content to remove any empty spaces for marquee elements that don't fit the width of the container. This will allow you to have seamless content that just works.
+
+## Changes from v1
+
+With version 2, typescript support has been added. It's currently in the beta phase but when I get some results from other devs using this library with typescript projects, I will push a full release to npm.
+
+The options object has been removed since it was adding additional code on the backend to handle. All options for the component should now be passed via template props.
+
+The clone attribute has been marked as experimental for the moment. If the options gives you strange artifacts or isn't what you are looking for, please just create a copy of your content to fit the width of your container.
+
+The `direction` prop has now changed to use the css value of `normal` or `reverse` natively. Use these as your passed props.
+
+The `gradientWidth` prop has been modified to only accept string attributes. Pass a valid css unit to adjust the width of the gradient.
+
+## Playground
+
+You can use the already setup code sandbox to play around with the library and test out the funcionality. [Use this link to go to the playground](https://codesandbox.io/s/vue3-marquee-sandbox-09zm5?file=/src/App.vue).
 
 ## Installation
 
@@ -76,15 +92,15 @@ All the possible props for `vue3-marquee` are shown below.
 
 ### direction
 
-The direction for the content to move in
+The direction for the content to move in. `normal` corresponds to elements moving left and `reverse` corresponds to elements moving right.
 
-| Type   | Default value | Required | Accepted values   |
-| ------ | ------------- | -------- | ----------------- |
-| String | "left"        | no       | "left" or "right" |
+| Type   | Default value | Required | Accepted values       |
+| ------ | ------------- | -------- | --------------------- |
+| String | "normal"      | no       | "normal" or "reverse" |
 
 ### duration
 
-The time taken for the marquee content to move the width of the container (in seconds)
+The time taken for the marquee content to move the width of its own container (in seconds).
 
 | Type   | Default value | Required | Accepted values |
 | ------ | ------------- | -------- | --------------- |
@@ -92,7 +108,7 @@ The time taken for the marquee content to move the width of the container (in se
 
 ### delay
 
-A delay before the animation starts (in seconds)
+A delay before the animation starts (in seconds).
 
 | Type   | Default value | Required | Accepted values |
 | ------ | ------------- | -------- | --------------- |
@@ -100,7 +116,7 @@ A delay before the animation starts (in seconds)
 
 ### loop
 
-The number of instances that the marquee animation should run (0 is infinite)
+The number of instances that the marquee animation should run (0 is infinite).
 
 | Type   | Default value | Required | Accepted values |
 | ------ | ------------- | -------- | --------------- |
@@ -108,7 +124,7 @@ The number of instances that the marquee animation should run (0 is infinite)
 
 ### gradient
 
-Whether to show a gradient overlay
+Whether to show a gradient overlay.
 
 | Type    | Default value | Required | Accepted values |
 | ------- | ------------- | -------- | --------------- |
@@ -116,7 +132,7 @@ Whether to show a gradient overlay
 
 ### gradientColor
 
-The RGB colors for the color of the gradient
+The RGB colors for the color of the gradient.
 
 | Type                  | Default value   | Required | Accepted values                                              |
 | --------------------- | --------------- | -------- | ------------------------------------------------------------ |
@@ -126,12 +142,12 @@ The RGB colors for the color of the gradient
 
 What portion of the container edges should be taken by the gradient overlay.
 
-| Type             | Default value | Required |
-| ---------------- | ------------- | -------- |
-| String or Number | 200           | no       |
+| Type   | Default value | Required | Accepted values    |
+| ------ | ------------- | -------- | ------------------ |
+| String | 200px         | no       | Any valid css unit |
 
 ::: tip
-You can use either a number or string value here. Numbers correspond to pixel values and strings can be any accepted css size unit (eg: 10%, 2em)
+Any accepted css size unit (eg: 10%, 2em) can be used here. You might need to play around with this unit to get the gradient overlay that you want.
 :::
 
 ### pauseOnHover
@@ -144,48 +160,20 @@ Whether to pause the marquee on hover
 
 ### pauseOnClick
 
-Whether to pause the marquee when you hold the right click button
+Whether to pause the marquee when you hold the right click button.
 
 | Type    | Default value | Required | Accepted values |
 | ------- | ------------- | -------- | --------------- |
 | Boolean | false         | no       | true or false   |
 
-### clone
+### clone - experimental
+
+::: warning
+This option is still in the experimental stage.
+:::
 
 Whether to clone the content if you want no empty spaces in the animation. Use this option if you find empty spaces between your marquee animations.
 
 | Type    | Default value | Required | Accepted values |
 | ------- | ------------- | -------- | --------------- |
 | Boolean | false         | no       | true or false   |
-
-## options
-
-You can also provide all of the props in an `options` prop for cleaner looking html.
-
-| Type   | Default value | Required |
-| ------ | ------------- | -------- |
-| Object | "{ }"         | no       |
-
-```vue
-<template>
-  <vue3-marquee :options="options"> </vue3-marquee>
-</template>
-
-<script>
-import Vue3Marquee from 'vue3-marquee'
-
-export default defineComponent({
-  components: {
-    Vue3Marquee,
-  },
-  data() {
-    return {
-      options: {
-        duration: 25,
-        direction: 'left',
-      },
-    }
-  },
-})
-</script>
-```

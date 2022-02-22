@@ -11,21 +11,21 @@
 </template>
 
 <script>
-import Vue3Marquee from "vue3-marquee";
+import { Vue3Marquee } from 'vue3-marquee'
 export default {
-  name: "ImagesWithClone",
+  name: 'ImagesWithClone',
   components: {
     Vue3Marquee,
   },
   data() {
     return {
       imgArray: [
-        "https://sponsors.vuejs.org/images/layer0.avif",
-        "https://sponsors.vuejs.org/images/plaid__inc_.svg",
+        'https://sponsors.vuejs.org/images/layer0.avif',
+        'https://sponsors.vuejs.org/images/plaid__inc_.svg',
       ],
-    };
+    }
   },
-};
+}
 </script>
 
 <style scoped>

@@ -12,30 +12,30 @@
 </template>
 
 <script>
-import { reactive } from "vue";
-import Vue3Marquee from "vue3-marquee";
+import { reactive } from 'vue'
+import { Vue3Marquee } from 'vue3-marquee'
 
 export default {
-  name: "CardsPauseOnHover",
+  name: 'CardsPauseOnHover',
   components: {
     Vue3Marquee,
   },
   setup() {
-    const avatarArray = reactive([]);
+    const avatarArray = reactive([])
 
     for (let i = 0; i < 5; i++) {
       avatarArray.push(
         `https://avatars.dicebear.com/api/avataaars/${Math.random()
           .toString(36)
-          .substr(2, 6)}.svg`
-      );
+          .substr(2, 6)}.svg`,
+      )
     }
 
     return {
       avatarArray,
-    };
+    }
   },
-};
+}
 </script>
 
 <style scoped>
