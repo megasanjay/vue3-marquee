@@ -423,7 +423,7 @@ export default {
 
 ### [#13](https://github.com/megasanjay/vue3-marquee/issues/13)
 
-Fixed an issue where putting texdt marquees in a flex div would cause it to clone endlessly
+Fixed an issue where putting a text marquee in a flex div would cause it to clone endlessly. Referenced here at [#13](https://github.com/megasanjay/vue3-marquee/issues/13)
 
 <Issue13 />
 
