@@ -11,6 +11,7 @@ import CardsPauseOnHover from './examples/CardsPauseOnHover.vue'
 import ImagesWithPauseOnClick from './examples/ImagesWithPauseOnClick.vue'
 import ImagesWithoutClone from './examples/ImagesWithoutClone.vue'
 import ImagesWithClone from './examples/ImagesWithClone.vue'
+import Issue13 from './examples/Issue13.vue'
 </script>
 
 <BasicExampleText />
@@ -416,6 +417,36 @@ export default {
   margin: 0 10px;
 }
 </style>
+```
+
+## Fixed Issues
+
+### [#13](https://github.com/megasanjay/vue3-marquee/issues/13)
+
+Fixed an issue where putting texdt marquees in a flex div would cause it to clone endlessly
+
+<Issue13 />
+
+```vue
+<template>
+  <div style="display: flex">
+    <Vue3Marquee :clone="true" :duration="1"> 123 </Vue3Marquee>
+  </div>
+</template>
+
+<script>
+import { Vue3Marquee } from 'vue3-marquee'
+
+export default {
+  name: 'Issue13',
+  components: {
+    Vue3Marquee,
+  },
+  data() {
+    return {}
+  },
+}
+</script>
 ```
 
 ::: warning Disclaimer

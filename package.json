@@ -2,6 +2,6 @@
   "name": "vue3-marquee-monorepo",
   "private": "true",
   "scripts": {
-    "build": "pnpm build --filter vue3-lottie"
+    "build": "pnpm build --filter vue3-marquee"
   }
 }

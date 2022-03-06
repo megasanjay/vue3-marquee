@@ -1,18 +1,21 @@
 <template>
-  <div v-if="ready">
-    <div class="vue3-marquee" :style="getCurrentStyle" :key="componentKey">
-      <div class="transparent-overlay" ref="marqueeContainer"></div>
-      <div class="overlay" v-if="showGradient"></div>
-      <div class="marquee" ref="marqueeContent">
-        <slot></slot>
-      </div>
-      <div class="marquee">
-        <slot></slot>
-      </div>
+  <div
+    class="vue3-marquee"
+    :style="getCurrentStyle"
+    :key="componentKey"
+    v-if="ready"
+  >
+    <div class="transparent-overlay" ref="marqueeContainer"></div>
+    <div class="overlay" v-if="showGradient"></div>
+    <div class="marquee" ref="marqueeContent">
+      <slot></slot>
+    </div>
+    <div class="marquee">
+      <slot></slot>
+    </div>
 
-      <div class="marquee cloned" v-for="num in cloneAmount" :key="num">
-        <slot></slot>
-      </div>
+    <div class="marquee cloned" v-for="num in cloneAmount" :key="num">
+      <slot></slot>
     </div>
   </div>
 </template>
@@ -98,7 +101,9 @@ export default defineComponent({
     let marqueeContent = ref<HTMLDivElement | any>(null)
     let marqueeContainer = ref<HTMLDivElement | any>(null)
 
-    const ForcesUpdate = () => {
+    const ForcesUpdate = async () => {
+      await checkForClone()
+
       componentKey.value++
     }
 
@@ -139,13 +144,13 @@ export default defineComponent({
       }, 100)
     }
 
-    watch(contentWidth, () => {
+    watch(contentWidth, async () => {
       if (props.clone) {
         ForcesUpdate()
       }
     })
 
-    watch(containerWidth, () => {
+    watch(containerWidth, async () => {
       if (props.clone) {
         ForcesUpdate()
       }
