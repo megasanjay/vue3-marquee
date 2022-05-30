@@ -229,7 +229,7 @@ export default defineComponent({
   animation-play-state: var(--pauseOnClick);
 }
 
-.marquee {
+.vue3-marquee > .marquee {
   flex: 0 0 auto;
   min-width: var(--min-width);
   z-index: 1;
@@ -249,20 +249,20 @@ export default defineComponent({
   }
 }
 
-.overlay {
+.vue3-marquee > .overlay {
   position: absolute;
   width: 100%;
   height: 100%;
 }
 
-.transparent-overlay {
+.vue3-marquee > .transparent-overlay {
   position: absolute;
   width: 100%;
   height: 100%;
 }
 
-.overlay::before,
-.overlay::after {
+.vue3-marquee > .overlay::before,
+.vue3-marquee > .overlay::after {
   background: linear-gradient(to right, var(--gradient-color));
   content: '';
   height: 100%;
@@ -271,13 +271,13 @@ export default defineComponent({
   z-index: 2;
 }
 
-.overlay::after {
+.vue3-marquee > .overlay::after {
   right: 0;
   top: 0;
   transform: rotateZ(180deg);
 }
 
-.overlay::before {
+.vue3-marquee > .overlay::before {
   left: 0;
   top: 0;
 }
