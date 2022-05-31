@@ -741,10 +741,10 @@ vitepress@0.20.0:
     vite "^2.6.5"
     vue "^3.2.19"
 
-vue3-marquee@^3.0.4-beta:
-  version "3.0.4-beta"
-  resolved "https://registry.yarnpkg.com/vue3-marquee/-/vue3-marquee-3.0.4-beta.tgz#9d0b5f99af363f65b63c9c8fe472289381db5701"
-  integrity sha512-yuvNC2mUGXKMz9eFsR6IyrPU6sos0OYNDbg/1wsTGQmEOlVFkYPyRWpwoKcJgWn89cuEhzUunUuyyECBuYKA2Q==
+vue3-marquee@^3.0.5:
+  version "3.0.5"
+  resolved "https://registry.yarnpkg.com/vue3-marquee/-/vue3-marquee-3.0.5.tgz#4bbe0167769490a3344a94a318ed461a2589ff61"
+  integrity sha512-gTBM5BCV1RnvV68dow4uzV2x2WwNlGRzKh/1EviRInTXBZgy3HBNJV/xgTvSNy/5G24IF/zDWmFQMIZJhb6SEQ==
 
 vue@^3.2.19:
   version "3.2.20"
