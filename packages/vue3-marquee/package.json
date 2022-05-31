@@ -1,6 +1,6 @@
 {
   "name": "vue3-marquee",
-  "version": "3.0.5",
+  "version": "3.0.6",
   "license": "MIT",
   "description": "A simple marquee component with ZERO dependencies for Vue 3",
   "author": "Sanjay Soundarajan <info@sanjaysoundarajan.dev> (https://sanjaysoundarajan.dev)",
