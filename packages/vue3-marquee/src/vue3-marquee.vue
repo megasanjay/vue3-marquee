@@ -144,17 +144,23 @@ export default defineComponent({
       }, 100)
     }
 
-    watch(contentWidth, async () => {
-      if (props.clone) {
-        ForcesUpdate()
-      }
-    })
+    watch(
+      () => contentWidth,
+      async () => {
+        if (props.clone) {
+          ForcesUpdate()
+        }
+      },
+    )
 
-    watch(containerWidth, async () => {
-      if (props.clone) {
-        ForcesUpdate()
-      }
-    })
+    watch(
+      () => containerWidth,
+      async () => {
+        if (props.clone) {
+          ForcesUpdate()
+        }
+      },
+    )
 
     const getCurrentStyle: any = computed(() => {
       let cssVariables = {
