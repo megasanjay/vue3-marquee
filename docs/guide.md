@@ -25,29 +25,23 @@ With version 3, native TypeScript support has been added.
 
 You can use the already setup code sandbox to play around with the library and test out the funcionality. [Use this link to go to the playground](https://codesandbox.io/s/vue3-marquee-sandbox-09zm5?file=/src/App.vue).
 
-## Installation
+# Installation and Usage
 
-### NPM
+## Vue 3
 
-You can install `vue3-marquee` over `yarn` or `npm`. The only dependency required is Vue 3 which should automatically be supplied by your Vue 3 page.
+If you are using npm:
 
-```bash
-yarn add vue3-marquee@latest
-```
-
-```bash
+```shell
 npm install vue3-marquee@latest --save
 ```
 
-<!-- ### Browser CDN
+If you are using yarn:
 
-You can also use `vue3-marquee` directly in the browser via CDN.
+```shell
+yarn add vue3-marquee@latest
+```
 
-```html
-<script src="https://unpkg.com/vue3-marquee@0.0.4/dist/vue3-marquee.min.js"></script>
-``` -->
-
-## Usage
+- Register the component in your Vue 3 application.
 
 The most common use case is to register the component globally.
 
@@ -60,15 +54,48 @@ import 'vue3-marquee/dist/style.css'
 createApp(App).use(Vue3Marquee).mount('#app')
 ```
 
-Alternatively you can import the marquee component locally.
+To define global components for [Volar type-checking](https://github.com/johnsoncodehk/volar/tree/master/extensions/vscode-vue-language-features#usage) you will need to add:
+
+```ts
+// components.d.ts
+declare module '@vue/runtime-core' {
+  export interface GlobalComponents {
+    LottieAnimation: typeof import('vue3-marquee')['Vue3Marquee']
+  }
+}
+export {}
+```
+
+If needed rename component to use:
+
+```ts
+app.use(Vue3Marquee, { name: 'MarqueeAnimation' }) // use in template <MarqueeAnimation />
+```
+
+- `name` string (default: 'Vue3Marquee') - set custom component name
+
+Alternatively you can also import the component locally.
+
+```js
+import { Vue3Marquee } from 'vue3-marquee'
+import 'vue3-marquee/dist/style.css'
+
+export default {
+  components: {
+    Vue3Marquee,
+  },
+}
+```
+
+You can then use the component in your template
 
 ```vue
 <template>
-  <vue3-marquee>
-    <img height="200" src="...img" />
-    <img height="200" src="...img" />
-    <img height="200" src="...img" />
-  </vue3-marquee>
+  <Vue3Marquee>
+    <img height="200" width="300" src="...img" />
+    <img height="200" width="300" src="...img" />
+    <img height="200" width="300" src="...img" />
+  </Vue3Marquee>
 </template>
 
 <script>
@@ -81,6 +108,42 @@ export default {
   },
 }
 </script>
+```
+
+## Nuxt 3
+
+:::warning
+This is still experimental. Will need to be tested extensively and will be updated as I find more use cases.
+:::
+
+If you are using npm:
+
+```shell
+npm install vue3-marquee@latest --save
+```
+
+If you are using yarn:
+
+```shell
+yarn add vue3-marquee@latest
+```
+
+- Create a folder called **`plugins`** at the root of your project.
+- Create a file named **`vue3-marquee.client.js`** inside the _plugins_ directory.
+- Add the following code to the **`vue3-marquee.client.js`** file.
+
+```js
+import { Vue3Marquee } from 'vue3-marquee'
+
+export default defineNuxtPlugin((nuxtApp) => {
+  nuxtApp.vueApp.use(Vue3Marquee)
+})
+```
+
+- Import the css file required by the component into your **`app.vue`** file.
+
+```js
+import 'vue3-marquee/dist/style.css'
 ```
 
 ## Available props
