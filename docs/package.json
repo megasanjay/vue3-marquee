@@ -19,7 +19,7 @@
     "vitepress": "0.22.4"
   },
   "dependencies": {
-    "vue3-marquee": "^3.0.6"
+    "vue3-marquee": "3.0.7"
   },
   "repository": {
     "type": "git",
