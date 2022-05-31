@@ -14,9 +14,11 @@ If you would like to test out any functionality before downloading, you can use 
 
 # Upgrade to v3.x
 
-If you are using version 1.x or 2.x of `vue3-marquee` you should upgrade to version 3.x. You can do this by running the [Installation](#installation) command below. This adds TS support for the component. There are some new imports so take a look at the [new documentation](https://vue3-marquee.vercel.app/guide.html#usage).
+If you are using version 1.x or 2.x of `vue3-marquee` you should upgrade to version 3.x. You can do this by running the [Installation and Usage](#installation-and-usage) command below. This adds TS support for the component. There are some new imports so take a look at the [new documentation](https://vue3-marquee.vercel.app/guide.html#usage).
 
-# Installation
+# Installation and Usage
+
+## Vue 3
 
 If you are using npm:
 
@@ -30,7 +32,7 @@ If you are using yarn:
 yarn add vue3-marquee@latest
 ```
 
-# Usage
+- Register the component in your Vue 3 application.
 
 The most common use case is to register the component globally.
 
@@ -43,7 +45,27 @@ import 'vue3-marquee/dist/style.css'
 createApp(App).use(Vue3Marquee).mount('#app')
 ```
 
-Alternatively you can import the marquee component locally.
+To define global components for [Volar type-checking](https://github.com/johnsoncodehk/volar/tree/master/extensions/vscode-vue-language-features#usage) you will need to add:
+
+```ts
+// components.d.ts
+declare module '@vue/runtime-core' {
+  export interface GlobalComponents {
+    LottieAnimation: typeof import('vue3-marquee')['Vue3Marquee']
+  }
+}
+export {}
+```
+
+If needed rename component to use:
+
+```ts
+app.use(Vue3Marquee, { name: 'MarqueeAnimation' }) // use in template <MarqueeAnimation />
+```
+
+- `name` string (default: 'Vue3Marquee') - set custom component name
+
+Alternatively you can also import the component locally.
 
 ```js
 import { Vue3Marquee } from 'vue3-marquee'
@@ -56,7 +78,7 @@ export default {
 }
 ```
 
-You can then use the component in your template. A common use case is an image marquee for logos but you can also use it for scrolling text.
+You can then use the component in your template
 
 ```vue
 <template>
@@ -77,6 +99,40 @@ export default {
   },
 }
 </script>
+```
+
+## Nuxt 3
+
+This is still experimental. Will be updated soon.
+
+If you are using npm:
+
+```shell
+npm install vue3-marquee@latest --save
+```
+
+If you are using yarn:
+
+```shell
+yarn add vue3-marquee@latest
+```
+
+- Create a folder called **`plugins`** at the root of your project.
+- Create a file named **`vue3-marquee.client.js`** inside the _plugins_ directory.
+- Add the following code to the **`vue3-marquee.client.js`** file.
+
+```js
+import { Vue3Marquee } from 'vue3-marquee'
+
+export default defineNuxtPlugin((nuxtApp) => {
+  nuxtApp.vueApp.use(Vue3Marquee)
+})
+```
+
+- Import the css file required by the component into your **`app.vue`** file.
+
+```js
+import 'vue3-marquee/dist/style.css'
 ```
 
 # Props and options
