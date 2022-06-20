@@ -8,7 +8,7 @@ importers:
   packages/playground/vite-project:
     specifiers:
       '@vitejs/plugin-vue': 2.3.3
-      typescript: 4.7.3
+      typescript: 4.7.4
       vite: 2.9.12
       vue: 3.2.37
       vue-tsc: 0.37.3
@@ -18,16 +18,16 @@ importers:
       vue3-marquee: link:../../vue3-marquee
     devDependencies:
       '@vitejs/plugin-vue': 2.3.3_vite@2.9.12+vue@3.2.37
-      typescript: 4.7.3
+      typescript: 4.7.4
       vite: 2.9.12
-      vue-tsc: 0.37.3_typescript@4.7.3
+      vue-tsc: 0.37.3_typescript@4.7.4
 
   packages/vue3-marquee:
     specifiers:
       '@babel/types': 7.18.4
       '@types/node': 17.0.21
       '@vitejs/plugin-vue': 2.3.3
-      typescript: 4.7.3
+      typescript: 4.7.4
       vite: 2.9.12
       vue: 3.2.37
       vue-tsc: 0.37.3
@@ -36,11 +36,11 @@ importers:
       '@babel/types': 7.18.4
       '@types/node': 17.0.21
       '@vitejs/plugin-vue': 2.3.3_vite@2.9.12+vue@3.2.37
-      typescript: 4.7.3
+      typescript: 4.7.4
       vite: 2.9.12
       vue: 3.2.37
-      vue-tsc: 0.37.3_typescript@4.7.3
-      vue-typegen: 0.2.0_typescript@4.7.3
+      vue-tsc: 0.37.3_typescript@4.7.4
+      vue-typegen: 0.2.0_typescript@4.7.4
 
 packages:
 
@@ -656,8 +656,8 @@ packages:
       is-number: 7.0.0
     dev: true
 
-  /typescript/4.7.3:
-    resolution: {integrity: sha512-WOkT3XYvrpXx4vMMqlD+8R8R37fZkjyLGlxavMc4iB8lrl8L0DeTcHbYgw/v0N/z9wAFsgBhcsF0ruoySS22mA==}
+  /typescript/4.7.4:
+    resolution: {integrity: sha512-C0WQT0gezHuw6AdY1M2jxUO83Rjf0HP7Sk1DtXj6j1EwkQNZrHAg2XPWlq62oqEhYvONq5pkC2Y9oPljWToLmQ==}
     engines: {node: '>=4.2.0'}
     hasBin: true
     dev: true
@@ -691,17 +691,17 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /vue-tsc/0.37.3_typescript@4.7.3:
+  /vue-tsc/0.37.3_typescript@4.7.4:
     resolution: {integrity: sha512-MB8aU+9z722Q1tD/pg8ZKnkOSZI1yAlPYCA7R42B86XCUJ/w7fQtlI8Ojcgznz7IH3SxIkOVIw+S6TfddOa9gg==}
     hasBin: true
     peerDependencies:
       typescript: '*'
     dependencies:
       '@volar/vue-typescript': 0.37.3
-      typescript: 4.7.3
+      typescript: 4.7.4
     dev: true
 
-  /vue-typegen/0.2.0_typescript@4.7.3:
+  /vue-typegen/0.2.0_typescript@4.7.4:
     resolution: {integrity: sha512-uleq28vMIwNVv1ublUQs1a/IxpD9s9rQHnWvb9FnJpFI1XEaicVKRlsbqju4mUfT4sY7NHJiUEepBOdsq7TROQ==}
     hasBin: true
     peerDependencies:
@@ -712,7 +712,7 @@ packages:
       pathe: 0.2.0
       picocolors: 1.0.0
       sade: 1.8.1
-      typescript: 4.7.3
+      typescript: 4.7.4
     dev: true
 
   /vue/3.2.37:
