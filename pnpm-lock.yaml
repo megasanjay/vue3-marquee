@@ -7,7 +7,7 @@ importers:
 
   packages/playground/vite-project:
     specifiers:
-      '@vitejs/plugin-vue': 2.3.3
+      '@vitejs/plugin-vue': 2.3.4
       typescript: 4.7.4
       vite: 2.9.15
       vue: 3.2.37
@@ -17,7 +17,7 @@ importers:
       vue: 3.2.37
       vue3-marquee: link:../../vue3-marquee
     devDependencies:
-      '@vitejs/plugin-vue': 2.3.3_vite@2.9.15+vue@3.2.37
+      '@vitejs/plugin-vue': 2.3.4_vite@2.9.15+vue@3.2.37
       typescript: 4.7.4
       vite: 2.9.15
       vue-tsc: 0.39.0_typescript@4.7.4
@@ -26,7 +26,7 @@ importers:
     specifiers:
       '@babel/types': 7.18.8
       '@types/node': 17.0.21
-      '@vitejs/plugin-vue': 2.3.3
+      '@vitejs/plugin-vue': 2.3.4
       typescript: 4.7.4
       vite: 2.9.15
       vue: 3.2.37
@@ -35,7 +35,7 @@ importers:
     devDependencies:
       '@babel/types': 7.18.8
       '@types/node': 17.0.21
-      '@vitejs/plugin-vue': 2.3.3_vite@2.9.15+vue@3.2.37
+      '@vitejs/plugin-vue': 2.3.4_vite@2.9.15+vue@3.2.37
       typescript: 4.7.4
       vite: 2.9.15
       vue: 3.2.37
@@ -87,8 +87,8 @@ packages:
     resolution: {integrity: sha512-DBZCJbhII3r90XbQxI8Y9IjjiiOGlZ0Hr32omXIZvwwZ7p4DMMXGrKXVyPfuoBOri9XNtL0UK69jYIBIsRX3QQ==}
     dev: true
 
-  /@vitejs/plugin-vue/2.3.3_vite@2.9.15+vue@3.2.37:
-    resolution: {integrity: sha512-SmQLDyhz+6lGJhPELsBdzXGc+AcaT8stgkbiTFGpXPe8Tl1tJaBw1A6pxDqDuRsVkD8uscrkx3hA7QDOoKYtyw==}
+  /@vitejs/plugin-vue/2.3.4_vite@2.9.15+vue@3.2.37:
+    resolution: {integrity: sha512-IfFNbtkbIm36O9KB8QodlwwYvTEsJb4Lll4c2IwB3VHc2gie2mSPtSzL0eYay7X2jd/2WX02FjSGTWR6OPr/zg==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
       vite: ^2.5.10
