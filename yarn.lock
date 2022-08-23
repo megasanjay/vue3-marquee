@@ -2,7 +2,7 @@
 # yarn lockfile v1
 
 
-vue3-marquee@3.0.0-beta:
-  version "3.0.0-beta"
-  resolved "https://registry.yarnpkg.com/vue3-marquee/-/vue3-marquee-3.0.0-beta.tgz#dc3b26a00d66c405ae482f01d9ee9203d2567594"
-  integrity sha512-EH3SgXA6OKKSuAuomjt2rkVqh1ZZSZnQx2KEmO3KPp4VdxIeGyUDcTD69seiSLcvIht2NeRwKHX1jqenot/qIQ==
+prettier@^2.7.1:
+  version "2.7.1"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.7.1.tgz#e235806850d057f97bb08368a4f7d899f7760c64"
+  integrity sha512-ujppO+MkdPqoVINuDFDRLClm7D78qbDt0/NR+wp5FqEZOoTNAjPHWj17QRhu7geIHJfcNhRk1XVQmF8Bp3ye+g==

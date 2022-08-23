@@ -3,5 +3,8 @@
   "private": "true",
   "scripts": {
     "build": "pnpm build --filter vue3-marquee"
+  },
+  "dependencies": {
+    "prettier": "^2.7.1"
   }
 }
