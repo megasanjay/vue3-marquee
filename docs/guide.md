@@ -248,7 +248,7 @@ If your marquee has a finite amount of loops you can use this event to know when
 
 ### onLoopComplete
 
-If your marquee has a finite amount of loops you can use this event to know when the animation has completed a loop.
+You can use this event to know when your marquee has completed a loop.
 
 ### onPause
 
