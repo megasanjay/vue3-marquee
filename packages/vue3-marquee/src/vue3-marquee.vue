@@ -4,6 +4,10 @@
     :style="getCurrentStyle"
     :key="componentKey"
     v-if="ready"
+    @mouseenter="hoverStarted"
+    @mouseleave="hoverEnded"
+    @mousedown="mouseDown"
+    @mouseup="mouseUp"
   >
     <div class="transparent-overlay" ref="marqueeContainer"></div>
     <div class="overlay" v-if="showGradient"></div>
@@ -89,12 +93,16 @@ export default defineComponent({
     },
   },
 
-  setup(props) {
+  emits: ['onComplete', 'onLoopComplete', 'onPause', 'onResume'],
+
+  setup(props, { emit }) {
     let cloneAmount = ref(0)
     let minWidth = ref('100%')
     let componentKey = ref(0)
     let containerWidth = ref(0)
     let contentWidth = ref(0)
+
+    let loopCounter = ref(0)
 
     let ready = ref(false)
 
@@ -156,6 +164,42 @@ export default defineComponent({
       }
     })
 
+    setInterval(() => {
+      loopCounter.value++
+
+      if (props.loop !== 0 && loopCounter.value === props.loop) {
+        emit('onComplete')
+      }
+
+      emit('onLoopComplete')
+
+      // Converting the duration into milliseconds here
+    }, props.duration * 1000)
+
+    const hoverStarted = () => {
+      if (props.pauseOnHover) {
+        emit('onPause')
+      }
+    }
+
+    const hoverEnded = () => {
+      if (props.pauseOnHover) {
+        emit('onResume')
+      }
+    }
+
+    const mouseDown = () => {
+      if (props.pauseOnClick) {
+        emit('onPause')
+      }
+    }
+
+    const mouseUp = () => {
+      if (props.pauseOnClick) {
+        emit('onResume')
+      }
+    }
+
     const getCurrentStyle: any = computed(() => {
       let cssVariables = {
         '--duration': `${props.duration}s`,
@@ -197,6 +241,7 @@ export default defineComponent({
       ready,
       contentWidth,
       containerWidth,
+      loopCounter,
       minWidth,
       marqueeContent,
       marqueeContainer,
@@ -207,6 +252,10 @@ export default defineComponent({
       checkForClone,
       setupMarquee,
       getCurrentStyle,
+      hoverStarted,
+      hoverEnded,
+      mouseDown,
+      mouseUp,
     }
   },
 })

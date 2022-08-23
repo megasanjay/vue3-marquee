@@ -152,4 +152,17 @@ More detailed explanations are provided in the [documentation](https://vue3-marq
 | pauseOnClick  | Boolean                                | false           | Whether to pause the marquee when you hold the right click button                      |
 | clone         | Boolean                                | false           | Whether to clone the content if you want no empty spaces in the animation              |
 
+# Events
+
+A few events are emitted from the component. Look at the [Demos](#Demos) for examples.
+
+- onComplete
+  - If your marquee has a finite amount of loops you can use this event to know when the animation has completed.
+- onLoopComplete
+  - If your marquee has a finite amount of loops you can use this event to know when the animation has completed a loop.
+- onPause
+  - This event is emitted if you have either `pauseOnHover` or `pauseOnClick` enabled. It will notify if the animation pauses.
+- onResume
+  - This event is emitted if you have either `pauseOnHover` or `pauseOnClick` enabled. It will notify if the animation resumes.
+
 [![forthebadge](https://forthebadge.com/images/badges/made-with-vue.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)

@@ -237,3 +237,23 @@ Whether to clone the content if you want no empty spaces in the animation. Use t
 | Type    | Default value | Required | Accepted values |
 | ------- | ------------- | -------- | --------------- |
 | Boolean | false         | no       | true or false   |
+
+## Available events
+
+`vue3-marquee` will also emit the following events. Look at the examples provided in the [examples section](/examples#listening-for-events) for how to use these methods.
+
+### onComplete
+
+If your marquee has a finite amount of loops you can use this event to know when the animation has completed.
+
+### onLoopComplete
+
+If your marquee has a finite amount of loops you can use this event to know when the animation has completed a loop.
+
+### onPause
+
+This event is emitted if you have either `pauseOnHover` or `pauseOnClick` enabled. It will notify if the animation pauses.
+
+### onResume
+
+This event is emitted if you have either `pauseOnHover` or `pauseOnClick` enabled. It will notify if the animation resumes.
