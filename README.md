@@ -159,7 +159,7 @@ A few events are emitted from the component. Look at the [Demos](#Demos) for exa
 - onComplete
   - If your marquee has a finite amount of loops you can use this event to know when the animation has completed.
 - onLoopComplete
-  - If your marquee has a finite amount of loops you can use this event to know when the animation has completed a loop.
+  - You can use this event to know when your marquee has completed a loop.
 - onPause
   - This event is emitted if you have either `pauseOnHover` or `pauseOnClick` enabled. It will notify if the animation pauses.
 - onResume
