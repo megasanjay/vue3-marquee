@@ -25,7 +25,15 @@
 </template>
 
 <script lang="ts">
-import { ref, onMounted, computed, watch, defineComponent, PropType } from 'vue'
+import {
+  ref,
+  onMounted,
+  onBeforeUnmount,
+  computed,
+  watch,
+  defineComponent,
+  PropType,
+} from 'vue'
 
 export interface MarqueeProps {
   direction: 'normal' | 'reverse'
@@ -103,6 +111,7 @@ export default defineComponent({
     let contentWidth = ref(0)
 
     let loopCounter = ref(0)
+    let loopInterval = ref<any>(null)
 
     let ready = ref(false)
 
@@ -164,18 +173,6 @@ export default defineComponent({
       }
     })
 
-    setInterval(() => {
-      loopCounter.value++
-
-      if (props.loop !== 0 && loopCounter.value === props.loop) {
-        emit('onComplete')
-      }
-
-      emit('onLoopComplete')
-
-      // Converting the duration into milliseconds here
-    }, props.duration * 1000)
-
     const hoverStarted = () => {
       if (props.pauseOnHover) {
         emit('onPause')
@@ -235,6 +232,23 @@ export default defineComponent({
 
     onMounted(async () => {
       setupMarquee()
+
+      loopInterval.value = setInterval(() => {
+        loopCounter.value++
+
+        if (props.loop !== 0 && loopCounter.value === props.loop) {
+          emit('onComplete')
+          clearInterval(loopInterval.value)
+        }
+
+        emit('onLoopComplete')
+
+        // Converting the duration into milliseconds here
+      }, props.duration * 1000)
+    })
+
+    onBeforeUnmount(() => {
+      clearInterval(loopInterval.value)
     })
 
     return {
@@ -242,6 +256,7 @@ export default defineComponent({
       contentWidth,
       containerWidth,
       loopCounter,
+      loopInterval,
       minWidth,
       marqueeContent,
       marqueeContainer,
