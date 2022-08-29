@@ -141,7 +141,7 @@ export default defineNuxtPlugin((nuxtApp) => {
 ```
 
 This should register as a global component that you can call anywhere in your app under the `<Vue3Marquee>` tag.
-  
+
 - Import the css file required by the component into your **`app.vue`** file.
 
 ```js
