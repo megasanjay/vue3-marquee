@@ -129,17 +129,19 @@ yarn add vue3-marquee@latest
 ```
 
 - Create a folder called **`plugins`** at the root of your project.
-- Create a file named **`vue3-marquee.client.js`** inside the _plugins_ directory.
-- Add the following code to the **`vue3-marquee.client.js`** file.
+- Create a file named **`Vue3Marquee.client.ts`** inside the _plugins_ directory.
+- Add the following code to the **`Vue3Marquee.client.ts`** file.
 
 ```js
-import { Vue3Marquee } from 'vue3-marquee'
+import Vue3Marquee from 'vue3-marquee'
 
 export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.vueApp.use(Vue3Marquee)
 })
 ```
 
+This should register as a global component that you can call anywhere in your app under the `<Vue3Marquee>` tag.
+  
 - Import the css file required by the component into your **`app.vue`** file.
 
 ```js
