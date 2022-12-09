@@ -42,7 +42,7 @@
     "@types/node": "18.11.11",
     "@vitejs/plugin-vue": "2.3.4",
     "typescript": "4.9.3",
-    "vite": "2.9.15",
+    "vite": "3.2.5",
     "vue": "3.2.39",
     "vue-tsc": "0.40.13",
     "vue-typegen": "0.2.0"
