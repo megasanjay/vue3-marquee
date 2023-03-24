@@ -39,7 +39,7 @@
   },
   "devDependencies": {
     "@babel/types": "7.21.3",
-    "@types/node": "18.15.3",
+    "@types/node": "18.15.5",
     "@vitejs/plugin-vue": "2.3.4",
     "typescript": "5.0.2",
     "vite": "2.9.15",
