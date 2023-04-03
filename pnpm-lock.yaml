@@ -11,7 +11,7 @@ importers:
   packages/playground/vite-project:
     specifiers:
       '@vitejs/plugin-vue': 2.3.4
-      typescript: 5.0.2
+      typescript: 5.0.3
       vite: 2.9.15
       vue: 3.2.47
       vue-tsc: 0.40.13
@@ -21,16 +21,16 @@ importers:
       vue3-marquee: link:../../vue3-marquee
     devDependencies:
       '@vitejs/plugin-vue': 2.3.4_vite@2.9.15+vue@3.2.47
-      typescript: 5.0.2
+      typescript: 5.0.3
       vite: 2.9.15
-      vue-tsc: 0.40.13_typescript@5.0.2
+      vue-tsc: 0.40.13_typescript@5.0.3
 
   packages/vue3-marquee:
     specifiers:
       '@babel/types': 7.21.4
       '@types/node': 18.15.5
       '@vitejs/plugin-vue': 2.3.4
-      typescript: 5.0.2
+      typescript: 5.0.3
       vite: 2.9.15
       vue: 3.2.47
       vue-tsc: 0.40.13
@@ -39,11 +39,11 @@ importers:
       '@babel/types': 7.21.4
       '@types/node': 18.15.5
       '@vitejs/plugin-vue': 2.3.4_vite@2.9.15+vue@3.2.47
-      typescript: 5.0.2
+      typescript: 5.0.3
       vite: 2.9.15
       vue: 3.2.47
-      vue-tsc: 0.40.13_typescript@5.0.2
-      vue-typegen: 0.2.0_typescript@5.0.2
+      vue-tsc: 0.40.13_typescript@5.0.3
+      vue-typegen: 0.2.0_typescript@5.0.3
 
 packages:
 
@@ -701,8 +701,8 @@ packages:
       is-number: 7.0.0
     dev: true
 
-  /typescript/5.0.2:
-    resolution: {integrity: sha512-wVORMBGO/FAs/++blGNeAVdbNKtIh1rbBL2EyQ1+J9lClJ93KiiKe8PmFIVdXhHcyv44SL9oglmfeSsndo0jRw==}
+  /typescript/5.0.3:
+    resolution: {integrity: sha512-xv8mOEDnigb/tN9PSMTwSEqAnUvkoXMQlicOb0IUVDBSQCgBSaAAROUZYy2IcUy5qU6XajK5jjjO7TMWqBTKZA==}
     engines: {node: '>=12.20'}
     hasBin: true
     dev: true
@@ -736,7 +736,7 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /vue-tsc/0.40.13_typescript@5.0.2:
+  /vue-tsc/0.40.13_typescript@5.0.3:
     resolution: {integrity: sha512-xzuN3g5PnKfJcNrLv4+mAjteMd5wLm5fRhW0034OfNJZY4WhB07vhngea/XeGn7wNYt16r7syonzvW/54dcNiA==}
     hasBin: true
     peerDependencies:
@@ -744,10 +744,10 @@ packages:
     dependencies:
       '@volar/vue-language-core': 0.40.13
       '@volar/vue-typescript': 0.40.13
-      typescript: 5.0.2
+      typescript: 5.0.3
     dev: true
 
-  /vue-typegen/0.2.0_typescript@5.0.2:
+  /vue-typegen/0.2.0_typescript@5.0.3:
     resolution: {integrity: sha512-uleq28vMIwNVv1ublUQs1a/IxpD9s9rQHnWvb9FnJpFI1XEaicVKRlsbqju4mUfT4sY7NHJiUEepBOdsq7TROQ==}
     hasBin: true
     peerDependencies:
@@ -758,7 +758,7 @@ packages:
       pathe: 0.2.0
       picocolors: 1.0.0
       sade: 1.8.1
-      typescript: 5.0.2
+      typescript: 5.0.3
     dev: true
 
   /vue/3.2.47:
