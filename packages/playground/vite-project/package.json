@@ -8,7 +8,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "vue": "3.2.47",
+    "vue": "3.3.2",
     "vue3-marquee": "workspace:*"
   },
   "devDependencies": {
