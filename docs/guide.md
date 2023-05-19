@@ -54,8 +54,6 @@ import 'vue3-marquee/dist/style.css'
 createApp(App).use(Vue3Marquee).mount('#app')
 ```
 
-
-
 If needed rename component to use:
 
 ```ts
