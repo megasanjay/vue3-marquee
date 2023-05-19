@@ -54,22 +54,12 @@ import 'vue3-marquee/dist/style.css'
 createApp(App).use(Vue3Marquee).mount('#app')
 ```
 
-To define global components for [Volar type-checking](https://github.com/johnsoncodehk/volar/tree/master/extensions/vscode-vue-language-features#usage) you will need to add:
 
-```ts
-// components.d.ts
-declare module '@vue/runtime-core' {
-  export interface GlobalComponents {
-    LottieAnimation: typeof import('vue3-marquee')['Vue3Marquee']
-  }
-}
-export {}
-```
 
 If needed rename component to use:
 
 ```ts
-app.use(Vue3Marquee, { name: 'MarqueeAnimation' }) // use in template <MarqueeAnimation />
+app.use(Vue3Marquee, { name: 'Vue3Marquee' }) // use in template as <Vue3Marquee />
 ```
 
 - `name` string (default: 'Vue3Marquee') - set custom component name
