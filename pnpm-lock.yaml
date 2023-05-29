@@ -27,7 +27,7 @@ importers:
 
   packages/vue3-marquee:
     specifiers:
-      '@babel/types': 7.21.5
+      '@babel/types': 7.22.0
       '@types/node': 18.15.11
       '@vitejs/plugin-vue': 2.3.4
       typescript: 5.0.4
@@ -36,7 +36,7 @@ importers:
       vue-tsc: 0.40.13
       vue-typegen: 0.2.0
     devDependencies:
-      '@babel/types': 7.21.5
+      '@babel/types': 7.22.0
       '@types/node': 18.15.11
       '@vitejs/plugin-vue': 2.3.4_vite@2.9.15+vue@3.3.4
       typescript: 5.0.4
@@ -60,10 +60,10 @@ packages:
     engines: {node: '>=6.0.0'}
     hasBin: true
     dependencies:
-      '@babel/types': 7.21.5
+      '@babel/types': 7.22.0
 
-  /@babel/types/7.21.5:
-    resolution: {integrity: sha512-m4AfNvVF2mVC/F7fDEdH2El3HzUg9It/XsCxZiOTTA3m3qYfcSVSbTfM6Q9xG+hYDniZssYhlXKKUMD5m8tF4Q==}
+  /@babel/types/7.22.0:
+    resolution: {integrity: sha512-NtXlm3f6cNWIv003cETdlz9sss0VMNtplyatFohxWPz90AbwuhCbHbQopkGis6bG1vOunDLN0FF/4Uv5i8LFZQ==}
     engines: {node: '>=6.9.0'}
     dependencies:
       '@babel/helper-string-parser': 7.21.5
