@@ -12,7 +12,7 @@ importers:
     specifiers:
       '@vitejs/plugin-vue': 2.3.4
       typescript: 5.0.4
-      vite: 2.9.15
+      vite: 2.9.16
       vue: 3.3.4
       vue-tsc: 0.40.13
       vue3-marquee: workspace:*
@@ -20,9 +20,9 @@ importers:
       vue: 3.3.4
       vue3-marquee: link:../../vue3-marquee
     devDependencies:
-      '@vitejs/plugin-vue': 2.3.4_vite@2.9.15+vue@3.3.4
+      '@vitejs/plugin-vue': 2.3.4_vite@2.9.16+vue@3.3.4
       typescript: 5.0.4
-      vite: 2.9.15
+      vite: 2.9.16
       vue-tsc: 0.40.13_typescript@5.0.4
 
   packages/vue3-marquee:
@@ -31,16 +31,16 @@ importers:
       '@types/node': 18.15.11
       '@vitejs/plugin-vue': 2.3.4
       typescript: 5.0.4
-      vite: 2.9.15
+      vite: 2.9.16
       vue: 3.3.4
       vue-tsc: 0.40.13
       vue-typegen: 0.2.0
     devDependencies:
       '@babel/types': 7.22.0
       '@types/node': 18.15.11
-      '@vitejs/plugin-vue': 2.3.4_vite@2.9.15+vue@3.3.4
+      '@vitejs/plugin-vue': 2.3.4_vite@2.9.16+vue@3.3.4
       typescript: 5.0.4
-      vite: 2.9.15
+      vite: 2.9.16
       vue: 3.3.4
       vue-tsc: 0.40.13_typescript@5.0.4
       vue-typegen: 0.2.0_typescript@5.0.4
@@ -98,14 +98,14 @@ packages:
     resolution: {integrity: sha512-E5Kwq2n4SbMzQOn6wnmBjuK9ouqlURrcZDVfbo9ftDDTFt3nk7ZKK4GMOzoYgnpQJKcxwQw+lGaBvvlMo0qN/Q==}
     dev: true
 
-  /@vitejs/plugin-vue/2.3.4_vite@2.9.15+vue@3.3.4:
+  /@vitejs/plugin-vue/2.3.4_vite@2.9.16+vue@3.3.4:
     resolution: {integrity: sha512-IfFNbtkbIm36O9KB8QodlwwYvTEsJb4Lll4c2IwB3VHc2gie2mSPtSzL0eYay7X2jd/2WX02FjSGTWR6OPr/zg==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
       vite: ^2.5.10
       vue: ^3.2.25
     dependencies:
-      vite: 2.9.15
+      vite: 2.9.16
       vue: 3.3.4
     dev: true
 
@@ -713,8 +713,8 @@ packages:
     engines: {node: '>= 10.0.0'}
     dev: true
 
-  /vite/2.9.15:
-    resolution: {integrity: sha512-fzMt2jK4vQ3yK56te3Kqpkaeq9DkcZfBbzHwYpobasvgYmP2SoAr6Aic05CsB4CzCZbsDv4sujX3pkEGhLabVQ==}
+  /vite/2.9.16:
+    resolution: {integrity: sha512-X+6q8KPyeuBvTQV8AVSnKDvXoBMnTx8zxh54sOwmmuOdxkjMmEJXH2UEchA+vTMps1xw9vL64uwJOWryULg7nA==}
     engines: {node: '>=12.2.0'}
     hasBin: true
     peerDependencies:
