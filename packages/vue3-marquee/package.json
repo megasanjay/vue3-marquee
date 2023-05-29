@@ -38,7 +38,7 @@
     "./dist/style.css": "./dist/style.css"
   },
   "devDependencies": {
-    "@babel/types": "7.21.5",
+    "@babel/types": "7.22.0",
     "@types/node": "18.15.11",
     "@vitejs/plugin-vue": "2.3.4",
     "typescript": "5.0.4",
