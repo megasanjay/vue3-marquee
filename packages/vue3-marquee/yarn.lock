@@ -22,10 +22,10 @@
   resolved "https://registry.yarnpkg.com/@babel/parser/-/parser-7.21.8.tgz#642af7d0333eab9c0ad70b14ac5e76dbde7bfdf8"
   integrity sha512-6zavDGdzG3gUqAdWvlLFfk+36RilI+Pwyuuh7HItyeScCWP3k6i8vKclAQ0bM/0y/Kz/xiwvxhMv9MgTJP5gmA==
 
-"@babel/types@7.22.3":
-  version "7.22.3"
-  resolved "https://registry.yarnpkg.com/@babel/types/-/types-7.22.3.tgz#0cc6af178b91490acaeb4a2f70dcbf27cdf3d8f3"
-  integrity sha512-P3na3xIQHTKY4L0YOG7pM8M8uoUIB910WQaSiiMCZUC2Cy8XFEQONGABFnHWBa2gpGKODTAJcNhi5Zk0sLRrzg==
+"@babel/types@7.22.4":
+  version "7.22.4"
+  resolved "https://registry.yarnpkg.com/@babel/types/-/types-7.22.4.tgz#56a2653ae7e7591365dabf20b76295410684c071"
+  integrity sha512-Tx9x3UBHTTsMSW85WB2kphxYQVvrZ/t1FxD88IpSgIjiUJlCm9z+xWIDwyo1vffTwSqteqyznB8ZE9vYYk16zA==
   dependencies:
     "@babel/helper-string-parser" "^7.21.5"
     "@babel/helper-validator-identifier" "^7.19.1"
