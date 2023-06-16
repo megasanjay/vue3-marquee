@@ -4,21 +4,13 @@
 
 A simple marquee component with ZERO dependencies for Vue 3. This component was originally developed for internal use but I figured this could be useful to someone else as well. This component is modeled after a React marquee component I found called [React Fast Marquee](https://github.com/justin-chu/react-fast-marquee). To keep a smooth animation running, clones of the content can be created for seamless transitions with no sudden jarring appearences or empty spaces in between content.
 
-# Demos
+## Demos
 
-View the live demos here: [https://vue3-marquee.vercel.app/examples.html](https://vue3-marquee.vercel.app/examples.html)
+View the live demos here: [https://vue3-marquee.vercel.app/examples](https://vue3-marquee.vercel.app/examples)
 
-# Playground
+## Installation and Usage
 
-If you would like to test out any functionality before downloading, you can use codesandbox.io to create a copy of an initialized playground. You can view the sandbox here: https://codesandbox.io/s/vue3-marquee-sandbox-09zm5?file=/src/App.vue
-
-# Upgrade to v3.x
-
-If you are using version 1.x or 2.x of `vue3-marquee` you should upgrade to version 3.x. You can do this by running the [Installation and Usage](#installation-and-usage) command below. This adds TS support for the component. There are some new imports so take a look at the [new documentation](https://vue3-marquee.vercel.app/guide.html#usage).
-
-# Installation and Usage
-
-## Vue 3
+### Vue 3
 
 If you are using npm:
 
@@ -45,19 +37,7 @@ import 'vue3-marquee/dist/style.css'
 createApp(App).use(Vue3Marquee).mount('#app')
 ```
 
-To define global components for [Volar type-checking](https://github.com/johnsoncodehk/volar/tree/master/extensions/vscode-vue-language-features#usage) you will need to add:
-
-```ts
-// components.d.ts
-declare module '@vue/runtime-core' {
-  export interface GlobalComponents {
-    LottieAnimation: typeof import('vue3-marquee')['Vue3Marquee']
-  }
-}
-export {}
-```
-
-If needed rename component to use:
+If you need to use a custom component name, you can pass it as an option to the plugin:
 
 ```ts
 app.use(Vue3Marquee, { name: 'MarqueeAnimation' }) // use in template <MarqueeAnimation />
@@ -101,9 +81,7 @@ export default {
 </script>
 ```
 
-## Nuxt 3
-
-This is still experimental.
+### Nuxt 3
 
 If you are using npm:
 
@@ -125,7 +103,7 @@ yarn add vue3-marquee@latest
 import Vue3Marquee from 'vue3-marquee'
 
 export default defineNuxtPlugin((nuxtApp) => {
-  nuxtApp.vueApp.use(Vue3Marquee)
+  nuxtApp.vueApp.use(Vue3Marquee, { name: 'Vue3Marquee' })
 })
 ```
 
@@ -137,9 +115,9 @@ This should register as a global component that you can call anywhere in your ap
 import 'vue3-marquee/dist/style.css'
 ```
 
-# Props and options
+## Props and options
 
-More detailed explanations are provided in the [documentation](https://vue3-marquee.vercel.app/guide.html).
+More detailed explanations are provided in the [documentation](https://vue3-marquee.vercel.app/api/props).
 
 | Prop          | Type                                   | Default Value   | Description                                                                            |
 | ------------- | -------------------------------------- | --------------- | -------------------------------------------------------------------------------------- |
@@ -154,9 +132,9 @@ More detailed explanations are provided in the [documentation](https://vue3-marq
 | pauseOnClick  | Boolean                                | false           | Whether to pause the marquee when you hold the right click button                      |
 | clone         | Boolean                                | false           | Whether to clone the content if you want no empty spaces in the animation              |
 
-# Events
+## Events
 
-A few events are emitted from the component. Look at the [Demos](#Demos) for examples.
+A few events are emitted from the component. Look at the [Demos](#demos) for examples.
 
 - onComplete
   - If your marquee has a finite amount of loops you can use this event to know when the animation has completed.
