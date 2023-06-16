@@ -1,33 +1,25 @@
 {
-  "name": "vue3-marquee-docs",
-  "version": "3.0.0",
-  "description": "A simple marquee component with ZERO dependencies for Vue 3",
-  "main": "index.js",
-  "keywords": [
-    "vue3",
-    "marquee"
-  ],
+  "name": "docus-starter",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "dev": "vitepress dev ",
-    "build": "vitepress build ",
-    "serve": "vitepress serve "
+    "dev": "nuxi dev",
+    "build": "nuxi build",
+    "generate": "nuxi generate",
+    "preview": "nuxi preview",
+    "lint": "eslint ."
   },
-  "author": "Sanjay Soundarajan <info@sanjaysoundarajan.dev> (https://sanjaysoundarajan.dev)",
-  "license": "MIT",
   "devDependencies": {
-    "copyfiles": "2.4.1",
-    "vitepress": "0.22.4"
+    "@nuxt-themes/docus": "^1.12.1",
+    "@nuxt/devtools": "^0.5.5",
+    "@nuxt/eslint-config": "^0.1.1",
+    "@nuxtjs/plausible": "^0.2.1",
+    "@types/node": "^20.2.5",
+    "eslint": "^8.42.0",
+    "nuxt": "^3.5.3"
   },
   "dependencies": {
-    "vue3-marquee": "3.1.2"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/megasanjay/vue3-marquee.git"
-  },
-  "homepage": "https://vue3-marquee.vercel.app/",
-  "bugs": {
-    "url": "https://github.com/megasanjay/vue3-marquee/issues",
-    "email": "info@sanjaysoundarajan.dev"
+    "vue3-lottie": "^2.7.1",
+    "vue3-marquee": "^3.1.2"
   }
 }
