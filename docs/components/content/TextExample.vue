@@ -39,6 +39,7 @@ const helloArray = [
   'สวัสดี ครับ/ค่ะ',
   'kamusta',
   'السلام علیکم ',
+  'Olá',
 ]
 </script>
 

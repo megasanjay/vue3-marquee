@@ -52,4 +52,17 @@ for (let i = 0; i < 5; i++) {
   background: rgb(226, 226, 226);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
+
+.dark .card {
+  background-color: rgb(31, 30, 28);
+}
+
+.dark .btn {
+  color: rgb(31, 30, 28);
+}
+
+.dark .btn:hover {
+  background: rgb(46, 45, 43);
+  color: var(--docus-body-color);
+}
 </style>
