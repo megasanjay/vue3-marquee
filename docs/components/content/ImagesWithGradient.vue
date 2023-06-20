@@ -1,7 +1,7 @@
 <template>
   <Vue3Marquee
     :gradient="true"
-    :gradient-color="[255, 255, 255]"
+    :gradient-color="colorMode.value === 'light' ? [255, 255, 255] : [0, 0, 0]"
     gradient-width="30%"
   >
     <img
@@ -16,6 +16,8 @@
 
 <script setup>
 import 'vue3-marquee/dist/style.css'
+
+const colorMode = useColorMode()
 
 const imgArray = [
   'https://sponsors.vuejs.org/images/vueschool.avif',

@@ -36,4 +36,8 @@ for (let i = 0; i < 5; i++) {
   flex-direction: column;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
+
+.dark .card {
+  background-color: rgb(31, 30, 28);
+}
 </style>
