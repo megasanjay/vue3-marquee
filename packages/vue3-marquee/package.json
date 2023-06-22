@@ -29,9 +29,9 @@
   },
   "main": "dist/vue3-marquee.umd.js",
   "module": "dist/vue3-marquee.es.js",
-  "types": "dist/index.d.ts",
   "exports": {
     ".": {
+      "types": "./dist/index.d.ts",
       "import": "./dist/vue3-marquee.es.js",
       "require": "./dist/vue3-marquee.umd.js"
     },
