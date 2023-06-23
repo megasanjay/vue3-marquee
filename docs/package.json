@@ -20,6 +20,6 @@
   },
   "dependencies": {
     "vue3-lottie": "^2.7.1",
-    "vue3-marquee": "^3.1.2"
+    "vue3-marquee": "^3.2.1"
   }
 }

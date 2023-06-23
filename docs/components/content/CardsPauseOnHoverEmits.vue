@@ -4,7 +4,7 @@
     @on-pause="playState = 'paused'"
     @on-resume="playState = 'playing'"
   >
-    <div class="card" v-for="avatar in avatarArray" :key="avatar">
+    <div v-for="avatar in avatarArray" :key="avatar" class="card">
       <img :src="avatar" width="100" height="100" />
       <p style="margin-top: 10px; margin-bottom: 0px">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
@@ -49,6 +49,9 @@ for (let i = 0; i < 5; i++) {
   padding: 5px;
   margin: 10px 0;
   transition: all 0.2s;
+  background-color: blanchedalmond;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 .btn:hover {

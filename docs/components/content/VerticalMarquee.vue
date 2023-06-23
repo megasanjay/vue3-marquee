@@ -1,17 +1,15 @@
 <template>
-  <Vue3Marquee
-    :gradient="true"
-    :gradient-color="colorMode.value === 'light' ? [255, 255, 255] : [0, 0, 0]"
-    gradient-length="30%"
-  >
-    <img
-      :src="img"
-      v-for="img in imgArray"
-      :key="img"
-      class="image"
-      width="100"
-    />
-  </Vue3Marquee>
+  <div style="height: 50px; width: max-content">
+    <Vue3Marquee :vertical="true">
+      <img
+        :src="img"
+        v-for="img in imgArray"
+        :key="img"
+        class="image"
+        width="100"
+      />
+    </Vue3Marquee>
+  </div>
 </template>
 
 <script setup>
@@ -45,6 +43,6 @@ const imgArray = [
 <style scoped>
 .image {
   font-size: 30px;
-  margin: 0 10px;
+  margin: 10px 10px;
 }
 </style>
