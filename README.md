@@ -2,7 +2,7 @@
 
 [![npm](https://img.shields.io/npm/v/vue3-marquee)](https://www.npmjs.com/package/vue3-marquee) [![Downloads](https://img.shields.io/npm/dt/vue3-marquee)](https://www.npmjs.com/package/vue3-marquee) [![Stars](https://img.shields.io/github/stars/megasanjay/vue3-marquee.svg?style=flat-square)](https://github.com/megasanjay/vue3-marquee/stargazers) [![License](https://img.shields.io/npm/l/vue3-marquee)](https://github.com/megasanjay/vue3-marquee/blob/main/LICENSE) [![GitHub issues](https://img.shields.io/github/issues/megasanjay/vue3-marquee)](https://github.com/megasanjay/vue3-marquee/issues)
 
-A simple marquee component with ZERO dependencies for Vue 3. This component was originally developed for internal use but I figured this could be useful to someone else as well. This component is modeled after a React marquee component I found called [React Fast Marquee](https://github.com/justin-chu/react-fast-marquee). To keep a smooth animation running, clones of the content can be created for seamless transitions with no sudden jarring appearences or empty spaces in between content.
+A simple marquee component with ZERO dependencies for Vue 3. This component was originally developed for internal use but I figured this could be useful to someone else as well. This component is modeled after a React marquee component I found called [React Fast Marquee](https://github.com/justin-chu/react-fast-marquee). To keep a smooth animation running, clones of the content can be created for seamless transitions with no flickering or empty spaces in between content.
 
 ## Demos
 
@@ -119,18 +119,19 @@ import 'vue3-marquee/dist/style.css'
 
 More detailed explanations are provided in the [documentation](https://vue3-marquee.vercel.app/api/props).
 
-| Prop          | Type                                   | Default Value   | Description                                                                            |
-| ------------- | -------------------------------------- | --------------- | -------------------------------------------------------------------------------------- |
-| direction     | String of either 'normal' or 'reverse' | "normal"        | The direction for the content to move in                                               |
-| duration      | Number                                 | 20              | The time taken for the marquee content to move the width of the container (in seconds) |
-| delay         | Number                                 | 0               | A delay before the animation starts (in seconds)                                       |
-| loop          | Number                                 | 0               | The number of instances that the marquee animation should run (0 is infinite)          |
-| gradient      | Boolean                                | false           | Whether to show a gradient overlay                                                     |
-| gradientColor | Array of 3 RGB values                  | [255, 255, 255] | The RGB colors for the color of the gradient                                           |
-| gradientWidth | String                                 | 200px           | Length of portion of the container edges that should be taken by the gradient overlay  |
-| pauseOnHover  | Boolean                                | false           | Whether to pause the marquee on hover                                                  |
-| pauseOnClick  | Boolean                                | false           | Whether to pause the marquee when you hold the right click button                      |
-| clone         | Boolean                                | false           | Whether to clone the content if you want no empty spaces in the animation              |
+| Prop           | Type                                   | Default Value   | Description                                                                            |
+| -------------- | -------------------------------------- | --------------- | -------------------------------------------------------------------------------------- |
+| direction      | String of either 'normal' or 'reverse' | "normal"        | The direction for the content to move in                                               |
+| duration       | Number                                 | 20              | The time taken for the marquee content to move the width of the container (in seconds) |
+| delay          | Number                                 | 0               | A delay before the animation starts (in seconds)                                       |
+| loop           | Number                                 | 0               | The number of instances that the marquee animation should run (0 is infinite)          |
+| gradient       | Boolean                                | false           | Whether to show a gradient overlay                                                     |
+| gradientColor  | Array of 3 RGB values                  | [255, 255, 255] | The RGB colors for the color of the gradient                                           |
+| gradientLength | String                                 | 200px           | Length of portion of the container edges that should be taken by the gradient overlay  |
+| pauseOnHover   | Boolean                                | false           | Whether to pause the marquee on hover                                                  |
+| pauseOnClick   | Boolean                                | false           | Whether to pause the marquee when you hold the right click button                      |
+| clone          | Boolean                                | false           | Whether to clone the content if you want no empty spaces in the animation              |
+| vertical       | Boolean                                | false           | Whether to make the marquee vertical                                                   |
 
 ## Events
 
