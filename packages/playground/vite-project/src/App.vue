@@ -1,6 +1,7 @@
 <template>
   <div>
     <HelloWorld msg="Hello Vue 3 + TypeScript + Vite + Vue3 Marquee" />
+
     <div>
       <p>Default</p>
       <Vue3Marquee>
@@ -50,10 +51,24 @@
       </Vue3Marquee>
     </div>
     <div>
+      <p>Gradient Length: 600px</p>
+      <Vue3Marquee :gradient="true" gradient-length="600px">
+        <img v-for="i in img_30" :key="i" height="80" :src="i" />
+      </Vue3Marquee>
+    </div>
+    <div>
       <p>clone</p>
       <Vue3Marquee :clone="true" :duration="5">
         <img v-for="i in img_5" :key="i" height="80" :src="i" />
       </Vue3Marquee>
+    </div>
+    <div>
+      <p>Vertical</p>
+      <div style="height: 500px; width: max-content">
+        <Vue3Marquee :vertical="true">
+          <img v-for="i in img_30" :key="i" height="50" :src="i" />
+        </Vue3Marquee>
+      </div>
     </div>
     <div>
       <p>
