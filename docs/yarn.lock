@@ -4846,10 +4846,10 @@ longest-streak@^3.0.0:
   resolved "https://registry.yarnpkg.com/longest-streak/-/longest-streak-3.1.0.tgz#62fa67cd958742a1574af9f39866364102d90cd4"
   integrity sha512-9Ri+o0JYgehTaVBBDoMqIl8GXtbWg711O3srftcHhZ0dqnETqLaoIK0x17fUw9rFSlK/0NlsKe0Ahhyl5pXE2g==
 
-lottie-web@5.12.1:
-  version "5.12.1"
-  resolved "https://registry.yarnpkg.com/lottie-web/-/lottie-web-5.12.1.tgz#0974eefaf8058c1cba4a05ae67a77894022f9e71"
-  integrity sha512-J5LgeexlmrrzRwe1q4qwQIwJmjih62vatDUPtxquaYVfjvSt/PfNfanhlfSrvdGPr4/nxJ8+uBKlS359Jq4F6w==
+lottie-web@5.12.2:
+  version "5.12.2"
+  resolved "https://registry.yarnpkg.com/lottie-web/-/lottie-web-5.12.2.tgz#579ca9fe6d3fd9e352571edd3c0be162492f68e5"
+  integrity sha512-uvhvYPC8kGPjXT3MyKMrL3JitEAmDMp30lVkuq/590Mw9ok6pWcFCwXJveo0t5uqYw1UREQHofD+jVpdjBv8wg==
 
 lower-case@^2.0.2:
   version "2.0.2"
@@ -8338,12 +8338,12 @@ vue-template-compiler@^2.7.14:
     he "^1.2.0"
 
 vue3-lottie@^2.7.1:
-  version "2.7.1"
-  resolved "https://registry.yarnpkg.com/vue3-lottie/-/vue3-lottie-2.7.1.tgz#1c429753ef6d3786af972b5a688de8c4b628a752"
-  integrity sha512-FWHDhqJxKMFKO+86VeaD9xHFY2h0zUh4VGPwGg1/cLkzWSQhJfLcV48Lf3GMfKpgVlvWNc/C2eoHndmPlc9puA==
+  version "2.7.3"
+  resolved "https://registry.yarnpkg.com/vue3-lottie/-/vue3-lottie-2.7.3.tgz#ab0c710a9a7ea6831f38410fd84021695eeeb493"
+  integrity sha512-1MPrS4Ul+9ixMIvs3YruF7FaykcQ1j+MBElhco0JQRGyguy69VrngI2flhqR5DgM0z4LUAEVhbVurvi9/FI85A==
   dependencies:
     lodash-es "^4.17.21"
-    lottie-web "5.12.1"
+    lottie-web "5.12.2"
 
 vue3-marquee@^3.2.1:
   version "3.2.1"
