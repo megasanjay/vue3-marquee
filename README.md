@@ -8,6 +8,10 @@ A simple marquee component with ZERO dependencies for Vue 3. This component was 
 
 View the live demos here: [https://vue3-marquee.vercel.app/examples](https://vue3-marquee.vercel.app/examples)
 
+## Upgrade to v4.x
+
+If you are using version 3.x of `vue3-marquee` you should upgrade to version 4.x. You can do this by running the [Installation and Usage](#installation-and-usage) command below. This add better support for Typescript. There is also a change with the `dist/style.css` import (it's been removed) so take a look at the [new documentation](https://vue3-marquee.vercel.app/introduction/v4) for instructions on how to migrate to this package.
+
 ## Installation and Usage
 
 ### Vue 3
@@ -32,7 +36,6 @@ The most common use case is to register the component globally.
 // main.js
 import { createApp } from 'vue'
 import Vue3Marquee from 'vue3-marquee'
-import 'vue3-marquee/dist/style.css'
 
 createApp(App).use(Vue3Marquee).mount('#app')
 ```
@@ -49,7 +52,6 @@ Alternatively you can also import the component locally.
 
 ```js
 import { Vue3Marquee } from 'vue3-marquee'
-import 'vue3-marquee/dist/style.css'
 
 export default {
   components: {
@@ -71,7 +73,6 @@ You can then use the component in your template
 
 <script>
 import { Vue3Marquee } from 'vue3-marquee'
-import 'vue3-marquee/dist/style.css'
 
 export default {
   components: {
@@ -108,12 +109,6 @@ export default defineNuxtPlugin((nuxtApp) => {
 ```
 
 This should register as a global component that you can call anywhere in your app under the `<Vue3Marquee>` tag.
-
-- Import the css file required by the component into your **`app.vue`** file.
-
-```js
-import 'vue3-marquee/dist/style.css'
-```
 
 ## Props and options
 
