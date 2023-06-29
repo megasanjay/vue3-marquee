@@ -1,23 +1,23 @@
 {
   "name": "vue3-marquee",
-  "version": "3.2.1",
+  "version": "4.0.0-beta.0",
   "license": "MIT",
   "description": "A simple marquee component with ZERO dependencies for Vue 3",
   "author": "Sanjay Soundarajan <info@sanjaysoundarajan.dev> (https://sanjaysoundarajan.dev)",
+  "type": "module",
   "scripts": {
-    "dev": "vue-cli-service serve dev/serve.ts",
-    "build": "vite build && tsc -d --emitDeclarationOnly && vue-typegen gen -s ./src -o ./dist",
+    "dev": "vite build --watch",
+    "build": "vite build",
+    "dev:build": "vite build && tsc -d --emitDeclarationOnly && vue-typegen gen -s ./src -o ./dist",
     "prepublishOnly": "npm run build",
     "lint": "eslint \"{packages,playground}/**/*.{ts,tsx,vue,js,jsx,html}\"",
     "prettier": "npx prettier --write ."
   },
-  "dependencies": {},
   "peerDependencies": {
     "vue": "^3.2"
   },
   "files": [
-    "dist",
-    "dist/*.css"
+    "dist/*"
   ],
   "repository": {
     "type": "git",
@@ -27,13 +27,14 @@
     "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
-  "main": "dist/vue3-marquee.umd.js",
+  "main": "dist/vue3-marquee.cjs.js",
   "module": "dist/vue3-marquee.es.js",
+  "types": "dist/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
       "import": "./dist/vue3-marquee.es.js",
-      "require": "./dist/vue3-marquee.umd.js"
+      "require": "./dist/vue3-marquee.cjs.js"
     },
     "./dist/style.css": "./dist/style.css"
   },
@@ -41,8 +42,12 @@
     "@babel/types": "7.22.5",
     "@types/node": "18.16.18",
     "@vitejs/plugin-vue": "2.3.4",
+    "@vue/compiler-sfc": "^3.3.4",
     "typescript": "5.0.4",
     "vite": "2.9.16",
+    "vite-plugin-css-injected-by-js": "^3.1.2",
+    "vite-plugin-dts": "^3.0.0-beta.3",
+    "vite-plugin-vue-type-imports": "^0.2.4",
     "vue": "3.3.4",
     "vue-tsc": "0.40.13",
     "vue-typegen": "0.2.0"
