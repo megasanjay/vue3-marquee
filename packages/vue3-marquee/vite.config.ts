@@ -1,13 +1,26 @@
-import { resolve } from 'path'
+import { resolve } from 'node:path'
 import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
+import Vue from '@vitejs/plugin-vue'
+import VueTypeImports from 'vite-plugin-vue-type-imports'
+import cssInjectedByJsPlugin from 'vite-plugin-css-injected-by-js'
+import dts from 'vite-plugin-dts'
 
 export default defineConfig({
-  plugins: [vue()],
+  plugins: [
+    Vue(),
+    VueTypeImports(),
+    cssInjectedByJsPlugin(),
+    dts({
+      insertTypesEntry: true,
+      copyDtsFiles: false,
+      cleanVueFileName: true,
+    }),
+  ],
   build: {
     lib: {
       entry: resolve(__dirname, './src/index.ts'),
-      name: 'vue3-marquee',
+      name: 'vue3marquee',
+      formats: ['es', 'cjs'],
     },
     outDir: 'dist',
     rollupOptions: {
@@ -19,8 +32,5 @@ export default defineConfig({
         },
       },
     },
-  },
-  define: {
-    VERSION: JSON.stringify(require('./package.json').version),
   },
 })
