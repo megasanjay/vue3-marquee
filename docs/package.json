@@ -1,6 +1,6 @@
 {
-  "name": "docus-starter",
-  "version": "0.1.0",
+  "name": "vue3-marquee-documentation",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "nuxi dev",
