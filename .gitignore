@@ -22,3 +22,4 @@ yarn-error.log*
 
 docs/package-lock.json
 packages/vue3-marquee/dist/
+packages/vue3-marquee/vue3-marquee-4.0.0.tgz
