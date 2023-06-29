@@ -10,5 +10,5 @@
     "moduleResolution": "node",
     "types": ["vite/client"]
   },
-  "include": ["src", "*.d.ts"],
+  "include": ["src", "*.d.ts"]
 }
