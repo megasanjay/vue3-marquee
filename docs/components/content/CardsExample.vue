@@ -11,7 +11,6 @@
 </template>
 
 <script setup>
-import 'vue3-marquee/dist/style.css'
 const avatarArray = reactive([])
 
 for (let i = 0; i < 5; i++) {

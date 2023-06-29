@@ -15,8 +15,6 @@
 </template>
 
 <script setup>
-import 'vue3-marquee/dist/style.css'
-
 const colorMode = useColorMode()
 
 const imgArray = [

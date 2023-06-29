@@ -17,8 +17,6 @@
 </template>
 
 <script setup>
-import 'vue3-marquee/dist/style.css'
-
 const avatarArray = reactive([])
 const playState = ref('playing')
 

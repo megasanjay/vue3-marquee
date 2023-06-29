@@ -12,8 +12,6 @@
 </template>
 
 <script setup>
-import 'vue3-marquee/dist/style.css'
-
 const helloArray = [
   'hello',
   'こんにちは',

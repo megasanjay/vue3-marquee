@@ -11,7 +11,6 @@
 </template>
 
 <script setup>
-import 'vue3-marquee/dist/style.css'
 const imgArray = [
   'https://sponsors.vuejs.org/images/layer0.avif',
   'https://sponsors.vuejs.org/images/plaid__inc_.svg',
