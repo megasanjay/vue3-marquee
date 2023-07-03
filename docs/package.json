@@ -19,7 +19,7 @@
     "nuxt": "^3.5.3"
   },
   "dependencies": {
-    "vue3-lottie": "^2.7.1",
+    "vue3-lottie": "^3.0.0",
     "vue3-marquee": "4.0.0"
   }
 }
