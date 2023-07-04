@@ -28,7 +28,7 @@ importers:
   packages/vue3-marquee:
     specifiers:
       '@babel/types': 7.22.5
-      '@types/node': 18.16.18
+      '@types/node': 18.16.19
       '@vitejs/plugin-vue': 2.3.4
       '@vue/compiler-sfc': ^3.3.4
       typescript: 5.0.4
@@ -41,13 +41,13 @@ importers:
       vue-typegen: 0.2.0
     devDependencies:
       '@babel/types': 7.22.5
-      '@types/node': 18.16.18
+      '@types/node': 18.16.19
       '@vitejs/plugin-vue': 2.3.4_vite@2.9.16+vue@3.3.4
       '@vue/compiler-sfc': 3.3.4
       typescript: 5.0.4
       vite: 2.9.16
       vite-plugin-css-injected-by-js: 3.1.2_vite@2.9.16
-      vite-plugin-dts: 3.0.0-beta.3_e5096deb022bb453f8c88fc7e136a794
+      vite-plugin-dts: 3.0.0-beta.3_c04053ce4cf43844f331fc89bb7c1066
       vite-plugin-vue-type-imports: 0.2.4_vite@2.9.16+vue@3.3.4
       vue: 3.3.4
       vue-tsc: 0.40.13_typescript@5.0.4
@@ -81,24 +81,24 @@ packages:
   /@jridgewell/sourcemap-codec/1.4.15:
     resolution: {integrity: sha512-eF2rxCRulEKXHTRiDrDy6erMYWqNw4LPdQ8UQA4huuxaQsVeRPFl2oM8oDGxMFhJUWZf9McpLtJasDDZb/Bpeg==}
 
-  /@microsoft/api-extractor-model/7.27.3_@types+node@18.16.18:
+  /@microsoft/api-extractor-model/7.27.3_@types+node@18.16.19:
     resolution: {integrity: sha512-fSFvw7otYHduOkyshjTbapKKgwF8bgquVHvgF8VgeKtMYvqXkoaj7W6VcM7PNY7E2bbblhUgC4XNdqZLD4SJGw==}
     dependencies:
       '@microsoft/tsdoc': 0.14.2
       '@microsoft/tsdoc-config': 0.16.2
-      '@rushstack/node-core-library': 3.59.4_@types+node@18.16.18
+      '@rushstack/node-core-library': 3.59.4_@types+node@18.16.19
     transitivePeerDependencies:
       - '@types/node'
     dev: true
 
-  /@microsoft/api-extractor/7.36.0_@types+node@18.16.18:
+  /@microsoft/api-extractor/7.36.0_@types+node@18.16.19:
     resolution: {integrity: sha512-P+kYgJFDXIr+UNzhRMhlpM/dderi6ab4lxn35vdhfAIMPtGCSXIJxrrtpTOQmQW8CZtmoZX06LYoUsKCc1zjow==}
     hasBin: true
     dependencies:
-      '@microsoft/api-extractor-model': 7.27.3_@types+node@18.16.18
+      '@microsoft/api-extractor-model': 7.27.3_@types+node@18.16.19
       '@microsoft/tsdoc': 0.14.2
       '@microsoft/tsdoc-config': 0.16.2
-      '@rushstack/node-core-library': 3.59.4_@types+node@18.16.18
+      '@rushstack/node-core-library': 3.59.4_@types+node@18.16.19
       '@rushstack/rig-package': 0.4.0
       '@rushstack/ts-command-line': 4.15.1
       colors: 1.2.5
@@ -160,7 +160,7 @@ packages:
       rollup: 2.67.3
     dev: true
 
-  /@rushstack/node-core-library/3.59.4_@types+node@18.16.18:
+  /@rushstack/node-core-library/3.59.4_@types+node@18.16.19:
     resolution: {integrity: sha512-YAKJDC6Mz/KA1D7bvB88WaRX3knt/ZuLzkRu5G9QADGSjLtvTWzCNCytRF2PCSaaHOZaZsWul4F1KQdgFgUDqA==}
     peerDependencies:
       '@types/node': '*'
@@ -168,7 +168,7 @@ packages:
       '@types/node':
         optional: true
     dependencies:
-      '@types/node': 18.16.18
+      '@types/node': 18.16.19
       colors: 1.2.5
       fs-extra: 7.0.1
       import-lazy: 4.0.0
@@ -202,8 +202,8 @@ packages:
     resolution: {integrity: sha512-LG4opVs2ANWZ1TJoKc937iMmNstM/d0ae1vNbnBvBhqCSezgVUOzcLCqbI5elV8Vy6WKwKjaqR+zO9VKirBBCA==}
     dev: true
 
-  /@types/node/18.16.18:
-    resolution: {integrity: sha512-/aNaQZD0+iSBAGnvvN2Cx92HqE5sZCPZtx2TsK+4nvV23fFe09jVDvpArXr2j9DnYlzuU9WuoykDDc6wqvpNcw==}
+  /@types/node/18.16.19:
+    resolution: {integrity: sha512-IXl7o+R9iti9eBW4Wg2hx1xQDig183jj7YLn8F7udNceyfkbn1ZxmzZXuak20gR40D7pIkIY1kYGx5VIGbaHKA==}
     dev: true
 
   /@vitejs/plugin-vue/2.3.4_vite@2.9.16+vue@3.3.4:
@@ -1099,15 +1099,15 @@ packages:
       vite: 2.9.16
     dev: true
 
-  /vite-plugin-dts/3.0.0-beta.3_e5096deb022bb453f8c88fc7e136a794:
+  /vite-plugin-dts/3.0.0-beta.3_c04053ce4cf43844f331fc89bb7c1066:
     resolution: {integrity: sha512-01cyoNH4811NW1ITde+RDvkU4w7EBap54/Rj0CDb7Ayu0SfwPy5OvJtR2NZZA2fqnXDX9y5NeaS1hzzHpJ2tVQ==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
       typescript: '*'
     dependencies:
-      '@microsoft/api-extractor': 7.36.0_@types+node@18.16.18
+      '@microsoft/api-extractor': 7.36.0_@types+node@18.16.19
       '@rollup/pluginutils': 5.0.2_rollup@2.67.3
-      '@rushstack/node-core-library': 3.59.4_@types+node@18.16.18
+      '@rushstack/node-core-library': 3.59.4_@types+node@18.16.19
       '@vue/language-core': 1.8.3_typescript@5.0.4
       debug: 4.3.4
       kolorist: 1.8.0
