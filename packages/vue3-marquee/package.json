@@ -40,7 +40,7 @@
   },
   "devDependencies": {
     "@babel/types": "7.22.5",
-    "@types/node": "18.17.0",
+    "@types/node": "18.17.1",
     "@vitejs/plugin-vue": "2.3.4",
     "@vue/compiler-sfc": "^3.3.4",
     "typescript": "5.0.4",
