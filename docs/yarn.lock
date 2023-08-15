@@ -934,19 +934,19 @@
   resolved "https://registry.yarnpkg.com/@nuxt/devalue/-/devalue-2.0.2.tgz#5749f04df13bda4c863338d8dabaf370f45ef7c7"
   integrity sha512-GBzP8zOc7CGWyFQS6dv1lQz8VVpz5C2yRszbXufwG/9zhStTIH50EtD87NmWbTMwXDvZLNg8GIpb1UFdH93JCA==
 
-"@nuxt/devtools-kit@0.7.6":
-  version "0.7.6"
-  resolved "https://registry.yarnpkg.com/@nuxt/devtools-kit/-/devtools-kit-0.7.6.tgz#9577c64872c15b5153314e8c308d1424f37c485c"
-  integrity sha512-2jSQ1rgStZifRHtfsdqmmvq/O5NskLCwg34JPchBRAx9Kv5IadABlBIWz1jLuaGarI/jsEEAmA5EpfxI5z/PJQ==
+"@nuxt/devtools-kit@0.8.0":
+  version "0.8.0"
+  resolved "https://registry.yarnpkg.com/@nuxt/devtools-kit/-/devtools-kit-0.8.0.tgz#2d987a5a3794b3ba59f50c45ffc94df84b18e791"
+  integrity sha512-zHwotLFwmYPFDg0JHyInn0L3i2gZK24JYDfgOzqBuvCD/Q3ytQVyAMrX2Mp4iIrHjwToZBJ0dlyV+UYXCiWwSg==
   dependencies:
     "@nuxt/kit" "^3.6.5"
     "@nuxt/schema" "^3.6.5"
     execa "^7.2.0"
 
-"@nuxt/devtools-wizard@0.7.6":
-  version "0.7.6"
-  resolved "https://registry.yarnpkg.com/@nuxt/devtools-wizard/-/devtools-wizard-0.7.6.tgz#b891f07715eda7e2b19186f57a09b0a004455bc3"
-  integrity sha512-XCznlUTk66ApYJygGc+6FVborAp2F4PAIvY4b6dVSUf1f47Hs3CPe6eEdatarmEqiTmFMInaX4y8z1hDXrFF0Q==
+"@nuxt/devtools-wizard@0.8.0":
+  version "0.8.0"
+  resolved "https://registry.yarnpkg.com/@nuxt/devtools-wizard/-/devtools-wizard-0.8.0.tgz#2dc61ec7a79c996960a337a5b7f124de331e1229"
+  integrity sha512-nxYAB4TQgeaoYY3xBEzrYVpXzXUAwoeCui0vqu1oTeeuKnl62uXFGsY4vXMHQtnibvbQVZzNFVFoXggKM3MBGw==
   dependencies:
     consola "^3.2.3"
     diff "^5.1.0"
@@ -960,13 +960,13 @@
     rc9 "^2.1.1"
     semver "^7.5.4"
 
-"@nuxt/devtools@^0.7.0":
-  version "0.7.6"
-  resolved "https://registry.yarnpkg.com/@nuxt/devtools/-/devtools-0.7.6.tgz#0fa1bafd147ce72dbc316a2bc34852e0dd12c60e"
-  integrity sha512-2x/eS0KbzTCK4+OozSZTcbjndM2ySy84MltF/suwLP7Wp/ehY8vzRp+yMTksxLjsf0sbiAa4K8WJCzKd8wLXxA==
+"@nuxt/devtools@^0.8.0":
+  version "0.8.0"
+  resolved "https://registry.yarnpkg.com/@nuxt/devtools/-/devtools-0.8.0.tgz#38a0c1977007b4e17fcd9ce9ac765cce407bd004"
+  integrity sha512-w48eqZ52NLVB8C0Q1E/eY0xsokMr9diOaxUptO08UYNhyj+MKKBrhIBTePYO7GlxabXOaHM62zi+iN8AT1qXoA==
   dependencies:
-    "@nuxt/devtools-kit" "0.7.6"
-    "@nuxt/devtools-wizard" "0.7.6"
+    "@nuxt/devtools-kit" "0.8.0"
+    "@nuxt/devtools-wizard" "0.8.0"
     "@nuxt/kit" "^3.6.5"
     birpc "^0.2.12"
     boxen "^7.1.1"
