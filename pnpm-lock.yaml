@@ -27,7 +27,7 @@ importers:
 
   packages/vue3-marquee:
     specifiers:
-      '@babel/types': 7.22.10
+      '@babel/types': 7.22.11
       '@types/node': 18.17.5
       '@vitejs/plugin-vue': 2.3.4
       '@vue/compiler-sfc': ^3.3.4
@@ -40,7 +40,7 @@ importers:
       vue-tsc: 0.40.13
       vue-typegen: 0.2.0
     devDependencies:
-      '@babel/types': 7.22.10
+      '@babel/types': 7.22.11
       '@types/node': 18.17.5
       '@vitejs/plugin-vue': 2.3.4_vite@2.9.16+vue@3.3.4
       '@vue/compiler-sfc': 3.3.4
@@ -68,10 +68,10 @@ packages:
     engines: {node: '>=6.0.0'}
     hasBin: true
     dependencies:
-      '@babel/types': 7.22.10
+      '@babel/types': 7.22.11
 
-  /@babel/types/7.22.10:
-    resolution: {integrity: sha512-obaoigiLrlDZ7TUQln/8m4mSqIW2QFeOrCQc9r+xsaHGNoplVNYlRVpsfE8Vj35GEm2ZH4ZhrNYogs/3fj85kg==}
+  /@babel/types/7.22.11:
+    resolution: {integrity: sha512-siazHiGuZRz9aB9NpHy9GOs9xiQPKnMzgdr493iI1M67vRXpnEq8ZOOKzezC5q7zwuQ6sDhdSp4SD9ixKSqKZg==}
     engines: {node: '>=6.9.0'}
     dependencies:
       '@babel/helper-string-parser': 7.22.5
@@ -1130,7 +1130,7 @@ packages:
       vite: ^3.0.0
       vue: ^2.7.0 || ^3.2.24
     dependencies:
-      '@babel/types': 7.22.10
+      '@babel/types': 7.22.11
       '@vue/compiler-sfc': 3.3.4
       debug: 4.3.4
       fast-glob: 3.2.12
