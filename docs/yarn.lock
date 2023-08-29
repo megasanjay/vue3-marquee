@@ -8458,9 +8458,9 @@ vue-template-compiler@^2.7.14:
     he "^1.2.0"
 
 vue3-lottie@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/vue3-lottie/-/vue3-lottie-3.0.0.tgz#371c2187481c493ed145f385d9ba6477ea0e3836"
-  integrity sha512-1HZhpKyqlj5jOwO2JTERJOXuJBYqnz/wnkeHjAmn7yI95ize62XQImP226/0G3+c5T3Oj//vIwyMJ2Zhsd8fwg==
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/vue3-lottie/-/vue3-lottie-3.1.0.tgz#39e2a595a83a7401f3308dfc923b28b0bb91a214"
+  integrity sha512-dS6/cjEuAoN/CWYqthPjGVVaeW5jRVB1yGEcFQbBcbDfCeMlVhC7pzn0Qatdz7gasOUIvZcJCmhfUe681GwhSg==
   dependencies:
     lodash-es "^4.17.21"
     lottie-web "5.12.2"
