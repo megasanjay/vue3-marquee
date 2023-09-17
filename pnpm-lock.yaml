@@ -27,7 +27,7 @@ importers:
 
   packages/vue3-marquee:
     specifiers:
-      '@babel/types': 7.22.17
+      '@babel/types': 7.22.19
       '@types/node': 18.17.5
       '@vitejs/plugin-vue': 2.3.4
       '@vue/compiler-sfc': ^3.3.4
@@ -40,7 +40,7 @@ importers:
       vue-tsc: 0.40.13
       vue-typegen: 0.2.0
     devDependencies:
-      '@babel/types': 7.22.17
+      '@babel/types': 7.22.19
       '@types/node': 18.17.5
       '@vitejs/plugin-vue': 2.3.4_vite@2.9.16+vue@3.3.4
       '@vue/compiler-sfc': 3.3.4
@@ -59,8 +59,8 @@ packages:
     resolution: {integrity: sha512-mM4COjgZox8U+JcXQwPijIZLElkgEpO5rsERVDJTc2qfCDfERyob6k5WegS14SX18IIjv+XD+GrqNumY5JRCDw==}
     engines: {node: '>=6.9.0'}
 
-  /@babel/helper-validator-identifier/7.22.15:
-    resolution: {integrity: sha512-4E/F9IIEi8WR94324mbDUMo074YTheJmd7eZF5vITTeYchqAi6sYXRLHUVsmkdmY4QjfKTcB2jB7dVP3NaBElQ==}
+  /@babel/helper-validator-identifier/7.22.20:
+    resolution: {integrity: sha512-Y4OZ+ytlatR8AI+8KZfKuL5urKp7qey08ha31L8b3BwewJAoJamTzyvxPR/5D+KkdJCGPq/+8TukHBlY10FX9A==}
     engines: {node: '>=6.9.0'}
 
   /@babel/parser/7.21.8:
@@ -68,14 +68,14 @@ packages:
     engines: {node: '>=6.0.0'}
     hasBin: true
     dependencies:
-      '@babel/types': 7.22.17
+      '@babel/types': 7.22.19
 
-  /@babel/types/7.22.17:
-    resolution: {integrity: sha512-YSQPHLFtQNE5xN9tHuZnzu8vPr61wVTBZdfv1meex1NBosa4iT05k/Jw06ddJugi4bk7The/oSwQGFcksmEJQg==}
+  /@babel/types/7.22.19:
+    resolution: {integrity: sha512-P7LAw/LbojPzkgp5oznjE6tQEIWbp4PkkfrZDINTro9zgBRtI324/EYsiSI7lhPbpIQ+DCeR2NNmMWANGGfZsg==}
     engines: {node: '>=6.9.0'}
     dependencies:
       '@babel/helper-string-parser': 7.22.5
-      '@babel/helper-validator-identifier': 7.22.15
+      '@babel/helper-validator-identifier': 7.22.20
       to-fast-properties: 2.0.0
 
   /@jridgewell/sourcemap-codec/1.4.15:
@@ -1130,7 +1130,7 @@ packages:
       vite: ^3.0.0
       vue: ^2.7.0 || ^3.2.24
     dependencies:
-      '@babel/types': 7.22.17
+      '@babel/types': 7.22.19
       '@vue/compiler-sfc': 3.3.4
       debug: 4.3.4
       fast-glob: 3.2.12
