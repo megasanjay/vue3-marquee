@@ -28,9 +28,9 @@
   integrity sha512-7NF8pOkHP5o2vpmGgNGcfAeCvOYhGLyA3Z4eBQkT1RJlWu47n63bCs93QfJ2hIAFCil7L5P2IWhs1oToVgrL0Q==
 
 "@babel/parser@^7.21.3":
-  version "7.22.11"
-  resolved "https://registry.yarnpkg.com/@babel/parser/-/parser-7.22.11.tgz#becf8ee33aad2a35ed5607f521fe6e72a615f905"
-  integrity sha512-R5zb8eJIBPJriQtbH/htEQy4k7E2dHWlD2Y2VT07JCzwYZHBxV5ZYtM0UhXSNMT74LyxuM+b1jdL7pSesXbC/g==
+  version "7.22.13"
+  resolved "https://registry.yarnpkg.com/@babel/parser/-/parser-7.22.13.tgz#23fb17892b2be7afef94f573031c2f4b42839a2b"
+  integrity sha512-3l6+4YOvc9wx7VlCSw4yQfcBo01ECA8TicQfbnCPuCEpRQrf+gTUyGdxNw+pyTUyywp6JRD1w0YQs9TpBXYlkw==
 
 "@babel/types@7.22.19":
   version "7.22.19"
@@ -64,7 +64,7 @@
     "@microsoft/tsdoc-config" "~0.16.1"
     "@rushstack/node-core-library" "3.59.7"
 
-"@microsoft/api-extractor@^7.36.3":
+"@microsoft/api-extractor@^7.36.4":
   version "7.36.4"
   resolved "https://registry.yarnpkg.com/@microsoft/api-extractor/-/api-extractor-7.36.4.tgz#3bb9fbbbeacaa48eea49150351905a2677a506d9"
   integrity sha512-21UECq8C/8CpHT23yiqTBQ10egKUacIpxkPyYR7hdswo/M5yTWdBvbq+77YC9uPKQJOUfOD1FImBQ1DzpsdeQQ==
@@ -1082,11 +1082,11 @@ vite-plugin-css-injected-by-js@^3.1.2:
   integrity sha512-xG+jyHNCmUqi/TXp6q88wTJGeAOrNLSyUUTp4qEQ9QZLGcHWQQsCsSSKa59rPMQr8sOzfzmWDd8enGqfH/dBew==
 
 vite-plugin-dts@^3.0.0-beta.3:
-  version "3.5.2"
-  resolved "https://registry.yarnpkg.com/vite-plugin-dts/-/vite-plugin-dts-3.5.2.tgz#429612f727f1bf4eff1f22e29c04b52a75d398b8"
-  integrity sha512-iKc851+jdHEoN1ifbOEsoMs+/Zg26PE1EyO2Jc+4apOWRoaeK2zRJnaStgUuJaVaEcAjTqWzpNgCAMq7iO6DWA==
+  version "3.5.3"
+  resolved "https://registry.yarnpkg.com/vite-plugin-dts/-/vite-plugin-dts-3.5.3.tgz#602dca3ceb5e56bed1b9ec32d92d4c24d049581d"
+  integrity sha512-h94j/+SR1PhLR9jnEtcjZILagE2QZBAV8V1y3T2Ujcet1VI0Et4dZSU1W8fbnp6obB7B3/b8hArqdi2/9HuH+w==
   dependencies:
-    "@microsoft/api-extractor" "^7.36.3"
+    "@microsoft/api-extractor" "^7.36.4"
     "@rollup/pluginutils" "^5.0.2"
     "@vue/language-core" "^1.8.8"
     debug "^4.3.4"
