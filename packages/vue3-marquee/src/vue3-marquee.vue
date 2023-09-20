@@ -125,7 +125,7 @@ export default defineComponent({
       type: Boolean as PropType<MarqueeProps['pauseOnClick']>,
       default: false,
     },
-    
+
     pause: {
       type: Boolean as PropType<MarqueeProps['pause']>,
       default: false,
@@ -279,7 +279,9 @@ export default defineComponent({
         '--direction': `${props.direction}`,
         '--pauseOnHover': `${props.pauseOnHover ? 'paused' : 'running'}`,
         '--pauseOnClick': `${props.pauseOnClick ? 'paused' : 'running'}`,
-        '--pauseAnimation': `${pauseAnimation.value||props.pause ? 'paused' : 'running'}`,
+        '--pauseAnimation': `${
+          pauseAnimation.value || props.pause ? 'paused' : 'running'
+        }`,
         '--loops': `${props.loop === 0 ? 'infinite' : props.loop}`,
         '--gradient-color': `rgba(${props.gradientColor[0]}, ${props.gradientColor[1]}, ${props.gradientColor[2]}, 1), rgba(${props.gradientColor[0]}, ${props.gradientColor[1]}, ${props.gradientColor[2]}, 0)`,
         '--gradient-length': `${gradientLength.value}`,
