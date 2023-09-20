@@ -4,72 +4,104 @@
 
     <div>
       <p>Default</p>
+
       <Vue3Marquee>
         <img v-for="i in img_30" :key="i" height="80" :src="i" />
       </Vue3Marquee>
     </div>
+
     <div>
       <p>Duration: 10s</p>
+
       <Vue3Marquee :duration="10">
         <img v-for="i in img_30" :key="i" height="80" :src="i" />
       </Vue3Marquee>
     </div>
+
     <div>
       <p>Direction: reverse</p>
+
       <Vue3Marquee direction="reverse">
         <img v-for="i in img_30" :key="i" height="80" :src="i" />
       </Vue3Marquee>
     </div>
+
+    <div>
+      <p>pauseAnimation</p>
+
+      <Vue3Marquee direction="reverse" :pauseAnimation="playState">
+        <img v-for="i in img_30" :key="i" height="80" :src="i" />
+      </Vue3Marquee>
+
+      <button @click="togglePlayState">Pause</button>
+    </div>
+
     <div>
       <p>Pause on hover</p>
+
       <Vue3Marquee :pause-on-hover="true">
         <img v-for="i in img_30" :key="i" height="80" :src="i" />
       </Vue3Marquee>
     </div>
+
     <div>
       <p>Pause on click</p>
+
       <Vue3Marquee :pause-on-click="true">
         <img v-for="i in img_30" :key="i" height="80" :src="i" />
       </Vue3Marquee>
     </div>
+
     <div>
       <p>Gradient</p>
+
       <Vue3Marquee :gradient="true">
         <img v-for="i in img_30" :key="i" height="80" :src="i" />
       </Vue3Marquee>
     </div>
+
     <div>
       <p>Gradient color: [78, 205, 196]</p>
+
       <Vue3Marquee :gradient="true" :gradient-color="[78, 205, 196]">
         <img v-for="i in img_30" :key="i" height="80" :src="i" />
       </Vue3Marquee>
     </div>
+
     <div>
       <p>Gradient width: 600px</p>
+
       <Vue3Marquee :gradient="true" gradient-width="600px">
         <img v-for="i in img_30" :key="i" height="80" :src="i" />
       </Vue3Marquee>
     </div>
+
     <div>
       <p>Gradient Length: 600px</p>
+
       <Vue3Marquee :gradient="true" gradient-length="600px">
         <img v-for="i in img_30" :key="i" height="80" :src="i" />
       </Vue3Marquee>
     </div>
+
     <div>
       <p>clone</p>
+
       <Vue3Marquee :clone="true" :duration="5">
         <img v-for="i in img_5" :key="i" height="80" :src="i" />
       </Vue3Marquee>
     </div>
+
     <div>
       <p>Vertical</p>
+
       <div style="height: 500px; width: max-content">
         <Vue3Marquee :vertical="true">
           <img v-for="i in img_30" :key="i" height="50" :src="i" />
         </Vue3Marquee>
       </div>
     </div>
+
     <div>
       <p>
         Fix for issue:
@@ -79,6 +111,7 @@
           >vue3-marquee#13</a
         >
       </p>
+
       <div style="display: flex">
         <Vue3Marquee :clone="true" :duration="1"> 123 </Vue3Marquee>
       </div>
@@ -100,6 +133,7 @@ export default defineComponent({
     return {
       img_30: this.getImgURLS(30),
       img_5: this.getImgURLS(5),
+      playState: false,
     }
   },
   methods: {
@@ -113,6 +147,9 @@ export default defineComponent({
         array.push(this.generateRandomString())
       }
       return array
+    },
+    togglePlayState() {
+      this.playState = !this.playState
     },
   },
 })

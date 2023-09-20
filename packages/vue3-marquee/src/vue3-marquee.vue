@@ -63,7 +63,7 @@ export interface MarqueeProps {
   gradientLength: string
   pauseOnHover: boolean
   pauseOnClick: boolean
-  pause: boolean
+  pauseAnimation: boolean
 }
 
 export default defineComponent({
@@ -125,9 +125,9 @@ export default defineComponent({
       type: Boolean as PropType<MarqueeProps['pauseOnClick']>,
       default: false,
     },
-    
-    pause: {
-      type: Boolean as PropType<MarqueeProps['pause']>,
+
+    pauseAnimation: {
+      type: Boolean as PropType<MarqueeProps['pauseAnimation']>,
       default: false,
     },
   },
@@ -142,7 +142,7 @@ export default defineComponent({
 
     const componentKey = ref(0)
 
-    const pauseAnimation = ref(false)
+    const verticalAnimationPause = ref(false)
 
     const containerWidth = ref(0)
     const contentWidth = ref(0)
@@ -169,7 +169,7 @@ export default defineComponent({
     const checkForClone = async () => {
       if (props.vertical) {
         // pause the animation to prevent flickering
-        pauseAnimation.value = true
+        verticalAnimationPause.value = true
       }
 
       setInterval(() => {
@@ -198,7 +198,7 @@ export default defineComponent({
                 : 0
 
               // resume the animation
-              pauseAnimation.value = false
+              verticalAnimationPause.value = false
 
               return cloneAmount.value
             } else if (
@@ -248,6 +248,22 @@ export default defineComponent({
       }
     })
 
+    console.log('props.pauseAnimation', props.pauseAnimation)
+
+    // watch pauseAnimation for emitting events
+    watch(
+      () => props.pauseAnimation,
+      (newVal, oldVal) => {
+        if (newVal !== oldVal) {
+          if (newVal) {
+            emit('onResume')
+          } else {
+            emit('onPause')
+          }
+        }
+      },
+    )
+
     const hoverStarted = () => {
       if (props.pauseOnHover) {
         emit('onPause')
@@ -279,7 +295,11 @@ export default defineComponent({
         '--direction': `${props.direction}`,
         '--pauseOnHover': `${props.pauseOnHover ? 'paused' : 'running'}`,
         '--pauseOnClick': `${props.pauseOnClick ? 'paused' : 'running'}`,
-        '--pauseAnimation': `${pauseAnimation.value||props.pause ? 'paused' : 'running'}`,
+        '--pauseAnimation': `${
+          verticalAnimationPause.value || props.pauseAnimation
+            ? 'paused'
+            : 'running'
+        }`,
         '--loops': `${props.loop === 0 ? 'infinite' : props.loop}`,
         '--gradient-color': `rgba(${props.gradientColor[0]}, ${props.gradientColor[1]}, ${props.gradientColor[2]}, 1), rgba(${props.gradientColor[0]}, ${props.gradientColor[1]}, ${props.gradientColor[2]}, 0)`,
         '--gradient-length': `${gradientLength.value}`,
