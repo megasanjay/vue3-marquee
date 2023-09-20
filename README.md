@@ -123,6 +123,7 @@ More detailed explanations are provided in the [documentation](https://vue3-marq
 | gradient       | Boolean                                | false           | Whether to show a gradient overlay                                                     |
 | gradientColor  | Array of 3 RGB values                  | [255, 255, 255] | The RGB colors for the color of the gradient                                           |
 | gradientLength | String                                 | 200px           | Length of portion of the container edges that should be taken by the gradient overlay  |
+| pause          | Boolean                                | false           | A reactive prop to pause the marquee                                                   |
 | pauseOnHover   | Boolean                                | false           | Whether to pause the marquee on hover                                                  |
 | pauseOnClick   | Boolean                                | false           | Whether to pause the marquee when you hold the right click button                      |
 | clone          | Boolean                                | false           | Whether to clone the content if you want no empty spaces in the animation              |
