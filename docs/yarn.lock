@@ -8661,10 +8661,10 @@ vue3-lottie@^3.0.0:
     lodash-es "^4.17.21"
     lottie-web "5.12.2"
 
-vue3-marquee@4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/vue3-marquee/-/vue3-marquee-4.0.0.tgz#137002148db3d81eead68e989fd4fcf37e9421b6"
-  integrity sha512-/CPyAi0TQM2Cdcf8PBT/A7uXRVHHncN3MyKRcFBqkj5ph2tlVk08D5K6fyY2S5tYscgLJc3ma2vhPTrrkZih1A==
+vue3-marquee@4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/vue3-marquee/-/vue3-marquee-4.1.0.tgz#145baa65dd40059358e4079d51ab596c2ccf1299"
+  integrity sha512-AkvpNC6+7CwvIBgiAr8qMs1XvhGhfSS2ahlMEp80YXAmDOP8nDdn/smQ6eWtusf+hLX21yTaSOoKGcill4bCRg==
 
 vue@^3.3.4:
   version "3.3.4"

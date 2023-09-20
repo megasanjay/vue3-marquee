@@ -142,4 +142,8 @@ A few events are emitted from the component. Look at the [Demos](#demos) for exa
 - onResume
   - This event is emitted if you have either `pauseOnHover` or `pauseOnClick` enabled. It will notify if the animation resumes.
 
-[![forthebadge](https://forthebadge.com/images/badges/made-with-vue.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
+## Credits
+
+- [@krishnaguragain](https://github.com/krishnaguragain) - PR [#217](https://github.com/megasanjay/vue3-marquee/pull/217) - Add the `pause` prop
+
+[![forthebadge](https://forthebadge.shorty.systems/images/badges/made-with-vue.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.shorty.systems/images/badges/built-with-love.svg)](https://forthebadge.com)
