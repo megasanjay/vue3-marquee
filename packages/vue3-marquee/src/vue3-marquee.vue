@@ -126,7 +126,7 @@ export default defineComponent({
       default: false,
     },
 
-    pauseAnimation: {
+    pause: {
       type: Boolean as PropType<MarqueeProps['pauseAnimation']>,
       default: false,
     },
@@ -247,8 +247,6 @@ export default defineComponent({
         ForcesUpdate()
       }
     })
-
-    console.log('props.pauseAnimation', props.pauseAnimation)
 
     // watch pauseAnimation for emitting events
     watch(
