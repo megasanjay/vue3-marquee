@@ -63,7 +63,7 @@ export interface MarqueeProps {
   gradientLength: string
   pauseOnHover: boolean
   pauseOnClick: boolean
-  pauseAnimation: boolean
+  pause: boolean
 }
 
 export default defineComponent({
@@ -127,7 +127,7 @@ export default defineComponent({
     },
 
     pause: {
-      type: Boolean as PropType<MarqueeProps['pauseAnimation']>,
+      type: Boolean as PropType<MarqueeProps['pause']>,
       default: false,
     },
   },
@@ -250,7 +250,7 @@ export default defineComponent({
 
     // watch pauseAnimation for emitting events
     watch(
-      () => props.pauseAnimation,
+      () => props.pause,
       (newVal, oldVal) => {
         if (newVal !== oldVal) {
           if (newVal) {
@@ -294,7 +294,7 @@ export default defineComponent({
         '--pauseOnHover': `${props.pauseOnHover ? 'paused' : 'running'}`,
         '--pauseOnClick': `${props.pauseOnClick ? 'paused' : 'running'}`,
         '--pauseAnimation': `${
-          verticalAnimationPause.value || props.pauseAnimation
+          (props.vertical && verticalAnimationPause.value) || props.pause
             ? 'paused'
             : 'running'
         }`,

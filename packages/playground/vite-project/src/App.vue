@@ -29,7 +29,7 @@
     <div>
       <p>pauseAnimation</p>
 
-      <Vue3Marquee direction="reverse" :pauseAnimation="playState">
+      <Vue3Marquee direction="reverse" :pause="playState">
         <img v-for="i in img_30" :key="i" height="80" :src="i" />
       </Vue3Marquee>
 
@@ -95,8 +95,8 @@
     <div>
       <p>Vertical</p>
 
-      <div style="height: 500px; width: max-content">
-        <Vue3Marquee :vertical="true">
+      <div style="height: 200px; width: max-content">
+        <Vue3Marquee :vertical="true" :pause="playState">
           <img v-for="i in img_30" :key="i" height="50" :src="i" />
         </Vue3Marquee>
       </div>

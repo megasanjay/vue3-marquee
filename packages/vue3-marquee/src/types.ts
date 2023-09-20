@@ -11,5 +11,5 @@ export interface MarqueeProps {
   gradientLength: string
   pauseOnHover: boolean
   pauseOnClick: boolean
-  pauseAnimation: boolean
+  pause: boolean
 }
