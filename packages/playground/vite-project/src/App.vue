@@ -106,6 +106,51 @@
       <p>
         Fix for issue:
         <a
+          href="https://github.com/megasanjay/vue3-marquee/issues/264"
+          target="__blank"
+          >vue3-marquee#264</a
+        >
+      </p>
+
+      <div>
+        <Vue3Marquee :clone="true">
+          <div
+            style="
+              display: flex;
+              margin-right: 2rem;
+              justify-content: center;
+              align-items: center;
+              border-radius: 9999px;
+              width: 4rem;
+              height: 4rem;
+              background: gainsboro;
+            "
+          >
+            hello
+          </div>
+
+          <div
+            style="
+              display: flex;
+              margin-right: 2rem;
+              justify-content: center;
+              align-items: center;
+              border-radius: 9999px;
+              width: 4rem;
+              height: 4rem;
+              background: gainsboro;
+            "
+          >
+            bye
+          </div>
+        </Vue3Marquee>
+      </div>
+    </div>
+
+    <div>
+      <p>
+        Fix for issue:
+        <a
           href="https://github.com/megasanjay/vue3-marquee/issues/13"
           target="__blank"
           >vue3-marquee#13</a
@@ -139,7 +184,7 @@ export default defineComponent({
   methods: {
     generateRandomString() {
       const randomString = Math.random().toString(36).substring(2, 15)
-      return `https://avatars.dicebear.com/api/avataaars/${randomString}.svg`
+      return `https://api.dicebear.com/7.x/adventurer/svg/seed=${randomString}`
     },
     getImgURLS(num: number) {
       let array = []
