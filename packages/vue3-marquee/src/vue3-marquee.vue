@@ -428,7 +428,12 @@ export default defineComponent({
         }
       } else {
         minHeight.value = 'auto'
-        minWidth.value = '100%'
+
+        if (props.animateOnOverflowOnly) {
+          minWidth.value = 'auto'
+        } else {
+          minWidth.value = '100%'
+        }
       }
 
       // Deprecate the gradientWidth prop in favor of gradientLength

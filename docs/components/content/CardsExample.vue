@@ -15,7 +15,7 @@ const avatarArray = reactive([])
 
 for (let i = 0; i < 5; i++) {
   avatarArray.push(
-    `https://avatars.dicebear.com/api/avataaars/${Math.random()
+    `https://api.dicebear.com/7.x/adventurer/svg/seed=${Math.random()
       .toString(36)
       .substr(2, 6)}.svg`,
   )

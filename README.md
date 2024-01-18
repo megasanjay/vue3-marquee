@@ -114,20 +114,21 @@ This should register as a global component that you can call anywhere in your ap
 
 More detailed explanations are provided in the [documentation](https://vue3-marquee.vercel.app/api/props).
 
-| Prop           | Type                                   | Default Value   | Description                                                                            |
-| -------------- | -------------------------------------- | --------------- | -------------------------------------------------------------------------------------- |
-| direction      | String of either 'normal' or 'reverse' | "normal"        | The direction for the content to move in                                               |
-| duration       | Number                                 | 20              | The time taken for the marquee content to move the width of the container (in seconds) |
-| delay          | Number                                 | 0               | A delay before the animation starts (in seconds)                                       |
-| loop           | Number                                 | 0               | The number of instances that the marquee animation should run (0 is infinite)          |
-| gradient       | Boolean                                | false           | Whether to show a gradient overlay                                                     |
-| gradientColor  | Array of 3 RGB values                  | [255, 255, 255] | The RGB colors for the color of the gradient                                           |
-| gradientLength | String                                 | 200px           | Length of portion of the container edges that should be taken by the gradient overlay  |
-| pause          | Boolean                                | false           | A reactive prop to pause the marquee                                                   |
-| pauseOnHover   | Boolean                                | false           | Whether to pause the marquee on hover                                                  |
-| pauseOnClick   | Boolean                                | false           | Whether to pause the marquee when you hold the right click button                      |
-| clone          | Boolean                                | false           | Whether to clone the content if you want no empty spaces in the animation              |
-| vertical       | Boolean                                | false           | Whether to make the marquee vertical                                                   |
+| Prop              | Type                                   | Default Value   | Description                                                                            |
+| ----------------- | -------------------------------------- | --------------- | -------------------------------------------------------------------------------------- |
+| direction         | String of either 'normal' or 'reverse' | "normal"        | The direction for the content to move in                                               |
+| duration          | Number                                 | 20              | The time taken for the marquee content to move the width of the container (in seconds) |
+| delay             | Number                                 | 0               | A delay before the animation starts (in seconds)                                       |
+| loop              | Number                                 | 0               | The number of instances that the marquee animation should run (0 is infinite)          |
+| gradient          | Boolean                                | false           | Whether to show a gradient overlay                                                     |
+| gradientColor     | Array of 3 RGB values                  | [255, 255, 255] | The RGB colors for the color of the gradient                                           |
+| gradientLength    | String                                 | 200px           | Length of portion of the container edges that should be taken by the gradient overlay  |
+| pause             | Boolean                                | false           | A reactive prop to pause the marquee                                                   |
+| pauseOnHover      | Boolean                                | false           | Whether to pause the marquee on hover                                                  |
+| pauseOnClick      | Boolean                                | false           | Whether to pause the marquee when you hold the right click button                      |
+| clone             | Boolean                                | false           | Whether to clone the content if you want no empty spaces in the animation              |
+| vertical          | Boolean                                | false           | Whether to make the marquee vertical                                                   |
+| animateOnOverflow | Boolean                                | false           | Whether to animate the marquee if the content overflows the container                  |
 
 ## Events
 
@@ -141,6 +142,10 @@ A few events are emitted from the component. Look at the [Demos](#demos) for exa
   - This event is emitted if you have either `pauseOnHover` or `pauseOnClick` enabled. It will notify if the animation pauses.
 - onResume
   - This event is emitted if you have either `pauseOnHover` or `pauseOnClick` enabled. It will notify if the animation resumes.
+- ononOverflowDetected
+  - This event is emitted if you have `animateOnOverflow` enabled. It will notify if the content overflows the container.
+- onOverflowCleared
+  - This event is emitted if you have `animateOnOverflow` enabled. It will notify if the content no longer overflows the container. (useful if you need to add a class to the container when the content overflows)
 
 ## Credits
 
