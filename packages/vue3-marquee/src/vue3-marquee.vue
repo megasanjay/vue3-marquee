@@ -416,6 +416,12 @@ export default defineComponent({
       if (props.vertical) {
         minHeight.value = '100%'
         minWidth.value = 'auto'
+
+        if (props.animateOnOverflowOnly) {
+          console.warn(
+            'The `animateOnOverflowOnly` prop is not supported for vertical marquees.',
+          )
+        }
       } else {
         minHeight.value = 'auto'
         minWidth.value = '100%'
