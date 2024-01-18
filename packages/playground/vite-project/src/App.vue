@@ -3,6 +3,11 @@
     <HelloWorld msg="Hello Vue 3 + TypeScript + Vite + Vue3 Marquee" />
 
     <div>
+      <input type="checkbox" v-model="showAll" />
+      <label>Show all</label>
+    </div>
+
+    <div v-if="showAll">
       <p>Default</p>
 
       <Vue3Marquee>
@@ -10,7 +15,7 @@
       </Vue3Marquee>
     </div>
 
-    <div>
+    <div v-if="showAll">
       <p>Duration: 10s</p>
 
       <Vue3Marquee :duration="10">
@@ -18,7 +23,7 @@
       </Vue3Marquee>
     </div>
 
-    <div>
+    <div v-if="showAll">
       <p>Direction: reverse</p>
 
       <Vue3Marquee direction="reverse">
@@ -26,7 +31,7 @@
       </Vue3Marquee>
     </div>
 
-    <div>
+    <div v-if="showAll">
       <p>pauseAnimation</p>
 
       <Vue3Marquee direction="reverse" :pause="playState">
@@ -36,7 +41,7 @@
       <button @click="togglePlayState">Pause</button>
     </div>
 
-    <div>
+    <div v-if="showAll">
       <p>Pause on hover</p>
 
       <Vue3Marquee :pause-on-hover="true">
@@ -44,7 +49,7 @@
       </Vue3Marquee>
     </div>
 
-    <div>
+    <div v-if="showAll">
       <p>Pause on click</p>
 
       <Vue3Marquee :pause-on-click="true">
@@ -52,7 +57,7 @@
       </Vue3Marquee>
     </div>
 
-    <div>
+    <div v-if="showAll">
       <p>Gradient</p>
 
       <Vue3Marquee :gradient="true">
@@ -60,7 +65,7 @@
       </Vue3Marquee>
     </div>
 
-    <div>
+    <div v-if="showAll">
       <p>Gradient color: [78, 205, 196]</p>
 
       <Vue3Marquee :gradient="true" :gradient-color="[78, 205, 196]">
@@ -68,7 +73,7 @@
       </Vue3Marquee>
     </div>
 
-    <div>
+    <div v-if="showAll">
       <p>Gradient width: 600px</p>
 
       <Vue3Marquee :gradient="true" gradient-width="600px">
@@ -76,7 +81,7 @@
       </Vue3Marquee>
     </div>
 
-    <div>
+    <div v-if="showAll">
       <p>Gradient Length: 600px</p>
 
       <Vue3Marquee :gradient="true" gradient-length="600px">
@@ -84,7 +89,7 @@
       </Vue3Marquee>
     </div>
 
-    <div>
+    <div v-if="showAll">
       <p>clone</p>
 
       <Vue3Marquee :clone="true" :duration="5">
@@ -93,6 +98,14 @@
     </div>
 
     <div>
+      <p>Animate on Overflow</p>
+
+      <Vue3Marquee :animateOnOverflowOnly="true" class="">
+        <img v-for="i in img_5" :key="i" height="80" :src="i" />
+      </Vue3Marquee>
+    </div>
+
+    <div v-if="showAll">
       <p>Vertical</p>
 
       <div style="height: 200px; width: max-content">
@@ -102,7 +115,7 @@
       </div>
     </div>
 
-    <div>
+    <div v-if="showAll">
       <p>
         Fix for issue:
         <a
@@ -147,7 +160,7 @@
       </div>
     </div>
 
-    <div>
+    <div v-if="showAll">
       <p>
         Fix for issue:
         <a
@@ -179,6 +192,7 @@ export default defineComponent({
       img_30: this.getImgURLS(30),
       img_5: this.getImgURLS(5),
       playState: false,
+      showAll: true,
     }
   },
   methods: {
