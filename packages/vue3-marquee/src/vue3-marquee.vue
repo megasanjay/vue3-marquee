@@ -370,6 +370,10 @@ export default defineComponent({
         return 'paused'
       }
 
+      if (!props.pauseOnHover && animationState.value === 'paused') {
+        return 'paused'
+      }
+
       return 'running'
     })
 
