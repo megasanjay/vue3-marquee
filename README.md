@@ -7,7 +7,7 @@ A simple marquee component with ZERO dependencies for Vue 3. This component was 
 ## Demos
 
 View the live demos here: [https://vue3-marquee.vercel.app/examples](https://vue3-marquee.vercel.app/examples)
- 
+
 ## Upgrade to v4.x
 
 If you are using version 3.x of `vue3-marquee` you should upgrade to version 4.x. You can do this by running the [Installation and Usage](#installation-and-usage) command below. This add better support for Typescript. There is also a change with the `dist/style.css` import (it's been removed) so take a look at the [new documentation](https://vue3-marquee.vercel.app/introduction/v4) for instructions on how to migrate to this package.
