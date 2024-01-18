@@ -9189,10 +9189,10 @@ vue3-lottie@^3.0.0:
     lodash-es "^4.17.21"
     lottie-web "5.12.2"
 
-vue3-marquee@4.1.0:
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/vue3-marquee/-/vue3-marquee-4.1.0.tgz#145baa65dd40059358e4079d51ab596c2ccf1299"
-  integrity sha512-AkvpNC6+7CwvIBgiAr8qMs1XvhGhfSS2ahlMEp80YXAmDOP8nDdn/smQ6eWtusf+hLX21yTaSOoKGcill4bCRg==
+vue3-marquee@4.2.0-beta.1:
+  version "4.2.0-beta.1"
+  resolved "https://registry.yarnpkg.com/vue3-marquee/-/vue3-marquee-4.2.0-beta.1.tgz#b514328acfea450b6afbdcf5b723ed2744da7097"
+  integrity sha512-rcqtFafNe8EQFTlxqboK21Q1MnkGzj0dwgf72a4D4FeTMflusC8ug9bgkHHGmw+zR7/SP8lcA4yUggK9+5GyJw==
 
 vue@^3.3.4:
   version "3.3.4"
