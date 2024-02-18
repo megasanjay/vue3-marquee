@@ -1,6 +1,6 @@
 <template>
   <Vue3Marquee>
-    <div class="card" v-for="avatar in avatarArray" :key="avatar">
+    <div v-for="avatar in avatarArray" :key="avatar" class="card">
       <img :src="avatar" width="100" height="100" />
       <p style="margin-top: 10px; margin-bottom: 0px">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
@@ -15,7 +15,7 @@ const avatarArray = reactive([])
 
 for (let i = 0; i < 5; i++) {
   avatarArray.push(
-    `https://avatars.dicebear.com/api/avataaars/${Math.random()
+    `https://api.dicebear.com/7.x/adventurer/svg/seed=${Math.random()
       .toString(36)
       .substr(2, 6)}.svg`,
   )
