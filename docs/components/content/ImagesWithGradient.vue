@@ -5,12 +5,12 @@
     gradient-length="30%"
   >
     <img
-      :src="img"
       v-for="img in imgArray"
       :key="img"
+      :src="img"
       class="image"
       width="100"
-    />
+    >
   </Vue3Marquee>
 </template>
 

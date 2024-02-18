@@ -1,12 +1,12 @@
 <template>
   <Vue3Marquee :clone="true" :duration="5" :direction="'reverse'">
     <img
-      :src="img"
       v-for="img in imgArray"
       :key="img"
+      :src="img"
       class="image"
       width="100"
-    />
+    >
   </Vue3Marquee>
 </template>
 

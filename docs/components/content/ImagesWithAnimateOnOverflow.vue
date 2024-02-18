@@ -1,13 +1,13 @@
 <template>
   <div>
-    <Vue3Marquee :animate-on-overflow="true" >
+    <Vue3Marquee :animate-on-overflow="true">
       <img
-        :src="img"
         v-for="img in imgArray"
         :key="img"
+        :src="img"
         class="image"
         width="100"
-      />
+      >
     </Vue3Marquee>
   </div>
 </template>

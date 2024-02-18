@@ -1,12 +1,12 @@
 <template>
   <Vue3Marquee :pause-on-click="true">
     <img
-      :src="img"
       v-for="img in imgArray"
       :key="img"
+      :src="img"
       class="image"
       width="100"
-    />
+    >
   </Vue3Marquee>
 </template>
 

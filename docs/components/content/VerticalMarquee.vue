@@ -2,19 +2,17 @@
   <div style="height: 50px; width: max-content">
     <Vue3Marquee :vertical="true">
       <img
-        :src="img"
         v-for="img in imgArray"
         :key="img"
+        :src="img"
         class="image"
         width="100"
-      />
+      >
     </Vue3Marquee>
   </div>
 </template>
 
 <script setup>
-const colorMode = useColorMode()
-
 const imgArray = [
   'https://sponsors.vuejs.org/images/vueschool.avif',
   'https://sponsors.vuejs.org/images/vehikl.avif',

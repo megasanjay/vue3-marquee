@@ -1,7 +1,7 @@
 <template>
   <Vue3Marquee>
-    <div class="card" v-for="avatar in avatarArray" :key="avatar">
-      <img :src="avatar" width="100" height="100" />
+    <div v-for="avatar in avatarArray" :key="avatar" class="card">
+      <img :src="avatar" width="100" height="100">
       <p style="margin-top: 10px; margin-bottom: 0px">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua.
