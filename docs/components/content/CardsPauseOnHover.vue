@@ -1,14 +1,12 @@
 <template>
   <Vue3Marquee :pause-on-hover="true">
     <div v-for="avatar in avatarArray" :key="avatar" class="card">
-      <img :src="avatar" width="100" height="100">
+      <img :src="avatar" width="100" height="100" />
       <p style="margin-top: 10px; margin-bottom: 0px">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua.
       </p>
-      <button class="btn">
-        Learn More
-      </button>
+      <button class="btn">Learn More</button>
     </div>
   </Vue3Marquee>
 </template>
