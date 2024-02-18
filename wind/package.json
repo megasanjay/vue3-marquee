@@ -1,0 +1,19 @@
+{
+  "name": "vue3-marquee-documentation",
+  "private": true,
+  "scripts": {
+    "dev": "nuxi dev",
+    "build": "nuxi build",
+    "generate": "nuxi generate",
+    "preview": "nuxi preview"
+  },
+  "devDependencies": {
+    "content-wind": "latest",
+    "nuxt": "latest",
+    "prettier": "^3.2.5"
+  },
+  "dependencies": {
+    "vue3-lottie": "^3.2.0",
+    "vue3-marquee": "^4.2.0-beta.1"
+  }
+}
