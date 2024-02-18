@@ -7,7 +7,7 @@
         :src="img"
         class="image"
         width="100"
-      >
+      />
     </Vue3Marquee>
   </div>
 </template>
