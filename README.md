@@ -142,7 +142,7 @@ A few events are emitted from the component. Look at the [Demos](#demos) for exa
   - This event is emitted if you have either `pauseOnHover` or `pauseOnClick` enabled. It will notify if the animation pauses.
 - onResume
   - This event is emitted if you have either `pauseOnHover` or `pauseOnClick` enabled. It will notify if the animation resumes.
-- ononOverflowDetected
+- onOverflowDetected
   - This event is emitted if you have `animateOnOverflow` enabled. It will notify if the content overflows the container.
 - onOverflowCleared
   - This event is emitted if you have `animateOnOverflow` enabled. It will notify if the content no longer overflows the container. (useful if you need to add a class to the container when the content overflows)
