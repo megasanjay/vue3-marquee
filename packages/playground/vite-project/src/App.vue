@@ -97,7 +97,7 @@
       </Vue3Marquee>
     </div>
 
-    <div>
+    <div v-if="showAll">
       <p>Animate on Overflow</p>
 
       <Vue3Marquee :animateOnOverflowOnly="true" class="">
@@ -111,6 +111,23 @@
       <div style="height: 200px; width: max-content">
         <Vue3Marquee :vertical="true" :pause="playState">
           <img v-for="i in img_30" :key="i" height="50" :src="i" />
+        </Vue3Marquee>
+      </div>
+    </div>
+
+    <div>
+      <p>
+        Fix for issue:
+        <a
+          href="https://github.com/megasanjay/vue3-marquee/issues/295"
+          target="__blank"
+          >vue3-marquee#295</a
+        >
+      </p>
+
+      <div style="display: flex">
+        <Vue3Marquee :duration="7" direction="reverse">
+          نفس إحكام الإنذار، لم, فبعد وحل الأثنان. هو تصفح بالرّغم مك|هو
         </Vue3Marquee>
       </div>
     </div>
