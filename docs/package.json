@@ -21,5 +21,8 @@
   "dependencies": {
     "vue3-lottie": "^3.0.0",
     "vue3-marquee": "^4.2.0"
+  },
+  "resolutions": {
+    "string-width": "4.2.3"
   }
 }
