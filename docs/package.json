@@ -16,10 +16,13 @@
     "@nuxtjs/plausible": "^0.2.1",
     "@types/node": "^20.2.5",
     "eslint": "^8.42.0",
-    "nuxt": "^3.5.3"
+    "nuxt": "3.10.0"
   },
   "dependencies": {
     "vue3-lottie": "^3.0.0",
     "vue3-marquee": "^4.2.0"
+  },
+  "resolutions": {
+    "string-width": "4.2.3"
   }
 }
