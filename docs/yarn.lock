@@ -376,6 +376,11 @@
     "@babel/helper-validator-identifier" "^7.24.5"
     to-fast-properties "^2.0.0"
 
+"@barbapapazes/plausible-tracker@^0.4.0":
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/@barbapapazes/plausible-tracker/-/plausible-tracker-0.4.0.tgz#3b3287988a8637d35c59140b6d6ec93664742552"
+  integrity sha512-4hhXK62ORb4feJfjnIILXRnb6xfejHM6yvGCid6MwNdKiQyj6YLW0M779zXLH5IBS4mQObmrNul2HUleeavSKw==
+
 "@cloudflare/kv-asset-handler@^0.3.1":
   version "0.3.2"
   resolved "https://registry.yarnpkg.com/@cloudflare/kv-asset-handler/-/kv-asset-handler-0.3.2.tgz#06437b75664729823ac9033b89f06a3b078e4f55"
@@ -1172,7 +1177,7 @@
     unimport "^3.7.1"
     untyped "^1.4.2"
 
-"@nuxt/kit@^3.10.2", "@nuxt/kit@^3.10.3", "@nuxt/kit@^3.11.2", "@nuxt/kit@^3.3.1", "@nuxt/kit@^3.4.2", "@nuxt/kit@^3.8.2", "@nuxt/kit@^3.9.1":
+"@nuxt/kit@^3.10.2", "@nuxt/kit@^3.10.3", "@nuxt/kit@^3.11.2", "@nuxt/kit@^3.3.1", "@nuxt/kit@^3.4.2", "@nuxt/kit@^3.9.1":
   version "3.11.2"
   resolved "https://registry.yarnpkg.com/@nuxt/kit/-/kit-3.11.2.tgz#dfc43c05992691bcd6aa58c14f88cf43e3abb788"
   integrity sha512-yiYKP0ZWMW7T3TCmsv4H8+jEsB/nFriRAR8bKoSqSV9bkVYWPE36sf7JDux30dQ91jSlQG6LQkB3vCHYTS2cIg==
@@ -1196,7 +1201,7 @@
     unimport "^3.7.1"
     untyped "^1.4.2"
 
-"@nuxt/kit@^3.12.2":
+"@nuxt/kit@^3.11.1", "@nuxt/kit@^3.12.2":
   version "3.12.3"
   resolved "https://registry.yarnpkg.com/@nuxt/kit/-/kit-3.12.3.tgz#71a8ea30feb54e0c6fb3b7df33b71aa08ba05f8f"
   integrity sha512-5R8FZLDxBKlkDWYsqwU1tctGJ5vwMA96WBrNkpQ0LznB2/p+3MWWTO6vz+0P0F9xvZZfkk/KKyZ3uUhnG9VJOA==
@@ -1408,15 +1413,14 @@
     unist-util-visit "^5.0.0"
     unwasm "^0.3.7"
 
-"@nuxtjs/plausible@^0.2.1":
-  version "0.2.4"
-  resolved "https://registry.yarnpkg.com/@nuxtjs/plausible/-/plausible-0.2.4.tgz#970705847bbb5307cd7ce4f117c4fc9b09c2f771"
-  integrity sha512-9HrSl9ZGKS/7bULAt8uzAGo9BJyIZebzRSLQD8ZhiODaGyRdEQlgcJBw5JgUzjcC5n4T0ZlX3FC6C3Wyp7opgA==
+"@nuxtjs/plausible@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/plausible/-/plausible-1.0.0.tgz#6fd329358e8827ce370782a6203d7ee68c2ddfb8"
+  integrity sha512-2K0/AbPJAEr3yMA8oDD0I6WB+SXs/YlF297azjR5eSZVQjuimDAwLf4bEXk9ilbrzoMFmm0Tpzn4CC6f0rISBA==
   dependencies:
-    "@nuxt/kit" "^3.8.2"
-    defu "^6.1.3"
-    pathe "^1.1.1"
-    plausible-tracker "^0.3.8"
+    "@barbapapazes/plausible-tracker" "^0.4.0"
+    "@nuxt/kit" "^3.11.1"
+    defu "^6.1.4"
 
 "@opentelemetry/api-logs@0.50.0":
   version "0.50.0"
@@ -6754,11 +6758,6 @@ pkg-types@^1.0.3, pkg-types@^1.1.1, pkg-types@^1.1.2:
     confbox "^0.1.7"
     mlly "^1.7.1"
     pathe "^1.1.2"
-
-plausible-tracker@^0.3.8:
-  version "0.3.8"
-  resolved "https://registry.yarnpkg.com/plausible-tracker/-/plausible-tracker-0.3.8.tgz#9b8b322cc41e0e1d6473869ef234deea365a5a40"
-  integrity sha512-lmOWYQ7s9KOUJ1R+YTOR3HrjdbxIS2Z4de0P/Jx2dQPteznJl2eX3tXxKClpvbfyGP59B5bbhW8ftN59HbbFSg==
 
 pluralize@^8.0.0:
   version "8.0.0"
