@@ -53,8 +53,8 @@ importers:
   packages/vue3-marquee:
     devDependencies:
       '@babel/types':
-        specifier: 7.24.7
-        version: 7.24.7
+        specifier: 7.24.9
+        version: 7.24.9
       '@types/node':
         specifier: 20.14.12
         version: 20.14.12
@@ -180,16 +180,8 @@ packages:
     resolution: {integrity: sha512-AsUnxuLhRYsisFiaJwvp1QF+I3KjD5FOxut14q/GzovUe6orHLesW2C7d754kRm53h5gqrz6sFl6sxc4BVtE/g==}
     engines: {node: '>=6.9.0'}
 
-  '@babel/helper-string-parser@7.24.7':
-    resolution: {integrity: sha512-7MbVt6xrwFQbunH2DNQsAP5sTGxfqQtErvBIvIMi6EQnbgUOuVYanvREcmFrOPhoXBrTtjhhP+lW+o5UfK+tDg==}
-    engines: {node: '>=6.9.0'}
-
   '@babel/helper-string-parser@7.24.8':
     resolution: {integrity: sha512-pO9KhhRcuUyGnJWwyEgnRJTSIZHiT+vMD0kPeD+so0l7mxkMT19g3pjY9GTnHySck/hDzq+dtW/4VgnMkippsQ==}
-    engines: {node: '>=6.9.0'}
-
-  '@babel/helper-validator-identifier@7.22.20':
-    resolution: {integrity: sha512-Y4OZ+ytlatR8AI+8KZfKuL5urKp7qey08ha31L8b3BwewJAoJamTzyvxPR/5D+KkdJCGPq/+8TukHBlY10FX9A==}
     engines: {node: '>=6.9.0'}
 
   '@babel/helper-validator-identifier@7.24.7':
@@ -266,12 +258,8 @@ packages:
     resolution: {integrity: sha512-tY3mM8rH9jM0YHFGyfC0/xf+SB5eKUu7HPj7/k3fpi9dAlsMc5YbQvDi0Sh2QTPXqMhyaAtzAr807TIyfQrmyg==}
     engines: {node: '>=6.9.0'}
 
-  '@babel/types@7.24.7':
-    resolution: {integrity: sha512-XEFXSlxiG5td2EJRe8vOmRbaXVgfcBlszKujvVmWIK/UpywWljQCfzAv3RQCGujWQ1RD4YYWEAqDXfuJiy8f5Q==}
-    engines: {node: '>=6.9.0'}
-
-  '@babel/types@7.25.0':
-    resolution: {integrity: sha512-LcnxQSsd9aXOIgmmSpvZ/1yo46ra2ESYyqLcryaBZOghxy5qqOBjvCWP5JfkI8yl9rlxRgdLTTMCQQRcN2hdCg==}
+  '@babel/types@7.24.9':
+    resolution: {integrity: sha512-xm8XrMKz0IlUdocVbYJe0Z9xEgidU7msskG8BbhnTPK/HZ2z/7FP7ykqPgrUH+C+r414mNfNWam1f2vqOjqjYQ==}
     engines: {node: '>=6.9.0'}
 
   '@cloudflare/kv-asset-handler@0.3.0':
@@ -3852,7 +3840,7 @@ snapshots:
       '@babel/parser': 7.25.0
       '@babel/template': 7.22.15
       '@babel/traverse': 7.23.7
-      '@babel/types': 7.24.7
+      '@babel/types': 7.24.9
       convert-source-map: 2.0.0
       debug: 4.3.4
       gensync: 1.0.0-beta.2
@@ -3863,14 +3851,14 @@ snapshots:
 
   '@babel/generator@7.23.6':
     dependencies:
-      '@babel/types': 7.24.7
+      '@babel/types': 7.24.9
       '@jridgewell/gen-mapping': 0.3.3
       '@jridgewell/trace-mapping': 0.3.21
       jsesc: 2.5.2
 
   '@babel/helper-annotate-as-pure@7.22.5':
     dependencies:
-      '@babel/types': 7.25.0
+      '@babel/types': 7.24.9
 
   '@babel/helper-compilation-targets@7.23.6':
     dependencies:
@@ -3898,19 +3886,19 @@ snapshots:
   '@babel/helper-function-name@7.23.0':
     dependencies:
       '@babel/template': 7.22.15
-      '@babel/types': 7.24.7
+      '@babel/types': 7.24.9
 
   '@babel/helper-hoist-variables@7.22.5':
     dependencies:
-      '@babel/types': 7.24.7
+      '@babel/types': 7.24.9
 
   '@babel/helper-member-expression-to-functions@7.23.0':
     dependencies:
-      '@babel/types': 7.25.0
+      '@babel/types': 7.24.9
 
   '@babel/helper-module-imports@7.22.15':
     dependencies:
-      '@babel/types': 7.24.7
+      '@babel/types': 7.24.9
 
   '@babel/helper-module-transforms@7.23.3(@babel/core@7.23.7)':
     dependencies:
@@ -3919,11 +3907,11 @@ snapshots:
       '@babel/helper-module-imports': 7.22.15
       '@babel/helper-simple-access': 7.22.5
       '@babel/helper-split-export-declaration': 7.22.6
-      '@babel/helper-validator-identifier': 7.22.20
+      '@babel/helper-validator-identifier': 7.24.7
 
   '@babel/helper-optimise-call-expression@7.22.5':
     dependencies:
-      '@babel/types': 7.25.0
+      '@babel/types': 7.24.9
 
   '@babel/helper-plugin-utils@7.22.5': {}
 
@@ -3936,21 +3924,17 @@ snapshots:
 
   '@babel/helper-simple-access@7.22.5':
     dependencies:
-      '@babel/types': 7.24.7
+      '@babel/types': 7.24.9
 
   '@babel/helper-skip-transparent-expression-wrappers@7.22.5':
     dependencies:
-      '@babel/types': 7.25.0
+      '@babel/types': 7.24.9
 
   '@babel/helper-split-export-declaration@7.22.6':
     dependencies:
-      '@babel/types': 7.24.7
-
-  '@babel/helper-string-parser@7.24.7': {}
+      '@babel/types': 7.24.9
 
   '@babel/helper-string-parser@7.24.8': {}
-
-  '@babel/helper-validator-identifier@7.22.20': {}
 
   '@babel/helper-validator-identifier@7.24.7': {}
 
@@ -3960,19 +3944,19 @@ snapshots:
     dependencies:
       '@babel/template': 7.22.15
       '@babel/traverse': 7.23.7
-      '@babel/types': 7.24.7
+      '@babel/types': 7.24.9
     transitivePeerDependencies:
       - supports-color
 
   '@babel/highlight@7.23.4':
     dependencies:
-      '@babel/helper-validator-identifier': 7.22.20
+      '@babel/helper-validator-identifier': 7.24.7
       chalk: 2.4.2
       js-tokens: 4.0.0
 
   '@babel/parser@7.25.0':
     dependencies:
-      '@babel/types': 7.24.7
+      '@babel/types': 7.24.9
 
   '@babel/plugin-proposal-decorators@7.23.7(@babel/core@7.23.7)':
     dependencies:
@@ -4020,7 +4004,7 @@ snapshots:
     dependencies:
       '@babel/code-frame': 7.23.5
       '@babel/parser': 7.25.0
-      '@babel/types': 7.24.7
+      '@babel/types': 7.24.9
 
   '@babel/traverse@7.23.7':
     dependencies:
@@ -4031,19 +4015,13 @@ snapshots:
       '@babel/helper-hoist-variables': 7.22.5
       '@babel/helper-split-export-declaration': 7.22.6
       '@babel/parser': 7.25.0
-      '@babel/types': 7.24.7
+      '@babel/types': 7.24.9
       debug: 4.3.4
       globals: 11.12.0
     transitivePeerDependencies:
       - supports-color
 
-  '@babel/types@7.24.7':
-    dependencies:
-      '@babel/helper-string-parser': 7.24.7
-      '@babel/helper-validator-identifier': 7.24.7
-      to-fast-properties: 2.0.0
-
-  '@babel/types@7.25.0':
+  '@babel/types@7.24.9':
     dependencies:
       '@babel/helper-string-parser': 7.24.8
       '@babel/helper-validator-identifier': 7.24.7
@@ -4923,7 +4901,7 @@ snapshots:
 
   '@vue-macros/common@1.10.0(rollup@4.13.0)(vue@3.4.34(typescript@5.4.5))':
     dependencies:
-      '@babel/types': 7.24.7
+      '@babel/types': 7.24.9
       '@rollup/pluginutils': 5.1.0(rollup@4.13.0)
       '@vue/compiler-sfc': 3.4.34
       ast-kit: 0.11.3(rollup@4.13.0)
@@ -4942,7 +4920,7 @@ snapshots:
       '@babel/plugin-syntax-jsx': 7.23.3(@babel/core@7.23.7)
       '@babel/template': 7.22.15
       '@babel/traverse': 7.23.7
-      '@babel/types': 7.25.0
+      '@babel/types': 7.24.9
       '@vue/babel-helper-vue-transform-on': 1.1.6
       camelcase: 6.3.0
       html-tags: 3.3.1
@@ -6283,7 +6261,7 @@ snapshots:
   magicast@0.3.3:
     dependencies:
       '@babel/parser': 7.25.0
-      '@babel/types': 7.25.0
+      '@babel/types': 7.24.9
       source-map-js: 1.2.0
 
   make-dir@3.1.0:
@@ -7519,7 +7497,7 @@ snapshots:
 
   unplugin-vue-router@0.7.0(rollup@4.13.0)(vue-router@4.3.2(vue@3.4.34(typescript@5.4.5)))(vue@3.4.34(typescript@5.4.5)):
     dependencies:
-      '@babel/types': 7.24.7
+      '@babel/types': 7.24.9
       '@rollup/pluginutils': 5.1.0(rollup@4.13.0)
       '@vue-macros/common': 1.10.0(rollup@4.13.0)(vue@3.4.34(typescript@5.4.5))
       ast-walker-scope: 0.5.0(rollup@4.13.0)
@@ -7573,7 +7551,7 @@ snapshots:
     dependencies:
       '@babel/core': 7.23.7
       '@babel/standalone': 7.23.8
-      '@babel/types': 7.24.7
+      '@babel/types': 7.24.9
       defu: 6.1.4
       jiti: 1.21.0
       mri: 1.2.0
@@ -7707,7 +7685,7 @@ snapshots:
 
   vite-plugin-vue-type-imports@0.2.5(vite@2.9.18)(vue@3.4.34(typescript@5.4.5)):
     dependencies:
-      '@babel/types': 7.24.7
+      '@babel/types': 7.24.9
       '@vue/compiler-sfc': 3.4.34
       debug: 4.3.4
       fast-glob: 3.3.2
