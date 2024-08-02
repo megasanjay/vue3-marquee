@@ -241,10 +241,10 @@ export default defineComponent({
             if (props.animateOnOverflowOnly) {
               if (contentWidth.value < containerWidth.value) {
                 animateOnOverflowPause.value = true
-                emit('onOverflowDetected')
+                emit('onOverflowCleared')
               } else {
                 animateOnOverflowPause.value = false
-                emit('onOverflowCleared')
+                emit('onOverflowDetected')
               }
 
               return 0 // don't clone if animateOnOverflowOnly is true
