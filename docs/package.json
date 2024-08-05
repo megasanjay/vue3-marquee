@@ -16,7 +16,7 @@
     "@nuxtjs/plausible": "^0.2.1",
     "@types/node": "^20.2.5",
     "eslint": "^8.42.0",
-    "nuxt": "3.10.0"
+    "nuxt": "3.12.4"
   },
   "dependencies": {
     "vue3-lottie": "^3.0.0",
