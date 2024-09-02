@@ -115,7 +115,7 @@
       </div>
     </div>
 
-    <div>
+    <div v-if="showAll">
       <p>
         Fix for issue:
         <a
@@ -210,6 +210,17 @@
         <Vue3Marquee :clone="true" :duration="1"> 123 </Vue3Marquee>
       </div>
     </div>
+
+    <div v-for="item in problemList">
+      <Vue3Marquee :pause="false" :pause-on-hover="true">
+        <div class="card" v-for="personItem in item">
+          <img :src="personItem.userPhoto" style="width: 40px" />
+          <span class="dm_talks_title">
+            {{ personItem.content }}
+          </span>
+        </div>
+      </Vue3Marquee>
+    </div>
   </div>
 </template>
 
@@ -230,6 +241,32 @@ export default defineComponent({
       playState: false,
       showAll: false,
       toggleShow: true,
+      problemList: [
+        [
+          {
+            userPhoto: this.generateRandomString(),
+            content: 'why why why why',
+          },
+          {
+            userPhoto: this.generateRandomString(),
+            content: 'hello hello hello',
+          },
+          {
+            userPhoto: this.generateRandomString(),
+            content: 'what are you doing?',
+          },
+          {
+            userPhoto: this.generateRandomString(),
+            content: 'how are you?',
+          },
+          {
+            userPhoto: this.generateRandomString(),
+            content: 'tomorrow is nice day',
+          },
+        ],
+        [],
+        [],
+      ],
     }
   },
   methods: {
@@ -261,5 +298,35 @@ export default defineComponent({
   color: #2c3e50;
   display: flex;
   flex-direction: column;
+}
+
+.card {
+  height: 48px;
+  background: rgba(5, 109, 255, 0.1);
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+  padding: 4px 12px 4px 4px;
+  cursor: pointer;
+  justify-content: space-around;
+  border: 1px solid transparent;
+}
+
+.dm_talks_title {
+  width: 150px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 20px;
+  font-size: 14px;
+  text-align: left;
+  color: red;
+  line-height: 20px;
+  /* font-weight: 500 !important; */
+}
+.card:hover {
+  background: #ffffff;
+  border: 1px solid #2a6aff;
 }
 </style>
