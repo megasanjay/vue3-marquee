@@ -34,6 +34,7 @@
         !animateOnOverflowOnly ||
         (animateOnOverflowOnly && !animateOnOverflowPause)
       "
+      style="background-color: green !important"
     >
       <slot></slot>
     </div>
@@ -167,7 +168,10 @@ export default defineComponent({
 
     const verticalAnimationPause = ref(false)
 
-    const animateOnOverflowPause = ref(false) // state to pause the animation when animateOnOverflowOnly is true
+    const animateOnOverflowPause = ref(
+      props.animateOnOverflowOnly ? true : false,
+    )
+    const animateOnOverflowCalculated = ref(false)
 
     const containerWidth = ref(0)
     const contentWidth = ref(0)
@@ -222,7 +226,9 @@ export default defineComponent({
               containerHeight.value / contentHeight.value,
             )
 
-            cloneAmount.value = isFinite(localCloneAmount)
+            cloneAmount.value = props.animateOnOverflowOnly
+              ? 0
+              : isFinite(localCloneAmount)
               ? localCloneAmount
               : 0
 
@@ -492,6 +498,7 @@ export default defineComponent({
       minWidth,
       minHeight,
       animateOnOverflowPause,
+      animateOnOverflowCalculated,
       marqueeContent,
       marqueeOverlayContainer,
       componentKey,
