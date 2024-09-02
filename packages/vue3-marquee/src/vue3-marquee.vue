@@ -30,6 +30,7 @@
     <div
       :aria-hidden="true"
       class="marquee"
+      style="background-color: white !important"
       v-if="
         !animateOnOverflowOnly ||
         (animateOnOverflowOnly && !animateOnOverflowPause)
