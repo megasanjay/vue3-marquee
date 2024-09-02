@@ -127,8 +127,8 @@
 
       <button @click="toggleShow = !toggleShow">Toggle</button>
 
-      <div v-show="toggleShow" style="height: 135px">
-        <Vue3Marquee :animateOnOverflowOnly="true" class="">
+      <div v-if="toggleShow" style="height: 80px">
+        <Vue3Marquee :animateOnOverflowOnly="true">
           <img v-for="i in img_5" :key="i" height="80" :src="i" />
         </Vue3Marquee>
       </div>
