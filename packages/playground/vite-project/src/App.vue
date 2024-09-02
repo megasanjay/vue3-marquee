@@ -119,6 +119,25 @@
       <p>
         Fix for issue:
         <a
+          href="https://github.com/megasanjay/vue3-marquee/issues/350"
+          target="__blank"
+          >vue3-marquee#350</a
+        >
+      </p>
+
+      <button @click="toggleShow = !toggleShow">Toggle</button>
+
+      <div v-if="toggleShow" style="height: 80px">
+        <Vue3Marquee :animateOnOverflowOnly="true">
+          <img v-for="i in img_5" :key="i" height="80" :src="i" />
+        </Vue3Marquee>
+      </div>
+    </div>
+
+    <div v-if="showAll">
+      <p>
+        Fix for issue:
+        <a
           href="https://github.com/megasanjay/vue3-marquee/issues/295"
           target="__blank"
           >vue3-marquee#295</a
@@ -210,6 +229,7 @@ export default defineComponent({
       img_5: this.getImgURLS(5),
       playState: false,
       showAll: false,
+      toggleShow: true,
     }
   },
   methods: {

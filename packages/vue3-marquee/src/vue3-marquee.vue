@@ -167,7 +167,7 @@ export default defineComponent({
 
     const verticalAnimationPause = ref(false)
 
-    const animateOnOverflowPause = ref(false) // state to pause the animation when animateOnOverflowOnly is true
+    const animateOnOverflowPause = ref(true)
 
     const containerWidth = ref(0)
     const contentWidth = ref(0)
@@ -222,7 +222,9 @@ export default defineComponent({
               containerHeight.value / contentHeight.value,
             )
 
-            cloneAmount.value = isFinite(localCloneAmount)
+            cloneAmount.value = props.animateOnOverflowOnly
+              ? 0
+              : isFinite(localCloneAmount)
               ? localCloneAmount
               : 0
 
@@ -238,8 +240,8 @@ export default defineComponent({
             contentWidth.value = marqueeContent.value.clientWidth
             containerWidth.value = marqueeOverlayContainer.value.clientWidth
 
-            if (props.animateOnOverflowOnly) {
-              if (contentWidth.value < containerWidth.value) {
+            if (props.animateOnOverflowOnly && ready.value) {
+              if (contentWidth.value <= containerWidth.value) {
                 animateOnOverflowPause.value = true
                 emit('onOverflowCleared')
               } else {
