@@ -39,7 +39,7 @@
   },
   "devDependencies": {
     "@babel/types": "7.25.0",
-    "@types/node": "20.14.12",
+    "@types/node": "20.16.11",
     "@vitejs/plugin-vue": "2.3.4",
     "@vue/compiler-sfc": "^3.3.4",
     "typescript": "5.4.5",
