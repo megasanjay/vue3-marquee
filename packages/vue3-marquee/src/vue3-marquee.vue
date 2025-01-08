@@ -57,7 +57,8 @@ import {
   computed,
   watch,
   defineComponent,
-  PropType,
+  type PropType,
+  type ComputedRef,
 } from 'vue'
 
 export interface MarqueeProps {
@@ -379,37 +380,39 @@ export default defineComponent({
       return 'running'
     })
 
-    const getCurrentStyle: any = computed(() => {
-      const cssVariables = {
-        '--duration': `${props.duration}s`,
-        '--delay': `${props.delay}s`,
-        '--direction': `${props.direction}`,
-        '--pauseOnHover': `${hoverAnimationState.value}`,
-        '--pauseOnClick': `${clickAnimationState.value}`,
-        '--pauseAnimation': `${animationState.value}`,
-        '--loops': `${props.loop === 0 ? 'infinite' : props.loop}`,
-        '--gradient-color': `rgba(${props.gradientColor[0]}, ${props.gradientColor[1]}, ${props.gradientColor[2]}, 1), rgba(${props.gradientColor[0]}, ${props.gradientColor[1]}, ${props.gradientColor[2]}, 0)`,
-        '--gradient-length': `${gradientLength.value}`,
-        '--min-width': `${minWidth.value}`,
-        '--min-height': `${minHeight.value}`,
-      }
+    const getCurrentStyle: ComputedRef<Record<string, string>> = computed(
+      () => {
+        const cssVariables = {
+          '--duration': `${props.duration}s`,
+          '--delay': `${props.delay}s`,
+          '--direction': `${props.direction}`,
+          '--pauseOnHover': `${hoverAnimationState.value}`,
+          '--pauseOnClick': `${clickAnimationState.value}`,
+          '--pauseAnimation': `${animationState.value}`,
+          '--loops': `${props.loop === 0 ? 'infinite' : props.loop}`,
+          '--gradient-color': `rgba(${props.gradientColor[0]}, ${props.gradientColor[1]}, ${props.gradientColor[2]}, 1), rgba(${props.gradientColor[0]}, ${props.gradientColor[1]}, ${props.gradientColor[2]}, 0)`,
+          '--gradient-length': `${gradientLength.value}`,
+          '--min-width': `${minWidth.value}`,
+          '--min-height': `${minHeight.value}`,
+        }
 
-      const animationStyles = {
-        '--orientation': 'scrollX',
-        orientation: 'horizontal',
-      }
+        const animationStyles = {
+          '--orientation': 'scrollX',
+          orientation: 'horizontal',
+        }
 
-      if (props.vertical) {
-        animationStyles['--orientation'] = 'scrollY'
-      }
+        if (props.vertical) {
+          animationStyles['--orientation'] = 'scrollY'
+        }
 
-      const styles = {
-        ...cssVariables,
-        ...animationStyles,
-      }
+        const styles = {
+          ...cssVariables,
+          ...animationStyles,
+        }
 
-      return styles
-    })
+        return styles
+      },
+    )
 
     const showGradient = computed(() => {
       if (props.gradient) {
