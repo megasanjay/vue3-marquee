@@ -513,6 +513,16 @@ export default defineComponent({
 </script>
 
 <style>
+:root {
+  --scroll-start: 0%;
+  --scroll-end: -100%;
+}
+
+html[dir='rtl'] {
+  --scroll-start: 100%;
+  --scroll-end: 0%;
+}
+
 .vue3-marquee {
   display: flex !important;
   position: relative;
@@ -565,10 +575,10 @@ export default defineComponent({
 
 @keyframes scrollX {
   0% {
-    transform: translateX(0%);
+    transform: translateX(var(--scroll-start));
   }
   100% {
-    transform: translateX(-100%);
+    transform: translateX(var(--scroll-end));
   }
 }
 

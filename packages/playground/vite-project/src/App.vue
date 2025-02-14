@@ -145,10 +145,23 @@
       </p>
 
       <div style="display: flex">
-        <Vue3Marquee :duration="7" direction="reverse">
-          نفس إحكام الإنذار، لم, فبعد وحل الأثنان. هو تصفح بالرّغم مك|هو
+        <Vue3Marquee
+          :direction="isRTL ? 'reverse' : 'normal'"
+          :delay="2"
+          :duration="5"
+          animate-on-overflow-only
+          pause-on-hover
+        >
+          <span
+            v-for="(item, index) in arabicList"
+            :key="index"
+            :style="isRTL ? 'margin-left: 48px' : 'margin-right: 48px'"
+          >
+            {{ `${index + 1}. ${item}` }}
+          </span>
         </Vue3Marquee>
       </div>
+      <button @click="handleToggleDirection">Toggle text direction</button>
     </div>
 
     <div v-if="showAll">
@@ -230,9 +243,20 @@ export default defineComponent({
       playState: false,
       showAll: false,
       toggleShow: true,
+      isRTL: false,
+      arabicList: ['علوم الفضاء والتكنولوجيا', 'المهمات الفضائية', 'أكاديمية الفضاء الوطنية', 'تنظيم الفضاء', 'البرامج الفضائية'],
     }
   },
   methods: {
+    handleToggleDirection() {
+      const _documentElement = document.documentElement
+      const dir = _documentElement.getAttribute('dir')
+
+      const _isRTL = dir === 'rtl'
+
+      _isRTL ? _documentElement.removeAttribute('dir') : _documentElement.setAttribute('dir', 'rtl')
+      this.isRTL = !_isRTL
+    },
     generateRandomString() {
       const randomString = Math.random().toString(36).substring(2, 15)
       return `https://api.dicebear.com/7.x/adventurer/svg/seed=${randomString}`
