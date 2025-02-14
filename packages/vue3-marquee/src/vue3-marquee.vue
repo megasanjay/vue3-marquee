@@ -9,6 +9,8 @@
     @mouseleave="hoverEnded"
     @mousedown="mouseDown"
     @mouseup="mouseUp"
+    @touchstart="mouseDown"
+    @touchend="mouseUp"
   >
     <div
       class="transparent-overlay"
@@ -158,6 +160,8 @@ export default defineComponent({
   ],
 
   setup(props, { emit }) {
+    const isMobile = 'ontouchstart' in document.documentElement
+
     const cloneAmount = ref(0)
 
     const minWidth = ref('100%')
@@ -301,7 +305,7 @@ export default defineComponent({
     )
 
     const hoverStarted = () => {
-      if (props.pauseOnHover) {
+      if (!isMobile && props.pauseOnHover) {
         emit('onPause')
 
         mouseOverMarquee.value = true
@@ -309,7 +313,7 @@ export default defineComponent({
     }
 
     const hoverEnded = () => {
-      if (props.pauseOnHover) {
+      if (!isMobile && props.pauseOnHover) {
         emit('onResume')
 
         mouseOverMarquee.value = false
@@ -513,6 +517,16 @@ export default defineComponent({
 </script>
 
 <style>
+:root {
+  --scroll-start: 0%;
+  --scroll-end: -100%;
+}
+
+html[dir='rtl'] {
+  --scroll-start: 100%;
+  --scroll-end: 0%;
+}
+
 .vue3-marquee {
   display: flex !important;
   position: relative;
@@ -565,10 +579,10 @@ export default defineComponent({
 
 @keyframes scrollX {
   0% {
-    transform: translateX(0%);
+    transform: translateX(var(--scroll-start));
   }
   100% {
-    transform: translateX(-100%);
+    transform: translateX(var(--scroll-end));
   }
 }
 
