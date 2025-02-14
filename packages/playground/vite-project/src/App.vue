@@ -151,6 +151,7 @@
           :duration="5"
           animate-on-overflow-only
           pause-on-hover
+          pause-on-click
         >
           <span
             v-for="(item, index) in arabicList"

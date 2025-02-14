@@ -9,6 +9,8 @@
     @mouseleave="hoverEnded"
     @mousedown="mouseDown"
     @mouseup="mouseUp"
+    @touchstart="mouseDown"
+    @touchend="mouseUp"
   >
     <div
       class="transparent-overlay"
@@ -158,6 +160,8 @@ export default defineComponent({
   ],
 
   setup(props, { emit }) {
+    const isMobile = 'ontouchstart' in document.documentElement
+
     const cloneAmount = ref(0)
 
     const minWidth = ref('100%')
@@ -301,7 +305,7 @@ export default defineComponent({
     )
 
     const hoverStarted = () => {
-      if (props.pauseOnHover) {
+      if (!isMobile && props.pauseOnHover) {
         emit('onPause')
 
         mouseOverMarquee.value = true
@@ -309,7 +313,7 @@ export default defineComponent({
     }
 
     const hoverEnded = () => {
-      if (props.pauseOnHover) {
+      if (!isMobile && props.pauseOnHover) {
         emit('onResume')
 
         mouseOverMarquee.value = false
