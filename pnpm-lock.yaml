@@ -38,8 +38,8 @@ importers:
         version: link:../../vue3-marquee
     devDependencies:
       '@vitejs/plugin-vue':
-        specifier: 2.3.4
-        version: 2.3.4(vite@2.9.18)(vue@3.4.34(typescript@5.4.5))
+        specifier: 5.2.4
+        version: 5.2.4(vite@2.9.18)(vue@3.4.34(typescript@5.4.5))
       typescript:
         specifier: 5.4.5
         version: 5.4.5
@@ -59,8 +59,8 @@ importers:
         specifier: 20.14.12
         version: 20.14.12
       '@vitejs/plugin-vue':
-        specifier: 2.3.4
-        version: 2.3.4(vite@2.9.18)(vue@3.4.34(typescript@5.4.5))
+        specifier: 5.2.4
+        version: 5.2.4(vite@2.9.18)(vue@3.4.34(typescript@5.4.5))
       '@vue/compiler-sfc':
         specifier: ^3.3.4
         version: 3.4.34
@@ -1039,18 +1039,11 @@ packages:
       vite: ^4.0.0 || ^5.0.0
       vue: ^3.0.0
 
-  '@vitejs/plugin-vue@2.3.4':
-    resolution: {integrity: sha512-IfFNbtkbIm36O9KB8QodlwwYvTEsJb4Lll4c2IwB3VHc2gie2mSPtSzL0eYay7X2jd/2WX02FjSGTWR6OPr/zg==}
-    engines: {node: '>=12.0.0'}
-    peerDependencies:
-      vite: ^2.5.10
-      vue: ^3.2.25
-
-  '@vitejs/plugin-vue@5.0.3':
-    resolution: {integrity: sha512-b8S5dVS40rgHdDrw+DQi/xOM9ed+kSRZzfm1T74bMmBDCd8XO87NKlFYInzCtwvtWwXZvo1QxE2OSspTATWrbA==}
+  '@vitejs/plugin-vue@5.2.4':
+    resolution: {integrity: sha512-7Yx/SXSOcQq5HiiV3orevHUFn+pmMB4cgbEkDYgnkUWb0WfeQ/wa2yFv6D5ICiCQOVpjA7vYDXrC7AGO8yjDHA==}
     engines: {node: ^18.0.0 || >=20.0.0}
     peerDependencies:
-      vite: ^5.0.0
+      vite: ^5.0.0 || ^6.0.0
       vue: ^3.2.25
 
   '@volar/code-gen@0.40.13':
@@ -2331,18 +2324,21 @@ packages:
 
   lodash.get@4.4.2:
     resolution: {integrity: sha512-z+Uw/vLuy6gQe8cfaFWD7p0wVv8fJl3mbzXh33RS+0oW2wvUqiRXiQ69gLWSLpgB5/6sU+r6BlQR0MBILadqTQ==}
+    deprecated: This package is deprecated. Use the optional chaining (?.) operator instead.
 
   lodash.isarguments@3.1.0:
     resolution: {integrity: sha512-chi4NHZlZqZD18a0imDHnZPrDeBbTtVN7GXMwuGdRH9qotxAjYs3aVLKc7zNOG9eddR5Ksd8rvFEBc9SsggPpg==}
 
   lodash.isequal@4.5.0:
     resolution: {integrity: sha512-pDo3lu8Jhfjqls6GkMgpahsF9kCyayhgykjyLMNFTKWrpVdAQtYyB4muAMWozBB4ig/dtWAmsMxLEI8wuz+DYQ==}
+    deprecated: This package is deprecated. Use require('node:util').isDeepStrictEqual instead.
 
   lodash.memoize@4.1.2:
     resolution: {integrity: sha512-t7j+NzmgnQzTAYXcsHYLgimltOV1MXHtlOWf6GjL9Kj8GK5FInw5JotxvbOs+IvV1/Dzo04/fCGfLVs7aXb4Ag==}
 
   lodash.pick@4.4.0:
     resolution: {integrity: sha512-hXt6Ul/5yWjfklSGvLQl8vM//l3FtyHZeuelpzK6mm99pNvN9yTDruNZPEJZD1oWrqo+izBmB7oUfWgcCX7s4Q==}
+    deprecated: This package is deprecated. Use destructuring assignment syntax instead.
 
   lodash.uniq@4.5.0:
     resolution: {integrity: sha512-xfBaXQd9ryd9dlSDvnvI0lvxfLJlYAZzXomUYzLKtUeOQvOP5piqAWuGtrhWeqaXK9hhoM/iyJc5AV+XfsX3HQ==}
@@ -4474,7 +4470,7 @@ snapshots:
     dependencies:
       '@nuxt/kit': 3.9.3(rollup@4.13.0)
       '@rollup/plugin-replace': 5.0.5(rollup@4.13.0)
-      '@vitejs/plugin-vue': 5.0.3(vite@5.0.11(@types/node@20.14.12)(terser@5.27.0))(vue@3.4.34(typescript@5.4.5))
+      '@vitejs/plugin-vue': 5.2.4(vite@5.0.11(@types/node@20.14.12)(terser@5.27.0))(vue@3.4.34(typescript@5.4.5))
       '@vitejs/plugin-vue-jsx': 3.1.0(vite@5.0.11(@types/node@20.14.12)(terser@5.27.0))(vue@3.4.34(typescript@5.4.5))
       autoprefixer: 10.4.17(postcss@8.4.40)
       clear: 0.1.0
@@ -4849,12 +4845,12 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@vitejs/plugin-vue@2.3.4(vite@2.9.18)(vue@3.4.34(typescript@5.4.5))':
+  '@vitejs/plugin-vue@5.2.4(vite@2.9.18)(vue@3.4.34(typescript@5.4.5))':
     dependencies:
       vite: 2.9.18
       vue: 3.4.34(typescript@5.4.5)
 
-  '@vitejs/plugin-vue@5.0.3(vite@5.0.11(@types/node@20.14.12)(terser@5.27.0))(vue@3.4.34(typescript@5.4.5))':
+  '@vitejs/plugin-vue@5.2.4(vite@5.0.11(@types/node@20.14.12)(terser@5.27.0))(vue@3.4.34(typescript@5.4.5))':
     dependencies:
       vite: 5.0.11(@types/node@20.14.12)(terser@5.27.0)
       vue: 3.4.34(typescript@5.4.5)
