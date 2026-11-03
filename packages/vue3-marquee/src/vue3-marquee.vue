@@ -180,6 +180,7 @@ export default defineComponent({
 
     const loopCounter = ref(0)
     const loopInterval = ref<any>(null)
+    const cloneInterval = ref<any>(null)
 
     const gradientLength = ref('200px')
 
@@ -200,78 +201,74 @@ export default defineComponent({
         verticalAnimationPause.value = true
       }
 
-      setInterval(() => {
-        minWidth.value = '0%'
-        minHeight.value = '0%'
+      minWidth.value = '0%'
+      minHeight.value = '0%'
 
+      if (
+        marqueeContent.value !== null &&
+        marqueeOverlayContainer.value !== null &&
+        marqueeContent.value &&
+        marqueeOverlayContainer.value
+      ) {
         if (
-          marqueeContent.value !== null &&
-          marqueeOverlayContainer.value !== null &&
-          marqueeContent.value &&
-          marqueeOverlayContainer.value
+          props.vertical &&
+          'clientHeight' in marqueeContent.value &&
+          'clientHeight' in marqueeOverlayContainer.value
         ) {
-          if (
-            props.vertical &&
-            'clientHeight' in marqueeContent.value &&
-            'clientHeight' in marqueeOverlayContainer.value
-          ) {
-            contentHeight.value = marqueeContent.value.clientHeight
-            containerHeight.value = marqueeOverlayContainer.value.clientHeight
+          contentHeight.value = marqueeContent.value.clientHeight
+          containerHeight.value = marqueeOverlayContainer.value.clientHeight
 
-            const localCloneAmount = Math.ceil(
-              containerHeight.value / contentHeight.value,
-            )
+          const localCloneAmount = Math.ceil(
+            containerHeight.value / contentHeight.value,
+          )
 
-            cloneAmount.value = props.animateOnOverflowOnly
-              ? 0
-              : isFinite(localCloneAmount)
-              ? localCloneAmount
-              : 0
+          cloneAmount.value = props.animateOnOverflowOnly
+            ? 0
+            : isFinite(localCloneAmount)
+            ? localCloneAmount
+            : 0
 
-            // resume the animation
-            verticalAnimationPause.value = false
+          // resume the animation
+          verticalAnimationPause.value = false
 
-            return cloneAmount.value
-          } else if (
-            !props.vertical &&
-            'clientWidth' in marqueeContent.value &&
-            'clientWidth' in marqueeOverlayContainer.value
-          ) {
-            contentWidth.value = marqueeContent.value.clientWidth
-            containerWidth.value = marqueeOverlayContainer.value.clientWidth
+          return cloneAmount.value
+        } else if (
+          !props.vertical &&
+          'clientWidth' in marqueeContent.value &&
+          'clientWidth' in marqueeOverlayContainer.value
+        ) {
+          contentWidth.value = marqueeContent.value.clientWidth
+          containerWidth.value = marqueeOverlayContainer.value.clientWidth
 
-            if (props.animateOnOverflowOnly && ready.value) {
-              if (contentWidth.value <= containerWidth.value) {
-                animateOnOverflowPause.value = true
-                emit('onOverflowCleared')
-              } else {
-                animateOnOverflowPause.value = false
-                emit('onOverflowDetected')
-              }
-
-              return 0 // don't clone if animateOnOverflowOnly is true
+          if (props.animateOnOverflowOnly && ready.value) {
+            if (contentWidth.value <= containerWidth.value) {
+              animateOnOverflowPause.value = true
+              emit('onOverflowCleared')
+            } else {
+              animateOnOverflowPause.value = false
+              emit('onOverflowDetected')
             }
 
-            const localCloneAmount = Math.ceil(
-              containerWidth.value / contentWidth.value,
-            )
-
-            cloneAmount.value = isFinite(localCloneAmount)
-              ? localCloneAmount
-              : 0
-
-            return cloneAmount.value
-          } else {
-            minWidth.value = '100%'
-            minHeight.value = '100%'
-            return 0
+            return 0 // don't clone if animateOnOverflowOnly is true
           }
+
+          const localCloneAmount = Math.ceil(
+            containerWidth.value / contentWidth.value,
+          )
+
+          cloneAmount.value = isFinite(localCloneAmount) ? localCloneAmount : 0
+
+          return cloneAmount.value
         } else {
           minWidth.value = '100%'
           minHeight.value = '100%'
           return 0
         }
-      }, 100)
+      } else {
+        minWidth.value = '100%'
+        minHeight.value = '100%'
+        return 0
+      }
     }
 
     watch(contentWidth, async () => {
@@ -455,6 +452,9 @@ export default defineComponent({
         await checkForClone()
         ForcesUpdate()
         ready.value = true
+
+        // keep re-measuring so clones and overflow state follow size changes
+        cloneInterval.value = setInterval(checkForClone, 100)
       } else {
         ready.value = true
       }
@@ -479,6 +479,7 @@ export default defineComponent({
 
     onBeforeUnmount(() => {
       clearInterval(loopInterval.value)
+      clearInterval(cloneInterval.value)
     })
 
     return {

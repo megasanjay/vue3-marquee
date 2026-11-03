@@ -228,7 +228,7 @@ export default defineComponent({
       img_30: this.getImgURLS(30),
       img_5: this.getImgURLS(5),
       playState: false,
-      showAll: false,
+      showAll: true,
       toggleShow: true,
     }
   },
