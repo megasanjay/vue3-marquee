@@ -144,7 +144,13 @@
         >
       </p>
 
-      <div style="display: flex">
+      <div style="display: flex" dir="rtl">
+        <Vue3Marquee :duration="7">
+          نفس إحكام الإنذار، لم, فبعد وحل الأثنان. هو تصفح بالرّغم مك|هو
+        </Vue3Marquee>
+      </div>
+
+      <div style="display: flex" dir="rtl">
         <Vue3Marquee :duration="7" direction="reverse">
           نفس إحكام الإنذار، لم, فبعد وحل الأثنان. هو تصفح بالرّغم مك|هو
         </Vue3Marquee>

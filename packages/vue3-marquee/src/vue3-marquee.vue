@@ -609,6 +609,12 @@ export default defineComponent({
   height: max-content;
 }
 
+/* In RTL contexts, flex items start on the right, which leaves the clone on
+   the wrong side of the leftward scroll. Pack items to the left instead. */
+.vue3-marquee.horizontal:dir(rtl) {
+  justify-content: flex-end;
+}
+
 .vue3-marquee.vertical {
   overflow-y: hidden !important;
   flex-direction: column !important;
