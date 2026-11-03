@@ -9,6 +9,8 @@
     @mouseleave="hoverEnded"
     @mousedown="mouseDown"
     @mouseup="mouseUp"
+    @focusin="focusStarted"
+    @focusout="focusEnded"
   >
     <div
       class="transparent-overlay"
@@ -53,6 +55,7 @@
 import {
   ref,
   onMounted,
+  onUpdated,
   onBeforeUnmount,
   computed,
   watch,
@@ -74,6 +77,7 @@ export interface MarqueeProps {
   gradientLength: string
   pauseOnHover: boolean
   pauseOnClick: boolean
+  pauseOnReducedMotion: boolean
   pause: boolean
 }
 
@@ -137,6 +141,11 @@ export default defineComponent({
       default: false,
     },
 
+    pauseOnReducedMotion: {
+      type: Boolean as PropType<MarqueeProps['pauseOnReducedMotion']>,
+      default: true,
+    },
+
     pause: {
       type: Boolean as PropType<MarqueeProps['pause']>,
       default: false,
@@ -177,6 +186,10 @@ export default defineComponent({
 
     const mouseOverMarquee = ref(false)
     const mouseDownMarquee = ref(false)
+    const focusWithinMarquee = ref(false)
+
+    const prefersReducedMotion = ref(false)
+    let reducedMotionQuery: MediaQueryList | null = null
 
     const loopCounter = ref(0)
     const loopInterval = ref<any>(null)
@@ -329,8 +342,42 @@ export default defineComponent({
       }
     }
 
+    // keep focused content in place so keyboard users can interact with it
+    const focusStarted = () => {
+      if (!focusWithinMarquee.value) {
+        emit('onPause')
+
+        focusWithinMarquee.value = true
+      }
+    }
+
+    const focusEnded = (event: FocusEvent) => {
+      const container = event.currentTarget as HTMLElement
+      const nextTarget = event.relatedTarget as Node | null
+
+      if (nextTarget && container.contains(nextTarget)) {
+        return
+      }
+
+      emit('onResume')
+
+      focusWithinMarquee.value = false
+    }
+
+    const updateReducedMotion = () => {
+      prefersReducedMotion.value = reducedMotionQuery?.matches ?? false
+    }
+
     const animationState = computed(() => {
       if (props.pause) {
+        return 'paused'
+      }
+
+      if (focusWithinMarquee.value) {
+        return 'paused'
+      }
+
+      if (props.pauseOnReducedMotion && prefersReducedMotion.value) {
         return 'paused'
       }
 
@@ -460,7 +507,38 @@ export default defineComponent({
       }
     }
 
+    // duplicated copies are aria-hidden, so any focusable elements inside them
+    // must be removed from the tab order. they stay clickable for mouse users.
+    const focusableSelector =
+      'a[href], area[href], button, input, select, textarea, iframe, summary, audio[controls], video[controls], [contenteditable]:not([contenteditable="false"]), [tabindex]'
+
+    const disableFocusInClones = () => {
+      const root = marqueeContent.value?.parentElement
+
+      if (!root) {
+        return
+      }
+
+      root
+        .querySelectorAll(':scope > .marquee[aria-hidden="true"]')
+        .forEach((copy: Element) => {
+          copy.querySelectorAll(focusableSelector).forEach((el: Element) => {
+            el.setAttribute('tabindex', '-1')
+          })
+        })
+    }
+
+    onUpdated(disableFocusInClones)
+
     onMounted(async () => {
+      if (typeof window !== 'undefined' && window.matchMedia) {
+        reducedMotionQuery = window.matchMedia(
+          '(prefers-reduced-motion: reduce)',
+        )
+        updateReducedMotion()
+        reducedMotionQuery.addEventListener?.('change', updateReducedMotion)
+      }
+
       setupMarquee()
 
       loopInterval.value = setInterval(() => {
@@ -480,6 +558,7 @@ export default defineComponent({
     onBeforeUnmount(() => {
       clearInterval(loopInterval.value)
       clearInterval(cloneInterval.value)
+      reducedMotionQuery?.removeEventListener?.('change', updateReducedMotion)
     })
 
     return {
@@ -492,6 +571,8 @@ export default defineComponent({
       loopInterval,
       mouseOverMarquee,
       mouseDownMarquee,
+      focusWithinMarquee,
+      prefersReducedMotion,
       minWidth,
       minHeight,
       animateOnOverflowPause,
@@ -508,6 +589,8 @@ export default defineComponent({
       hoverEnded,
       mouseDown,
       mouseUp,
+      focusStarted,
+      focusEnded,
     }
   },
 })
@@ -539,6 +622,10 @@ export default defineComponent({
 
 .vue3-marquee:active > .marquee {
   animation-play-state: var(--pauseOnClick);
+}
+
+.vue3-marquee:focus-within > .marquee {
+  animation-play-state: paused;
 }
 
 .vue3-marquee > .marquee {
@@ -586,12 +673,14 @@ export default defineComponent({
   position: absolute;
   width: 100%;
   height: 100%;
+  pointer-events: none;
 }
 
 .vue3-marquee > .transparent-overlay {
   position: absolute;
   width: 100%;
   height: 100%;
+  pointer-events: none;
 }
 
 .vue3-marquee > .overlay::before,
