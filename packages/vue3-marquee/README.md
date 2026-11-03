@@ -126,6 +126,7 @@ More detailed explanations are provided in the [documentation](https://vue3-marq
 | pause                 | Boolean                                | false           | A reactive prop to pause the marquee                                                   |
 | pauseOnHover          | Boolean                                | false           | Whether to pause the marquee on hover                                                  |
 | pauseOnClick          | Boolean                                | false           | Whether to pause the marquee when you hold the right click button                      |
+| pauseOnReducedMotion  | Boolean                                | true            | Whether to pause the marquee when the user prefers reduced motion                      |
 | clone                 | Boolean                                | false           | Whether to clone the content if you want no empty spaces in the animation              |
 | vertical              | Boolean                                | false           | Whether to make the marquee vertical                                                   |
 | animateOnOverflowOnly | Boolean                                | false           | Whether to animate the marquee if the content overflows the container                  |
@@ -139,9 +140,9 @@ A few events are emitted from the component. Look at the [Demos](#demos) for exa
 - onLoopComplete
   - You can use this event to know when your marquee has completed a loop.
 - onPause
-  - This event is emitted if you have either `pauseOnHover` or `pauseOnClick` enabled. It will notify if the animation pauses.
+  - This event is emitted if you have either `pauseOnHover` or `pauseOnClick` enabled, or when keyboard focus enters or leaves the marquee. It will notify if the animation pauses.
 - onResume
-  - This event is emitted if you have either `pauseOnHover` or `pauseOnClick` enabled. It will notify if the animation resumes.
+  - This event is emitted if you have either `pauseOnHover` or `pauseOnClick` enabled, or when keyboard focus enters or leaves the marquee. It will notify if the animation resumes.
 - onOverflowDetected
   - This event is emitted if you have `animateOnOverflowOnly` enabled. It will notify if the content overflows the container.
 - onOverflowCleared
