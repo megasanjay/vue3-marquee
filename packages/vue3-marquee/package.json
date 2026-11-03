@@ -27,15 +27,21 @@
     "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
-  "main": "dist/vue3-marquee.cjs.js",
+  "main": "dist/vue3-marquee.cjs",
   "module": "dist/vue3-marquee.es.js",
   "types": "dist/index.d.ts",
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/vue3-marquee.es.js",
-      "require": "./dist/vue3-marquee.cjs.js"
-    }
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/vue3-marquee.es.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/vue3-marquee.cjs"
+      }
+    },
+    "./package.json": "./package.json"
   },
   "devDependencies": {
     "@babel/types": "7.25.0",
@@ -56,7 +62,7 @@
     "email": "info@sanjaysoundarajan.dev"
   },
   "engines": {
-    "node": ">=12"
+    "node": ">=14.16"
   },
   "homepage": "https://vue3-marquee.vercel.app/",
   "keywords": [
