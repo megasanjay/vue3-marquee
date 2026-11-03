@@ -25,7 +25,12 @@
       :class="{ vertical: vertical, horizontal: !vertical }"
     ></div>
 
-    <div class="marquee" ref="marqueeContent">
+    <div
+      class="marquee"
+      ref="marqueeContent"
+      @animationiteration.self="loopCompleted"
+      @animationend.self="loopCompleted"
+    >
       <slot></slot>
     </div>
 
@@ -192,7 +197,6 @@ export default defineComponent({
     let reducedMotionQuery: MediaQueryList | null = null
 
     const loopCounter = ref(0)
-    const loopInterval = ref<any>(null)
     const cloneInterval = ref<any>(null)
 
     const gradientLength = ref('200px')
@@ -205,7 +209,22 @@ export default defineComponent({
     const ForcesUpdate = async () => {
       await checkForClone()
 
+      // re-keying recreates the elements, which restarts the animation
+      loopCounter.value = 0
       componentKey.value++
+    }
+
+    // driven by the browser's animation events so the count follows the real
+    // animation, including the initial delay and any time spent paused.
+    // the final iteration fires animationend instead of animationiteration.
+    const loopCompleted = () => {
+      loopCounter.value++
+
+      if (props.loop !== 0 && loopCounter.value === props.loop) {
+        emit('onComplete')
+      }
+
+      emit('onLoopComplete')
     }
 
     const checkForClone = async () => {
@@ -540,23 +559,9 @@ export default defineComponent({
       }
 
       setupMarquee()
-
-      loopInterval.value = setInterval(() => {
-        loopCounter.value++
-
-        if (props.loop !== 0 && loopCounter.value === props.loop) {
-          emit('onComplete')
-          clearInterval(loopInterval.value)
-        }
-
-        emit('onLoopComplete')
-
-        // Converting the duration into milliseconds here
-      }, props.duration * 1000)
     })
 
     onBeforeUnmount(() => {
-      clearInterval(loopInterval.value)
       clearInterval(cloneInterval.value)
       reducedMotionQuery?.removeEventListener?.('change', updateReducedMotion)
     })
@@ -568,7 +573,7 @@ export default defineComponent({
       contentHeight,
       containerHeight,
       loopCounter,
-      loopInterval,
+      loopCompleted,
       mouseOverMarquee,
       mouseDownMarquee,
       focusWithinMarquee,

@@ -134,6 +134,39 @@
       </div>
     </div>
 
+    <div>
+      <p>
+        Fix for issue:
+        <a
+          href="https://github.com/megasanjay/vue3-marquee/issues/355"
+          target="__blank"
+          >vue3-marquee#355</a
+        >
+      </p>
+
+      <Vue3Marquee
+        :key="loopRunKey"
+        :duration="5"
+        :delay="2"
+        :loop="3"
+        :pause="loopPaused"
+        @on-loop-complete="loopsCompleted++"
+        @on-complete="loopCompleted = true"
+      >
+        <img v-for="i in img_30" :key="i" height="80" :src="i" />
+      </Vue3Marquee>
+
+      <p>
+        Loops completed: {{ loopsCompleted }} / 3
+        <span v-if="loopCompleted"> - animation complete!</span>
+      </p>
+
+      <button :disabled="loopCompleted" @click="loopPaused = !loopPaused">
+        {{ loopPaused ? 'Resume' : 'Pause' }}
+      </button>
+      <button @click="restartLoops">Restart</button>
+    </div>
+
     <div v-if="showAll">
       <p>
         Fix for issue:
@@ -236,6 +269,10 @@ export default defineComponent({
       playState: false,
       showAll: true,
       toggleShow: true,
+      loopRunKey: 0,
+      loopPaused: false,
+      loopsCompleted: 0,
+      loopCompleted: false,
     }
   },
   methods: {
@@ -252,6 +289,12 @@ export default defineComponent({
     },
     togglePlayState() {
       this.playState = !this.playState
+    },
+    restartLoops() {
+      this.loopPaused = false
+      this.loopsCompleted = 0
+      this.loopCompleted = false
+      this.loopRunKey++
     },
   },
 })
