@@ -256,9 +256,7 @@ export default defineComponent({
             containerWidth.value / contentWidth.value,
           )
 
-          cloneAmount.value = isFinite(localCloneAmount)
-            ? localCloneAmount
-            : 0
+          cloneAmount.value = isFinite(localCloneAmount) ? localCloneAmount : 0
 
           return cloneAmount.value
         } else {
